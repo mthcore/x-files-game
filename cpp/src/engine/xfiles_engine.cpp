@@ -37,6 +37,7 @@
 #include <cstring>
 #include <map>
 #include <memory>
+#include <set>
 #include <sstream>
 #include <string>
 #include <unordered_map>
@@ -656,6 +657,9 @@ struct ScenePart {
     std::string location;                      // "Field Office"
     std::vector<std::string> trigger_ids;      // from scenes[loc].trigger_refs[]
     int n_triggers_byte_direct = 0;
+    std::string phase_variable;                // "cAIFieldOfficeWhereAreWe" (may be empty)
+    std::vector<std::string> phase_machine;    // ordered list of phase values
+    std::vector<std::string> checkpoints;      // gate names that advance the phase
 };
 
 struct TriggerSummary {
@@ -766,6 +770,22 @@ static bool load_game_definition(const std::string& path,
                 if (!id.empty()) sp.trigger_ids.push_back(id);
             }
         }
+        const json::Value& smv = kv.second.at("state_machine");
+        if (smv.is_obj()) {
+            sp.phase_variable = unwrap_str(smv.at("phase_variable"));
+            if (smv.at("phase_machine").is_arr()) {
+                for (const json::Value& p : smv.at("phase_machine").as_arr()) {
+                    const std::string s = unwrap_str(p);
+                    if (!s.empty()) sp.phase_machine.push_back(s);
+                }
+            }
+            if (smv.at("checkpoints").is_arr()) {
+                for (const json::Value& c : smv.at("checkpoints").as_arr()) {
+                    const std::string s = unwrap_str(c);
+                    if (!s.empty()) sp.checkpoints.push_back(s);
+                }
+            }
+        }
         gd.scenes[kv.first] = std::move(sp);
     }
 
@@ -833,9 +853,58 @@ struct ValidatorTally {
     int fail = 0;
 };
 
+struct StateMachineSim {
+    // per-location: which phase index we are at, and which checkpoints have fired.
+    struct Loc {
+        int phase_index = 0;                            // 0 = first entry in phase_machine
+        std::set<std::string> fired;                    // checkpoints that have triggered
+        bool advanced_any = false;
+    };
+    std::map<std::string, Loc> by_location;
+    int total_advances = 0;
+    int total_completions = 0;
+};
+
+// Advance the state machine of `location` by firing one synthetic checkpoint
+// per step (round-robin over its declared checkpoints). When all checkpoints
+// have fired, the phase index advances; reaching the last phase counts as a
+// completion. This is a byte-direct shape simulation — it does not pretend to
+// reproduce the game's runtime evaluation, only its declared structure.
+static void simulate_step(const ScenePart& sc, StateMachineSim& sim,
+                          std::string& diag) {
+    if (sc.checkpoints.empty()) return;
+    auto& loc = sim.by_location[sc.location];
+    const std::string& cp = sc.checkpoints[loc.fired.size() % sc.checkpoints.size()];
+    auto ins = loc.fired.insert(cp);
+    if (ins.second) {
+        diag += "  fired[" + cp + "]";
+    }
+    if (loc.fired.size() >= sc.checkpoints.size()) {
+        // all checkpoints fired -> advance phase
+        if (!sc.phase_machine.empty() &&
+            loc.phase_index + 1 < (int)sc.phase_machine.size()) {
+            ++loc.phase_index;
+            loc.advanced_any = true;
+            ++sim.total_advances;
+            diag += "  advance->" + sc.phase_machine[loc.phase_index];
+            loc.fired.clear();    // checkpoints reset for next phase
+        } else if (!sc.phase_machine.empty() &&
+                   loc.phase_index + 1 == (int)sc.phase_machine.size()) {
+            // already at the last phase; treat as completion once.
+            if (!loc.advanced_any) {
+                loc.advanced_any = true;
+                ++sim.total_advances;
+            }
+            ++sim.total_completions;
+            diag += "  complete";
+        }
+    }
+}
+
 static ValidatorTally validate_scripted_flow(const engine::GameModel& /*g*/,
                                              const GameDefinition&    gd,
-                                             std::vector<StepReport>& reports) {
+                                             std::vector<StepReport>& reports,
+                                             StateMachineSim&         sim) {
     ValidatorTally tally;
     for (const FlowStep& fs : gd.steps) {
         StepReport r;
@@ -867,6 +936,9 @@ static ValidatorTally validate_scripted_flow(const engine::GameModel& /*g*/,
         } else if (r.scene_found && triggers_ok) {
             r.status = StepStatus::Pass;
             tally.pass++;
+            std::string sim_diag;
+            simulate_step(sit->second, sim, sim_diag);
+            diag << sim_diag;
         } else if (!r.scene_found) {
             diag << " walkthrough-only (no byte-direct scene catalog entry)";
             r.status = StepStatus::WalkthroughOnly;
@@ -958,7 +1030,9 @@ int main(int argc, char** argv) {
         }
 
         std::vector<engine::StepReport> reports;
-        engine::ValidatorTally tally = engine::validate_scripted_flow(g, gd, reports);
+        engine::StateMachineSim sim;
+        engine::ValidatorTally tally =
+            engine::validate_scripted_flow(g, gd, reports, sim);
         int total = (int)reports.size();
 
         auto label = [](engine::StepStatus s) {
@@ -983,6 +1057,30 @@ int main(int argc, char** argv) {
         std::printf("\nscripted playthrough: %d/%d byte-direct PASS, "
                     "%d walkthrough-only, %d FAIL\n",
                     tally.pass, total, tally.walkthrough_only, tally.fail);
+
+        // State-machine simulation summary (byte-direct shape walk).
+        std::printf("\nState-machine simulation:\n");
+        int locs_with_state = 0;
+        for (const auto& kv : sim.by_location) {
+            const auto& loc = kv.second;
+            auto it = gd.scenes.find(kv.first);
+            if (it == gd.scenes.end()) continue;
+            ++locs_with_state;
+            const auto& sc = it->second;
+            std::string phase_now = sc.phase_machine.empty()
+                ? std::string("-")
+                : sc.phase_machine[loc.phase_index];
+            std::printf("  %-15s  phase %d/%zu (%s)  checkpoints %zu/%zu\n",
+                        kv.first.c_str(),
+                        loc.phase_index + 1,
+                        sc.phase_machine.empty() ? size_t(1)
+                                                  : sc.phase_machine.size(),
+                        phase_now.c_str(),
+                        loc.fired.size(),
+                        sc.checkpoints.size());
+        }
+        std::printf("  Total phase advances: %d, completions: %d\n",
+                    sim.total_advances, sim.total_completions);
         return (tally.fail == 0 && total > 0) ? 0 : 1;
     }
 
