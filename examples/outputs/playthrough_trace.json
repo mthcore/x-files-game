@@ -1,0 +1,4155 @@
+{
+ "_about": "Per-step playthrough trace cross-referencing the byte-direct catalog with the canonical 29-step flow.",
+ "_source": "examples/outputs/game_definition.json",
+ "stats": {
+  "steps_total": 29,
+  "byte_direct_catalog_steps": 18,
+  "walkthrough_only_steps": 11,
+  "triggers_total": 113,
+  "conversations_total": 174,
+  "dialogue_samples_total": 53
+ },
+ "steps": [
+  {
+   "step": {
+    "value": 1,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 2",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Field Office",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAIFieldOfficeWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "P:Phone",
+     "A:APB/Case Files",
+     "E:Equipment",
+     "W:Warehouse",
+     "T:Node 3",
+     "N:None",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "SearchedForWare",
+     "RevivedCook",
+     "SearchedOffice",
+     "CaseFiles2Cook",
+     "FiledAPB",
+     "GotDrawerInv",
+     "GotEquipInv",
+     "RetrievedCaseFile"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Cook warns of 'big gun from D.C.'; sit at desk -> phone (Shanks); meet Skinner. Login CRAIG WILLMORE / SHILOH. Talk to Cook, hand case files; take gun/badge/cuffs.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "gun",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "badge",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "cuffs",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "case files",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIFieldOfficeN2_SearchedForWare",
+     "action_label": "SearchedForWare",
+     "effect_summary": "set bAIFieldOfficeN2_SearchedForWare = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_RevivedCook",
+     "action_label": "RevivedCook",
+     "effect_summary": "set bAIFieldOfficeN3_RevivedCook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_SearchedOffice",
+     "action_label": "SearchedOffice",
+     "effect_summary": "set bAIFieldOfficeN3_SearchedOffice = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_CaseFiles2Cook",
+     "action_label": "CaseFiles2Cook",
+     "effect_summary": "set bAIFieldOffice_CaseFiles2Cook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_FiledAPB",
+     "action_label": "FiledAPB",
+     "effect_summary": "set bAIFieldOffice_FiledAPB = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotDrawerInv",
+     "action_label": "GotDrawerInv",
+     "effect_summary": "set bAIFieldOffice_GotDrawerInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotEquipInv",
+     "action_label": "GotEquipInv",
+     "effect_summary": "set bAIFieldOffice_GotEquipInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_RetrievedCaseFile",
+     "action_label": "RetrievedCaseFile",
+     "effect_summary": "set bAIFieldOffice_RetrievedCaseFile = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 2,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 2",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Comity",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAIComityWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "N:None",
+     "P:Phone",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "GetLaptop",
+     "PhoneIdeaIcon",
+     "SkinnerMentionedPhone",
+     "get_laptop",
+     "phone_idea"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Question the motel clerk; search Mulder & Scully's rooms; suggest phone records when the phone icon appears.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "case file",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "brochure",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "book",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "sunflower seeds",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "newspaper",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "bible",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIComity_GetLaptop",
+     "action_label": "GetLaptop",
+     "effect_summary": "set bAIComity_GetLaptop = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIComity_PhoneIdeaIcon",
+     "action_label": "PhoneIdeaIcon",
+     "effect_summary": "set bAIComity_PhoneIdeaIcon = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIComity_SkinnerMentionedPhone",
+     "action_label": "SkinnerMentionedPhone",
+     "effect_summary": "set bAIComity_SkinnerMentionedPhone = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIComity_get_laptop",
+     "action_label": "get_laptop",
+     "effect_summary": "set bAIComity_get_laptop = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIComity_phone_idea",
+     "action_label": "phone_idea",
+     "effect_summary": "set bAIComity_phone_idea = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 953,
+     "text": "COMITY INN\nEVERETT, WASHINGTON",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 974,
+     "text": "Lieu : Interrogatoire employé accueil auberge Comity au sujet de 2 agts du FBI : Fox Mulder/Dana Scully - R.A.S. sur les agents. \"Enregistrés, sont partis ce soir...\"",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 3,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 2",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Field Office",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAIFieldOfficeWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "P:Phone",
+     "A:APB/Case Files",
+     "E:Equipment",
+     "W:Warehouse",
+     "T:Node 3",
+     "N:None",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "SearchedForWare",
+     "RevivedCook",
+     "SearchedOffice",
+     "CaseFiles2Cook",
+     "FiledAPB",
+     "GotDrawerInv",
+     "GotEquipInv",
+     "RetrievedCaseFile"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "ING lookup: phones 202-555-0149 / 206-555-0182, plate 621517.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIFieldOfficeN2_SearchedForWare",
+     "action_label": "SearchedForWare",
+     "effect_summary": "set bAIFieldOfficeN2_SearchedForWare = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_RevivedCook",
+     "action_label": "RevivedCook",
+     "effect_summary": "set bAIFieldOfficeN3_RevivedCook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_SearchedOffice",
+     "action_label": "SearchedOffice",
+     "effect_summary": "set bAIFieldOfficeN3_SearchedOffice = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_CaseFiles2Cook",
+     "action_label": "CaseFiles2Cook",
+     "effect_summary": "set bAIFieldOffice_CaseFiles2Cook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_FiledAPB",
+     "action_label": "FiledAPB",
+     "effect_summary": "set bAIFieldOffice_FiledAPB = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotDrawerInv",
+     "action_label": "GotDrawerInv",
+     "effect_summary": "set bAIFieldOffice_GotDrawerInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotEquipInv",
+     "action_label": "GotEquipInv",
+     "effect_summary": "set bAIFieldOffice_GotEquipInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_RetrievedCaseFile",
+     "action_label": "RetrievedCaseFile",
+     "effect_summary": "set bAIFieldOffice_RetrievedCaseFile = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 4,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 2",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Warehouse",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "CollectedBlackPowde",
+     "CollectedBlood",
+     "CollectedBullet",
+     "CollectedMorleyButt",
+     "CrateOpen",
+     "GetCrowbar"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Lockpick padlock; collect bullet/blood/cigarette/crowbar/powder; talk to Wong; photograph car plate 240-EAK.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "bullet",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "blood",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "cigarette butt",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "crowbar",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "powder",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIWarehouse_CollectedBlackPowde",
+     "action_label": "CollectedBlackPowde",
+     "effect_summary": "set bAIWarehouse_CollectedBlackPowde = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedBlood",
+     "action_label": "CollectedBlood",
+     "effect_summary": "set bAIWarehouse_CollectedBlood = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedBullet",
+     "action_label": "CollectedBullet",
+     "effect_summary": "set bAIWarehouse_CollectedBullet = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedMorleyButt",
+     "action_label": "CollectedMorleyButt",
+     "effect_summary": "set bAIWarehouse_CollectedMorleyButt = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CrateOpen",
+     "action_label": "CrateOpen",
+     "effect_summary": "set bAIWarehouse_CrateOpen = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_GetCrowbar",
+     "action_label": "GetCrowbar",
+     "effect_summary": "set bAIWarehouse_GetCrowbar = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 489,
+     "text": "Warehouse",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 490,
+     "text": "Warehouse Bullet",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 500,
+     "text": "Ev. Bullet (Warehouse)",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 954,
+     "text": "DOCKSIDE WAREHOUSE, SEATTLE",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 5,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 2",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Crime Lab",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Give bullet/blood/cigarette/powder to Amis.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 6,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 2",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Field Office",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAIFieldOfficeWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "P:Phone",
+     "A:APB/Case Files",
+     "E:Equipment",
+     "W:Warehouse",
+     "T:Node 3",
+     "N:None",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "SearchedForWare",
+     "RevivedCook",
+     "SearchedOffice",
+     "CaseFiles2Cook",
+     "FiledAPB",
+     "GotDrawerInv",
+     "GotEquipInv",
+     "RetrievedCaseFile"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Download photos; ING: car is Gov/Military restricted + Wong record; PDA notes to Skinner/Shanks; refuse Cook.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIFieldOfficeN2_SearchedForWare",
+     "action_label": "SearchedForWare",
+     "effect_summary": "set bAIFieldOfficeN2_SearchedForWare = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_RevivedCook",
+     "action_label": "RevivedCook",
+     "effect_summary": "set bAIFieldOfficeN3_RevivedCook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_SearchedOffice",
+     "action_label": "SearchedOffice",
+     "effect_summary": "set bAIFieldOfficeN3_SearchedOffice = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_CaseFiles2Cook",
+     "action_label": "CaseFiles2Cook",
+     "effect_summary": "set bAIFieldOffice_CaseFiles2Cook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_FiledAPB",
+     "action_label": "FiledAPB",
+     "effect_summary": "set bAIFieldOffice_FiledAPB = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotDrawerInv",
+     "action_label": "GotDrawerInv",
+     "effect_summary": "set bAIFieldOffice_GotDrawerInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotEquipInv",
+     "action_label": "GotEquipInv",
+     "effect_summary": "set bAIFieldOffice_GotEquipInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_RetrievedCaseFile",
+     "action_label": "RetrievedCaseFile",
+     "effect_summary": "set bAIFieldOffice_RetrievedCaseFile = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 7,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 2",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Warehouse",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "CollectedBlackPowde",
+     "CollectedBlood",
+     "CollectedBullet",
+     "CollectedMorleyButt",
+     "CrateOpen",
+     "GetCrowbar"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Night surveillance: men remove item from floor hatch (found empty).",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIWarehouse_CollectedBlackPowde",
+     "action_label": "CollectedBlackPowde",
+     "effect_summary": "set bAIWarehouse_CollectedBlackPowde = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedBlood",
+     "action_label": "CollectedBlood",
+     "effect_summary": "set bAIWarehouse_CollectedBlood = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedBullet",
+     "action_label": "CollectedBullet",
+     "effect_summary": "set bAIWarehouse_CollectedBullet = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedMorleyButt",
+     "action_label": "CollectedMorleyButt",
+     "effect_summary": "set bAIWarehouse_CollectedMorleyButt = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CrateOpen",
+     "action_label": "CrateOpen",
+     "effect_summary": "set bAIWarehouse_CrateOpen = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_GetCrowbar",
+     "action_label": "GetCrowbar",
+     "effect_summary": "set bAIWarehouse_GetCrowbar = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 489,
+     "text": "Warehouse",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 490,
+     "text": "Warehouse Bullet",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 500,
+     "text": "Ev. Bullet (Warehouse)",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 954,
+     "text": "DOCKSIDE WAREHOUSE, SEATTLE",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 8,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 2",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Apt",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Sleep.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 502,
+     "text": "Ev. Captain's Journal",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1045,
+     "text": "[ Données capture vidéo chargées ]",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 9,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 3",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Warehouse",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "CollectedBlackPowde",
+     "CollectedBlood",
+     "CollectedBullet",
+     "CollectedMorleyButt",
+     "CrateOpen",
+     "GetCrowbar"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Show badge; Wong's body; board the Agrippa: yellow slicker, pills.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "yellow slicker",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "pills",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIWarehouse_CollectedBlackPowde",
+     "action_label": "CollectedBlackPowde",
+     "effect_summary": "set bAIWarehouse_CollectedBlackPowde = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedBlood",
+     "action_label": "CollectedBlood",
+     "effect_summary": "set bAIWarehouse_CollectedBlood = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedBullet",
+     "action_label": "CollectedBullet",
+     "effect_summary": "set bAIWarehouse_CollectedBullet = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedMorleyButt",
+     "action_label": "CollectedMorleyButt",
+     "effect_summary": "set bAIWarehouse_CollectedMorleyButt = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CrateOpen",
+     "action_label": "CrateOpen",
+     "effect_summary": "set bAIWarehouse_CrateOpen = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_GetCrowbar",
+     "action_label": "GetCrowbar",
+     "effect_summary": "set bAIWarehouse_GetCrowbar = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 489,
+     "text": "Warehouse",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 490,
+     "text": "Warehouse Bullet",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 500,
+     "text": "Ev. Bullet (Warehouse)",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 954,
+     "text": "DOCKSIDE WAREHOUSE, SEATTLE",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 10,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 3",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Tarakan",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "AllGrowingFoodFound",
+     "BeenInHold",
+     "BeenInWheelhouse",
+     "GotLeadSphere",
+     "GotLogAndJournal",
+     "NOTInWheelhouse",
+     "SeeEagleCrates",
+     "SeeFingerPrints",
+     "SeeWhiteShadow"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Three levels: lead sphere (chest), phoenix crates, 2 Russian books (payroll+journal). Phone Amis for prints.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "lead sphere",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "payroll book",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "journal",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAITarakan_AllGrowingFoodFound",
+     "action_label": "AllGrowingFoodFound",
+     "effect_summary": "set bAITarakan_AllGrowingFoodFound = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAITarakan_BeenInHold",
+     "action_label": "BeenInHold",
+     "effect_summary": "set bAITarakan_BeenInHold = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAITarakan_BeenInWheelhouse",
+     "action_label": "BeenInWheelhouse",
+     "effect_summary": "set bAITarakan_BeenInWheelhouse = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAITarakan_GotLeadSphere",
+     "action_label": "GotLeadSphere",
+     "effect_summary": "set bAITarakan_GotLeadSphere = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAITarakan_GotLogAndJournal",
+     "action_label": "GotLogAndJournal",
+     "effect_summary": "set bAITarakan_GotLogAndJournal = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAITarakan_NOTInWheelhouse",
+     "action_label": "NOTInWheelhouse",
+     "effect_summary": "set bAITarakan_NOTInWheelhouse = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAITarakan_SeeEagleCrates",
+     "action_label": "SeeEagleCrates",
+     "effect_summary": "set bAITarakan_SeeEagleCrates = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAITarakan_SeeFingerPrints",
+     "action_label": "SeeFingerPrints",
+     "effect_summary": "set bAITarakan_SeeFingerPrints = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAITarakan_SeeWhiteShadow",
+     "action_label": "SeeWhiteShadow",
+     "effect_summary": "set bAITarakan_SeeWhiteShadow = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 137,
+     "text": "Nous devons trouver ce qui a mis le feu au Tarakan.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 151,
+     "text": "Comment avez-vous su pour les blessés du Tarakan?",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 161,
+     "text": "Quelles sont les similitudes avec les victimes du Tarakan?",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 162,
+     "text": "Y-a-t-il une piste concernant les corps manquants du Tarakan?",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 11,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 3",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Coroner",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Body, bullet from trays; bodies stolen; Astadourian becomes partner.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "bullet",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 125,
+     "text": "Ecoutez, j'ai le droit d'aller au bureau du coroner.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 527,
+     "text": "Joan Truit\n(Coroner)\n555-0181",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1015,
+     "text": "Message du coroner : l'autopsie de Wong a révélé quelque chose d'intéressant. Quel est le rapport entre Wong et le Tarakan?",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1021,
+     "text": "Lieu : Bureau du coroner : l'autopsie de la victime brûlée a révélé des brûlures \"de la tête au pieds\". Truitt pense que se sont des brûlures radioactives. Rayons thermiques. Pas d'identification.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 12,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 3",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Crime Lab",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Give bullet + sphere to Amis.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 13,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 3",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Field Office",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAIFieldOfficeWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "P:Phone",
+     "A:APB/Case Files",
+     "E:Equipment",
+     "W:Warehouse",
+     "T:Node 3",
+     "N:None",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "SearchedForWare",
+     "RevivedCook",
+     "SearchedOffice",
+     "CaseFiles2Cook",
+     "FiledAPB",
+     "GotDrawerInv",
+     "GotEquipInv",
+     "RetrievedCaseFile"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Wake Cook; Scully's laptop missing; DC message; ING media on Tarakan.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIFieldOfficeN2_SearchedForWare",
+     "action_label": "SearchedForWare",
+     "effect_summary": "set bAIFieldOfficeN2_SearchedForWare = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_RevivedCook",
+     "action_label": "RevivedCook",
+     "effect_summary": "set bAIFieldOfficeN3_RevivedCook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_SearchedOffice",
+     "action_label": "SearchedOffice",
+     "effect_summary": "set bAIFieldOfficeN3_SearchedOffice = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_CaseFiles2Cook",
+     "action_label": "CaseFiles2Cook",
+     "effect_summary": "set bAIFieldOffice_CaseFiles2Cook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_FiledAPB",
+     "action_label": "FiledAPB",
+     "effect_summary": "set bAIFieldOffice_FiledAPB = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotDrawerInv",
+     "action_label": "GotDrawerInv",
+     "effect_summary": "set bAIFieldOffice_GotDrawerInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotEquipInv",
+     "action_label": "GotEquipInv",
+     "effect_summary": "set bAIFieldOffice_GotEquipInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_RetrievedCaseFile",
+     "action_label": "RetrievedCaseFile",
+     "effect_summary": "set bAIFieldOffice_RetrievedCaseFile = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 14,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 3",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Apt",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Email: Cook's fingerprints on the boat; confront Cook; PDA notes.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 502,
+     "text": "Ev. Captain's Journal",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1045,
+     "text": "[ Données capture vidéo chargées ]",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 15,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 3",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Warehouse",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "CollectedBlackPowde",
+     "CollectedBlood",
+     "CollectedBullet",
+     "CollectedMorleyButt",
+     "CrateOpen",
+     "GetCrowbar"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Parking: truck 'Gordon's Hauling'; glove-box paper 'RR#1121 82434'.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "paper RR#1121 82434",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIWarehouse_CollectedBlackPowde",
+     "action_label": "CollectedBlackPowde",
+     "effect_summary": "set bAIWarehouse_CollectedBlackPowde = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedBlood",
+     "action_label": "CollectedBlood",
+     "effect_summary": "set bAIWarehouse_CollectedBlood = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedBullet",
+     "action_label": "CollectedBullet",
+     "effect_summary": "set bAIWarehouse_CollectedBullet = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CollectedMorleyButt",
+     "action_label": "CollectedMorleyButt",
+     "effect_summary": "set bAIWarehouse_CollectedMorleyButt = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_CrateOpen",
+     "action_label": "CrateOpen",
+     "effect_summary": "set bAIWarehouse_CrateOpen = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIWarehouse_GetCrowbar",
+     "action_label": "GetCrowbar",
+     "effect_summary": "set bAIWarehouse_GetCrowbar = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 489,
+     "text": "Warehouse",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 490,
+     "text": "Warehouse Bullet",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 500,
+     "text": "Ev. Bullet (Warehouse)",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 954,
+     "text": "DOCKSIDE WAREHOUSE, SEATTLE",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 16,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 4",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Coroner",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Question coroner thoroughly.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 125,
+     "text": "Ecoutez, j'ai le droit d'aller au bureau du coroner.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 527,
+     "text": "Joan Truit\n(Coroner)\n555-0181",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1015,
+     "text": "Message du coroner : l'autopsie de Wong a révélé quelque chose d'intéressant. Quel est le rapport entre Wong et le Tarakan?",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1021,
+     "text": "Lieu : Bureau du coroner : l'autopsie de la victime brûlée a révélé des brûlures \"de la tête au pieds\". Truitt pense que se sont des brûlures radioactives. Rayons thermiques. Pas d'identification.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 17,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 4",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Hauling Yard",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "EscapeThruGrate",
+     "GetShovel",
+     "GetsLogManifest"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Pick up shovel + floor paper. TRAP: beat out the vent panel (left wall, near floor) with the shovel to escape. Talk to Astadourian; PDA notes.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "shovel",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "log manifest",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIHauling_EscapeThruGrate",
+     "action_label": "EscapeThruGrate",
+     "effect_summary": "set bAIHauling_EscapeThruGrate = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIHauling_GetShovel",
+     "action_label": "GetShovel",
+     "effect_summary": "set bAIHauling_GetShovel = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIHauling_GetsLogManifest",
+     "action_label": "GetsLogManifest",
+     "effect_summary": "set bAIHauling_GetsLogManifest = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 18,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 4",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Apt",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Email; sleep.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 502,
+     "text": "Ev. Captain's Journal",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1045,
+     "text": "[ Données capture vidéo chargées ]",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 19,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 5",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Field Office",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAIFieldOfficeWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "P:Phone",
+     "A:APB/Case Files",
+     "E:Equipment",
+     "W:Warehouse",
+     "T:Node 3",
+     "N:None",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "SearchedForWare",
+     "RevivedCook",
+     "SearchedOffice",
+     "CaseFiles2Cook",
+     "FiledAPB",
+     "GotDrawerInv",
+     "GotEquipInv",
+     "RetrievedCaseFile"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Brief with Cook in the conference room; go to warehouse.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIFieldOfficeN2_SearchedForWare",
+     "action_label": "SearchedForWare",
+     "effect_summary": "set bAIFieldOfficeN2_SearchedForWare = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_RevivedCook",
+     "action_label": "RevivedCook",
+     "effect_summary": "set bAIFieldOfficeN3_RevivedCook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_SearchedOffice",
+     "action_label": "SearchedOffice",
+     "effect_summary": "set bAIFieldOfficeN3_SearchedOffice = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_CaseFiles2Cook",
+     "action_label": "CaseFiles2Cook",
+     "effect_summary": "set bAIFieldOffice_CaseFiles2Cook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_FiledAPB",
+     "action_label": "FiledAPB",
+     "effect_summary": "set bAIFieldOffice_FiledAPB = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotDrawerInv",
+     "action_label": "GotDrawerInv",
+     "effect_summary": "set bAIFieldOffice_GotDrawerInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotEquipInv",
+     "action_label": "GotEquipInv",
+     "effect_summary": "set bAIFieldOffice_GotEquipInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_RetrievedCaseFile",
+     "action_label": "RetrievedCaseFile",
+     "effect_summary": "set bAIFieldOffice_RetrievedCaseFile = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 20,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 5",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Smolnikoff",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAISmolnikoffWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "C:Cover Me",
+     "G:Goons",
+     "E:Clues",
+     "P:Process Gun",
+     "N:None",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "CenterGoonDead",
+     "GotGun",
+     "LeftGoonDead",
+     "ProcessedGun",
+     "RightGoonDead",
+     "SeeEagleCrates",
+     "SeePayrollLog"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Cook covers; shoot 3 enemies (ground), 2 (upstairs); corner Smolnikoff. Get gun, logbook, phoenix crates; interrogate.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "gun",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "logbook",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAISmol_CenterGoonDead",
+     "action_label": "CenterGoonDead",
+     "effect_summary": "set bAISmol_CenterGoonDead = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_GotGun",
+     "action_label": "GotGun",
+     "effect_summary": "set bAISmol_GotGun = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_LeftGoonDead",
+     "action_label": "LeftGoonDead",
+     "effect_summary": "set bAISmol_LeftGoonDead = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_ProcessedGun",
+     "action_label": "ProcessedGun",
+     "effect_summary": "set bAISmol_ProcessedGun = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_RightGoonDead",
+     "action_label": "RightGoonDead",
+     "effect_summary": "set bAISmol_RightGoonDead = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_SeeEagleCrates",
+     "action_label": "SeeEagleCrates",
+     "effect_summary": "set bAISmol_SeeEagleCrates = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_SeePayrollLog",
+     "action_label": "SeePayrollLog",
+     "effect_summary": "set bAISmol_SeePayrollLog = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 176,
+     "text": "Calme-toi. Smolnikoff est fini, c'est ce qui compte.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 448,
+     "text": "Smolnikoff, Yvgeny",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 778,
+     "text": "Revolver de Smolnikoff",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 789,
+     "text": "Revolver de Smolnikoff",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 21,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 5",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Crime Lab",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Give gun to Amis (bullets match).",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 22,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 5",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Smolnikoff",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAISmolnikoffWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "C:Cover Me",
+     "G:Goons",
+     "E:Clues",
+     "P:Process Gun",
+     "N:None",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "CenterGoonDead",
+     "GotGun",
+     "LeftGoonDead",
+     "ProcessedGun",
+     "RightGoonDead",
+     "SeeEagleCrates",
+     "SeePayrollLog"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Question again; Cook arrests Smolnikoff.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAISmol_CenterGoonDead",
+     "action_label": "CenterGoonDead",
+     "effect_summary": "set bAISmol_CenterGoonDead = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_GotGun",
+     "action_label": "GotGun",
+     "effect_summary": "set bAISmol_GotGun = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_LeftGoonDead",
+     "action_label": "LeftGoonDead",
+     "effect_summary": "set bAISmol_LeftGoonDead = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_ProcessedGun",
+     "action_label": "ProcessedGun",
+     "effect_summary": "set bAISmol_ProcessedGun = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_RightGoonDead",
+     "action_label": "RightGoonDead",
+     "effect_summary": "set bAISmol_RightGoonDead = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_SeeEagleCrates",
+     "action_label": "SeeEagleCrates",
+     "effect_summary": "set bAISmol_SeeEagleCrates = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISmol_SeePayrollLog",
+     "action_label": "SeePayrollLog",
+     "effect_summary": "set bAISmol_SeePayrollLog = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 176,
+     "text": "Calme-toi. Smolnikoff est fini, c'est ce qui compte.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 448,
+     "text": "Smolnikoff, Yvgeny",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 778,
+     "text": "Revolver de Smolnikoff",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 789,
+     "text": "Revolver de Smolnikoff",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 23,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 5",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Apt",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Messages; Gov/Mil fingerprint email; sleep.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 502,
+     "text": "Ev. Captain's Journal",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1045,
+     "text": "[ Données capture vidéo chargées ]",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 24,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 6",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Hangar",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Meet 'X'; answer politely/promptly -> weapon; decline to follow; meet Astadourian.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "weapon",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 960,
+     "text": "HANGAR 4\nSAND POINT NAVAL STATION, SEATTLE",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 1027,
+     "text": "Appel téléphonique bizarre : Rencontre avec homme non ident., aube - Sandpoint, Hangar 4. Il dit que S&M sont toujours en vie. (!)",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 25,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 6",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Hospital",
+    "certainty": "walkthrough",
+    "source": "walkthrough-step"
+   },
+   "status": "walkthrough-only",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": []
+   },
+   "actions_walkthrough": {
+    "value": "Badge to doctor; identify Scully & Skinner; enter Scully's room; show weapon.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 962,
+     "text": "PRESBYTERIAN HOSPITAL\nGOLD BAR, WASHINGTON",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 26,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 6",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Rail Yard",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "ClimbedPole"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Climb the telephone pole; binoculars to spot the car (view RailYard82434); get the videotape.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "videotape",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIRailyard_ClimbedPole",
+     "action_label": "ClimbedPole",
+     "effect_summary": "set bAIRailyard_ClimbedPole = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 27,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 6",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Field Office",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": "cAIFieldOfficeWhereAreWe",
+     "certainty": "byte-direct",
+     "source": "GAM:state-var"
+    },
+    "phases": [
+     "P:Phone",
+     "A:APB/Case Files",
+     "E:Equipment",
+     "W:Warehouse",
+     "T:Node 3",
+     "N:None",
+     "D:Done"
+    ],
+    "checkpoints": [
+     "SearchedForWare",
+     "RevivedCook",
+     "SearchedOffice",
+     "CaseFiles2Cook",
+     "FiledAPB",
+     "GotDrawerInv",
+     "GotEquipInv",
+     "RetrievedCaseFile"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Play tape; ING identifies surgeon Colonel Rauch; video conference; PDA notes.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIFieldOfficeN2_SearchedForWare",
+     "action_label": "SearchedForWare",
+     "effect_summary": "set bAIFieldOfficeN2_SearchedForWare = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_RevivedCook",
+     "action_label": "RevivedCook",
+     "effect_summary": "set bAIFieldOfficeN3_RevivedCook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOfficeN3_SearchedOffice",
+     "action_label": "SearchedOffice",
+     "effect_summary": "set bAIFieldOfficeN3_SearchedOffice = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_CaseFiles2Cook",
+     "action_label": "CaseFiles2Cook",
+     "effect_summary": "set bAIFieldOffice_CaseFiles2Cook = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_FiledAPB",
+     "action_label": "FiledAPB",
+     "effect_summary": "set bAIFieldOffice_FiledAPB = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotDrawerInv",
+     "action_label": "GotDrawerInv",
+     "effect_summary": "set bAIFieldOffice_GotDrawerInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_GotEquipInv",
+     "action_label": "GotEquipInv",
+     "effect_summary": "set bAIFieldOffice_GotEquipInv = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAIFieldOffice_RetrievedCaseFile",
+     "action_label": "RetrievedCaseFile",
+     "effect_summary": "set bAIFieldOffice_RetrievedCaseFile = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  },
+  {
+   "step": {
+    "value": 28,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 7",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Rauch",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "OpenedAttic"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Body upstairs; pull ceiling skeleton -> attic ladder; find Mulder; Scully calls. Woods chase: right, straight x2, hide in tree hollow.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": "",
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAIRauch_OpenedAttic",
+     "action_label": "OpenedAttic",
+     "effect_summary": "set bAIRauch_OpenedAttic = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": [
+    {
+     "string_id": 262,
+     "text": "Rauch est en bas.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 264,
+     "text": "Pourquoi Rauch vous a-t-il enlevé?",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 266,
+     "text": "Rauch avait le même film noir sur les yeux.",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    },
+    {
+     "string_id": 444,
+     "text": "Col. Rauch, Johnathan",
+     "certainty": "byte-direct",
+     "source": "DLL:XFilest:RT_STRING"
+    }
+   ]
+  },
+  {
+   "step": {
+    "value": 29,
+    "certainty": "byte-direct",
+    "source": "walkthrough-order"
+   },
+   "day": {
+    "value": "April 7",
+    "certainty": "walkthrough"
+   },
+   "location": {
+    "value": "Secret Base",
+    "certainty": "byte-direct",
+    "source": "HDB:inline-label"
+   },
+   "status": "byte-direct-catalog",
+   "state_machine": {
+    "phase_variable": {
+     "value": null,
+     "certainty": "undetermined",
+     "reason": "no-phase-variable-for-this-scene"
+    },
+    "phases": [],
+    "checkpoints": [
+     "ComputerAccessed",
+     "GotKey",
+     "IsoActionIconShowing",
+     "IsoChamberOn",
+     "IsoDoorEastOpen",
+     "IsoDoorWestOpen",
+     "LifeSupportOn",
+     "LuredMulder"
+    ]
+   },
+   "actions_walkthrough": {
+    "value": "Cattle prod (side table). Zap Cook, avoid Mulder, shoot operatives. Push central button; pull green button (Scully's room); open glass-room doors; lure Mulder through glass room & close door; throw weapon to Scully to take out Cook at the double-key station. END.",
+    "certainty": "walkthrough"
+   },
+   "items_walkthrough": {
+    "value": [
+     {
+      "value": "cattle prod",
+      "certainty": "walkthrough"
+     },
+     {
+      "value": "key",
+      "certainty": "walkthrough"
+     }
+    ],
+    "certainty": "walkthrough"
+   },
+   "triggers_in_scope": [
+    {
+     "trigger_id": "bAISecretB_ComputerAccessed",
+     "action_label": "ComputerAccessed",
+     "effect_summary": "set bAISecretB_ComputerAccessed = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISecretB_GotKey",
+     "action_label": "GotKey",
+     "effect_summary": "set bAISecretB_GotKey = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISecretB_IsoActionIconShowing",
+     "action_label": "IsoActionIconShowing",
+     "effect_summary": "set bAISecretB_IsoActionIconShowing = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISecretB_IsoChamberOn",
+     "action_label": "IsoChamberOn",
+     "effect_summary": "set bAISecretB_IsoChamberOn = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISecretB_IsoDoorEastOpen",
+     "action_label": "IsoDoorEastOpen",
+     "effect_summary": "set bAISecretB_IsoDoorEastOpen = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISecretB_IsoDoorWestOpen",
+     "action_label": "IsoDoorWestOpen",
+     "effect_summary": "set bAISecretB_IsoDoorWestOpen = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISecretB_LifeSupportOn",
+     "action_label": "LifeSupportOn",
+     "effect_summary": "set bAISecretB_LifeSupportOn = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    },
+    {
+     "trigger_id": "bAISecretB_LuredMulder",
+     "action_label": "LuredMulder",
+     "effect_summary": "set bAISecretB_LuredMulder = true",
+     "certainty": "byte-direct",
+     "source": "HDB:trigger-name"
+    }
+   ],
+   "conversations_in_scope": [
+    {
+     "record_offset": 3225816,
+     "slot": "response_1",
+     "string_id": 362,
+     "text": "caucasienne",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244592,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244600,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244608,
+     "slot": "prompt",
+     "string_id": 16,
+     "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244616,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    },
+    {
+     "record_offset": 3244624,
+     "slot": "prompt",
+     "string_id": 8,
+     "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+     "certainty": "byte-direct",
+     "source": "HDB:VCConversation + XFilest.dll",
+     "scene_match": "undetermined"
+    }
+   ],
+   "dialogue_lines_sample": []
+  }
+ ]
+}
