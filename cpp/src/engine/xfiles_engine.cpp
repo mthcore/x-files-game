@@ -972,8 +972,9 @@ static ValidatorTally validate_scripted_flow(const engine::GameModel& /*g*/,
 int main(int argc, char** argv) {
     using namespace xfiles;
 
-    // --- minimal flag parser (positional + --validate-flow) ------------------
+    // --- minimal flag parser (positional + --validate-flow + --print-trace) ---
     std::string validate_flow_path;
+    std::string print_trace_path;
     std::vector<std::string> positional;
     for (int i = 1; i < argc; ++i) {
         std::string a = argv[i];
@@ -983,15 +984,102 @@ int main(int argc, char** argv) {
                 return 1;
             }
             validate_flow_path = argv[++i];
+        } else if (a == "--print-trace") {
+            if (i + 1 >= argc) {
+                std::fprintf(stderr, "--print-trace requires a path argument\n");
+                return 1;
+            }
+            print_trace_path = argv[++i];
         } else if (a == "--help" || a == "-h") {
             std::fprintf(stderr,
                 "Usage: xfiles_engine <XFILES.HDB> [XV_dir_with_HOT_files]\n"
                 "       xfiles_engine --validate-flow <game_definition.json> "
-                "[<XFILES.HDB>]\n");
+                "[<XFILES.HDB>]\n"
+                "       xfiles_engine --print-trace <playthrough_trace.json>\n");
             return 0;
         } else {
             positional.push_back(a);
         }
+    }
+
+    // --- --print-trace mode (readable per-step trace summary) ----------------
+    if (!print_trace_path.empty()) {
+        std::string buf;
+        if (!engine::json::load_file(print_trace_path, buf)) {
+            std::fprintf(stderr, "cannot read %s\n", print_trace_path.c_str());
+            return 1;
+        }
+        engine::json::Parser parser(buf.data(), buf.size());
+        engine::json::Value root;
+        if (!parser.parse(root) || !root.is_obj()) {
+            std::fprintf(stderr, "cannot parse %s: %s\n",
+                         print_trace_path.c_str(), parser.error().c_str());
+            return 1;
+        }
+        auto str_at = [](const engine::json::Value& v,
+                          const std::string& key) -> std::string {
+            const engine::json::Value& f = v.at(key);
+            if (f.is_str()) return f.as_str();
+            if (f.is_obj() && f.at("value").is_str()) return f.at("value").as_str();
+            return {};
+        };
+        auto int_at = [](const engine::json::Value& v,
+                          const std::string& key) -> long long {
+            const engine::json::Value& f = v.at(key);
+            if (f.is_num()) return f.as_int();
+            if (f.is_obj() && f.at("value").is_num()) return f.at("value").as_int();
+            return 0;
+        };
+
+        std::printf("=== Playthrough trace ===\n");
+        std::printf("source: %s\n", print_trace_path.c_str());
+        const engine::json::Value& steps = root.at("steps");
+        if (!steps.is_arr()) {
+            std::fprintf(stderr, "trace has no steps[]\n");
+            return 1;
+        }
+        for (const engine::json::Value& s : steps.as_arr()) {
+            int step = (int)int_at(s, "step");
+            std::string day = str_at(s, "day");
+            std::string loc = str_at(s, "location");
+            std::string status = s.at("status").is_str() ? s.at("status").as_str() : "";
+            std::string actions = str_at(s, "actions_walkthrough");
+            const engine::json::Value& trigs = s.at("triggers_in_scope");
+            const engine::json::Value& convs = s.at("conversations_in_scope");
+            const engine::json::Value& dlg   = s.at("dialogue_lines_sample");
+            std::size_t n_tr = trigs.is_arr() ? trigs.as_arr().size() : 0;
+            std::size_t n_cv = convs.is_arr() ? convs.as_arr().size() : 0;
+            std::size_t n_dl = dlg.is_arr()   ? dlg.as_arr().size()   : 0;
+            std::printf("\n--- step %2d (%s) %s [%s] ---\n",
+                        step, day.c_str(), loc.c_str(), status.c_str());
+            if (!actions.empty()) {
+                std::printf("  actions: %s\n", actions.c_str());
+            }
+            std::printf("  triggers: %zu  conversations: %zu  dialogue samples: %zu\n",
+                        n_tr, n_cv, n_dl);
+            if (n_tr && trigs.as_arr().size() > 0) {
+                std::size_t shown = 0;
+                for (const engine::json::Value& t : trigs.as_arr()) {
+                    if (shown++ >= 3) break;
+                    std::printf("    trig: %s -- %s\n",
+                                str_at(t, "trigger_id").c_str(),
+                                str_at(t, "effect_summary").c_str());
+                }
+                if (n_tr > 3) std::printf("    (+ %zu more)\n", n_tr - 3);
+            }
+            if (n_dl && dlg.as_arr().size() > 0) {
+                std::size_t shown = 0;
+                for (const engine::json::Value& d : dlg.as_arr()) {
+                    if (shown++ >= 2) break;
+                    std::string text = str_at(d, "text");
+                    if (text.size() > 90) text = text.substr(0, 87) + "...";
+                    std::printf("    line[%lld]: %s\n",
+                                int_at(d, "string_id"), text.c_str());
+                }
+            }
+        }
+        std::printf("\n%zu steps printed\n", steps.as_arr().size());
+        return 0;
     }
 
     // --- --validate-flow mode (scripted playthrough validator) ---------------
