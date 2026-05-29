@@ -1,0 +1,618 @@
+{
+  "_source": "triggers_instances.csv (byte-direct scan of HDB)",
+  "_architecture_reference": "Each VCTrigger record (class_id 0x51) holds : Conditions[<=8] polymorphic, Actions[<=12] polymorphic, Targets[<=4] 1-byte. Full grammar in out/json/trigger_system.json",
+  "_decoded_records_pointer": "Concrete decoded VCTrigger record instances are in out/json/decoded_records.json (filter by_class['VCTrigger']). Wire format established byte-direct from the on-disk structure ; bit-reversal + BE->LE byte-swap on the typed reads.",
+  "total": 61,
+  "triggers": [
+    {
+      "trigger_id": "bAIComity_GetLaptop",
+      "scene_scope": "Comity",
+      "action_label": "GetLaptop",
+      "effect": "set bAIComity_GetLaptop = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIComity_GetLaptop"
+      ]
+    },
+    {
+      "trigger_id": "bAIComity_PhoneIdeaIcon",
+      "scene_scope": "Comity",
+      "action_label": "PhoneIdeaIcon",
+      "effect": "set bAIComity_PhoneIdeaIcon = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIComity_PhoneIdeaIcon"
+      ]
+    },
+    {
+      "trigger_id": "bAIComity_SkinnerMentionedPhone",
+      "scene_scope": "Comity",
+      "action_label": "SkinnerMentionedPhone",
+      "effect": "set bAIComity_SkinnerMentionedPhone = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIComity_SkinnerMentionedPhone"
+      ]
+    },
+    {
+      "trigger_id": "bAIComity_get_laptop",
+      "scene_scope": "Comity",
+      "action_label": "get_laptop",
+      "effect": "set bAIComity_get_laptop = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIComity_get_laptop"
+      ]
+    },
+    {
+      "trigger_id": "bAIComity_phone_idea",
+      "scene_scope": "Comity",
+      "action_label": "phone_idea",
+      "effect": "set bAIComity_phone_idea = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIComity_phone_idea"
+      ]
+    },
+    {
+      "trigger_id": "bAIFieldOfficeN2_SearchedForWare",
+      "scene_scope": "FieldOfficeN2",
+      "action_label": "SearchedForWare",
+      "effect": "set bAIFieldOfficeN2_SearchedForWare = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIFieldOfficeN2_SearchedForWare"
+      ]
+    },
+    {
+      "trigger_id": "bAIFieldOfficeN3_RevivedCook",
+      "scene_scope": "FieldOfficeN3",
+      "action_label": "RevivedCook",
+      "effect": "set bAIFieldOfficeN3_RevivedCook = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIFieldOfficeN3_RevivedCook"
+      ]
+    },
+    {
+      "trigger_id": "bAIFieldOfficeN3_SearchedOffice",
+      "scene_scope": "FieldOfficeN3",
+      "action_label": "SearchedOffice",
+      "effect": "set bAIFieldOfficeN3_SearchedOffice = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIFieldOfficeN3_SearchedOffice"
+      ]
+    },
+    {
+      "trigger_id": "bAIFieldOffice_CaseFiles2Cook",
+      "scene_scope": "FieldOffice",
+      "action_label": "CaseFiles2Cook",
+      "effect": "set bAIFieldOffice_CaseFiles2Cook = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIFieldOffice_CaseFiles2Cook"
+      ]
+    },
+    {
+      "trigger_id": "bAIFieldOffice_FiledAPB",
+      "scene_scope": "FieldOffice",
+      "action_label": "FiledAPB",
+      "effect": "set bAIFieldOffice_FiledAPB = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIFieldOffice_FiledAPB"
+      ]
+    },
+    {
+      "trigger_id": "bAIFieldOffice_GotDrawerInv",
+      "scene_scope": "FieldOffice",
+      "action_label": "GotDrawerInv",
+      "effect": "set bAIFieldOffice_GotDrawerInv = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIFieldOffice_GotDrawerInv"
+      ]
+    },
+    {
+      "trigger_id": "bAIFieldOffice_GotEquipInv",
+      "scene_scope": "FieldOffice",
+      "action_label": "GotEquipInv",
+      "effect": "set bAIFieldOffice_GotEquipInv = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIFieldOffice_GotEquipInv"
+      ]
+    },
+    {
+      "trigger_id": "bAIFieldOffice_RetrievedCaseFile",
+      "scene_scope": "FieldOffice",
+      "action_label": "RetrievedCaseFile",
+      "effect": "set bAIFieldOffice_RetrievedCaseFile = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIFieldOffice_RetrievedCaseFile"
+      ]
+    },
+    {
+      "trigger_id": "bAIGeneral_ClickedSleepActionIco",
+      "scene_scope": "General",
+      "action_label": "ClickedSleepActionIco",
+      "effect": "set bAIGeneral_ClickedSleepActionIco = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIGeneral_ClickedSleepActionIco"
+      ]
+    },
+    {
+      "trigger_id": "bAIGeneral_IsItTimeToSleep",
+      "scene_scope": "General",
+      "action_label": "IsItTimeToSleep",
+      "effect": "set bAIGeneral_IsItTimeToSleep = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIGeneral_IsItTimeToSleep"
+      ]
+    },
+    {
+      "trigger_id": "bAIHauling_EscapeThruGrate",
+      "scene_scope": "Hauling",
+      "action_label": "EscapeThruGrate",
+      "effect": "set bAIHauling_EscapeThruGrate = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIHauling_EscapeThruGrate"
+      ]
+    },
+    {
+      "trigger_id": "bAIHauling_GetShovel",
+      "scene_scope": "Hauling",
+      "action_label": "GetShovel",
+      "effect": "set bAIHauling_GetShovel = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIHauling_GetShovel"
+      ]
+    },
+    {
+      "trigger_id": "bAIHauling_GetsLogManifest",
+      "scene_scope": "Hauling",
+      "action_label": "GetsLogManifest",
+      "effect": "set bAIHauling_GetsLogManifest = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIHauling_GetsLogManifest"
+      ]
+    },
+    {
+      "trigger_id": "bAILink1_BackDoorOpen",
+      "scene_scope": "Link1",
+      "action_label": "BackDoorOpen",
+      "effect": "set bAILink1_BackDoorOpen = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAILink1_BackDoorOpen"
+      ]
+    },
+    {
+      "trigger_id": "bAILink2_EnteredTruck",
+      "scene_scope": "Link2",
+      "action_label": "EnteredTruck",
+      "effect": "set bAILink2_EnteredTruck = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAILink2_EnteredTruck"
+      ]
+    },
+    {
+      "trigger_id": "bAILink2_FoundClays",
+      "scene_scope": "Link2",
+      "action_label": "FoundClays",
+      "effect": "set bAILink2_FoundClays = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAILink2_FoundClays"
+      ]
+    },
+    {
+      "trigger_id": "bAILink2_OpenedGloveCompartment",
+      "scene_scope": "Link2",
+      "action_label": "OpenedGloveCompartment",
+      "effect": "set bAILink2_OpenedGloveCompartment = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAILink2_OpenedGloveCompartment"
+      ]
+    },
+    {
+      "trigger_id": "bAIRailyard_ClimbedPole",
+      "scene_scope": "Railyard",
+      "action_label": "ClimbedPole",
+      "effect": "set bAIRailyard_ClimbedPole = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIRailyard_ClimbedPole"
+      ]
+    },
+    {
+      "trigger_id": "bAIRauch_OpenedAttic",
+      "scene_scope": "Rauch",
+      "action_label": "OpenedAttic",
+      "effect": "set bAIRauch_OpenedAttic = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIRauch_OpenedAttic"
+      ]
+    },
+    {
+      "trigger_id": "bAISecretB_ComputerAccessed",
+      "scene_scope": "SecretB",
+      "action_label": "ComputerAccessed",
+      "effect": "set bAISecretB_ComputerAccessed = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISecretB_ComputerAccessed"
+      ]
+    },
+    {
+      "trigger_id": "bAISecretB_GotKey",
+      "scene_scope": "SecretB",
+      "action_label": "GotKey",
+      "effect": "set bAISecretB_GotKey = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISecretB_GotKey"
+      ]
+    },
+    {
+      "trigger_id": "bAISecretB_IsoActionIconShowing",
+      "scene_scope": "SecretB",
+      "action_label": "IsoActionIconShowing",
+      "effect": "set bAISecretB_IsoActionIconShowing = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISecretB_IsoActionIconShowing"
+      ]
+    },
+    {
+      "trigger_id": "bAISecretB_IsoChamberOn",
+      "scene_scope": "SecretB",
+      "action_label": "IsoChamberOn",
+      "effect": "set bAISecretB_IsoChamberOn = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISecretB_IsoChamberOn"
+      ]
+    },
+    {
+      "trigger_id": "bAISecretB_IsoDoorEastOpen",
+      "scene_scope": "SecretB",
+      "action_label": "IsoDoorEastOpen",
+      "effect": "set bAISecretB_IsoDoorEastOpen = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISecretB_IsoDoorEastOpen"
+      ]
+    },
+    {
+      "trigger_id": "bAISecretB_IsoDoorWestOpen",
+      "scene_scope": "SecretB",
+      "action_label": "IsoDoorWestOpen",
+      "effect": "set bAISecretB_IsoDoorWestOpen = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISecretB_IsoDoorWestOpen"
+      ]
+    },
+    {
+      "trigger_id": "bAISecretB_LifeSupportOn",
+      "scene_scope": "SecretB",
+      "action_label": "LifeSupportOn",
+      "effect": "set bAISecretB_LifeSupportOn = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISecretB_LifeSupportOn"
+      ]
+    },
+    {
+      "trigger_id": "bAISecretB_LuredMulder",
+      "scene_scope": "SecretB",
+      "action_label": "LuredMulder",
+      "effect": "set bAISecretB_LuredMulder = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISecretB_LuredMulder"
+      ]
+    },
+    {
+      "trigger_id": "bAISmol_CenterGoonDead",
+      "scene_scope": "Smol",
+      "action_label": "CenterGoonDead",
+      "effect": "set bAISmol_CenterGoonDead = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISmol_CenterGoonDead"
+      ]
+    },
+    {
+      "trigger_id": "bAISmol_GotGun",
+      "scene_scope": "Smol",
+      "action_label": "GotGun",
+      "effect": "set bAISmol_GotGun = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISmol_GotGun"
+      ]
+    },
+    {
+      "trigger_id": "bAISmol_LeftGoonDead",
+      "scene_scope": "Smol",
+      "action_label": "LeftGoonDead",
+      "effect": "set bAISmol_LeftGoonDead = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISmol_LeftGoonDead"
+      ]
+    },
+    {
+      "trigger_id": "bAISmol_ProcessedGun",
+      "scene_scope": "Smol",
+      "action_label": "ProcessedGun",
+      "effect": "set bAISmol_ProcessedGun = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISmol_ProcessedGun"
+      ]
+    },
+    {
+      "trigger_id": "bAISmol_RightGoonDead",
+      "scene_scope": "Smol",
+      "action_label": "RightGoonDead",
+      "effect": "set bAISmol_RightGoonDead = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISmol_RightGoonDead"
+      ]
+    },
+    {
+      "trigger_id": "bAISmol_SeeEagleCrates",
+      "scene_scope": "Smol",
+      "action_label": "SeeEagleCrates",
+      "effect": "set bAISmol_SeeEagleCrates = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISmol_SeeEagleCrates"
+      ]
+    },
+    {
+      "trigger_id": "bAISmol_SeePayrollLog",
+      "scene_scope": "Smol",
+      "action_label": "SeePayrollLog",
+      "effect": "set bAISmol_SeePayrollLog = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAISmol_SeePayrollLog"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_AllGrowingFoodFound",
+      "scene_scope": "Tarakan",
+      "action_label": "AllGrowingFoodFound",
+      "effect": "set bAITarakan_AllGrowingFoodFound = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_AllGrowingFoodFound"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_BeenInHold",
+      "scene_scope": "Tarakan",
+      "action_label": "BeenInHold",
+      "effect": "set bAITarakan_BeenInHold = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_BeenInHold"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_BeenInWheelhouse",
+      "scene_scope": "Tarakan",
+      "action_label": "BeenInWheelhouse",
+      "effect": "set bAITarakan_BeenInWheelhouse = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_BeenInWheelhouse"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_GotLeadSphere",
+      "scene_scope": "Tarakan",
+      "action_label": "GotLeadSphere",
+      "effect": "set bAITarakan_GotLeadSphere = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_GotLeadSphere"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_GotLogAndJournal",
+      "scene_scope": "Tarakan",
+      "action_label": "GotLogAndJournal",
+      "effect": "set bAITarakan_GotLogAndJournal = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_GotLogAndJournal"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_NOTInWheelhouse",
+      "scene_scope": "Tarakan",
+      "action_label": "NOTInWheelhouse",
+      "effect": "set bAITarakan_NOTInWheelhouse = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_NOTInWheelhouse"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_SeeEagleCrates",
+      "scene_scope": "Tarakan",
+      "action_label": "SeeEagleCrates",
+      "effect": "set bAITarakan_SeeEagleCrates = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_SeeEagleCrates"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_SeeFingerPrints",
+      "scene_scope": "Tarakan",
+      "action_label": "SeeFingerPrints",
+      "effect": "set bAITarakan_SeeFingerPrints = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_SeeFingerPrints"
+      ]
+    },
+    {
+      "trigger_id": "bAITarakan_SeeWhiteShadow",
+      "scene_scope": "Tarakan",
+      "action_label": "SeeWhiteShadow",
+      "effect": "set bAITarakan_SeeWhiteShadow = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAITarakan_SeeWhiteShadow"
+      ]
+    },
+    {
+      "trigger_id": "bAIWarehouse_CollectedBlackPowde",
+      "scene_scope": "Warehouse",
+      "action_label": "CollectedBlackPowde",
+      "effect": "set bAIWarehouse_CollectedBlackPowde = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWarehouse_CollectedBlackPowde"
+      ]
+    },
+    {
+      "trigger_id": "bAIWarehouse_CollectedBlood",
+      "scene_scope": "Warehouse",
+      "action_label": "CollectedBlood",
+      "effect": "set bAIWarehouse_CollectedBlood = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWarehouse_CollectedBlood"
+      ]
+    },
+    {
+      "trigger_id": "bAIWarehouse_CollectedBullet",
+      "scene_scope": "Warehouse",
+      "action_label": "CollectedBullet",
+      "effect": "set bAIWarehouse_CollectedBullet = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWarehouse_CollectedBullet"
+      ]
+    },
+    {
+      "trigger_id": "bAIWarehouse_CollectedMorleyButt",
+      "scene_scope": "Warehouse",
+      "action_label": "CollectedMorleyButt",
+      "effect": "set bAIWarehouse_CollectedMorleyButt = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWarehouse_CollectedMorleyButt"
+      ]
+    },
+    {
+      "trigger_id": "bAIWarehouse_CrateOpen",
+      "scene_scope": "Warehouse",
+      "action_label": "CrateOpen",
+      "effect": "set bAIWarehouse_CrateOpen = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWarehouse_CrateOpen"
+      ]
+    },
+    {
+      "trigger_id": "bAIWarehouse_GetCrowbar",
+      "scene_scope": "Warehouse",
+      "action_label": "GetCrowbar",
+      "effect": "set bAIWarehouse_GetCrowbar = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWarehouse_GetCrowbar"
+      ]
+    },
+    {
+      "trigger_id": "bAIWong_BeginTalkArley",
+      "scene_scope": "Wong",
+      "action_label": "BeginTalkArley",
+      "effect": "set bAIWong_BeginTalkArley = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWong_BeginTalkArley"
+      ]
+    },
+    {
+      "trigger_id": "bAIWong_BeginTalkAsta",
+      "scene_scope": "Wong",
+      "action_label": "BeginTalkAsta",
+      "effect": "set bAIWong_BeginTalkAsta = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWong_BeginTalkAsta"
+      ]
+    },
+    {
+      "trigger_id": "bAIWong_SeeDrugs",
+      "scene_scope": "Wong",
+      "action_label": "SeeDrugs",
+      "effect": "set bAIWong_SeeDrugs = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWong_SeeDrugs"
+      ]
+    },
+    {
+      "trigger_id": "bAIWong_SeeSlicker",
+      "scene_scope": "Wong",
+      "action_label": "SeeSlicker",
+      "effect": "set bAIWong_SeeSlicker = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWong_SeeSlicker"
+      ]
+    },
+    {
+      "trigger_id": "bAIWong_ShowBadge",
+      "scene_scope": "Wong",
+      "action_label": "ShowBadge",
+      "effect": "set bAIWong_ShowBadge = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWong_ShowBadge"
+      ]
+    },
+    {
+      "trigger_id": "bAIWong_Talk2Arley",
+      "scene_scope": "Wong",
+      "action_label": "Talk2Arley",
+      "effect": "set bAIWong_Talk2Arley = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWong_Talk2Arley"
+      ]
+    },
+    {
+      "trigger_id": "bAIWong_Talk2Asta",
+      "scene_scope": "Wong",
+      "action_label": "Talk2Asta",
+      "effect": "set bAIWong_Talk2Asta = true",
+      "condition_hint": "player completes action in scene",
+      "vars_written": [
+        "bAIWong_Talk2Asta"
+      ]
+    }
+  ]
+}

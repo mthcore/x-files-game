@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg
+.venv/
+venv/
+env/
+.tox/
+
+# C++ / CMake
+cpp/build/
+cpp/cmake-build-*/
+*.obj
+*.o
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Sensitive — never commit the game binary nor large dumps
+*.HDB
+*.hdb
+XFILES.HDB
+Xfiles.exe
+*.exe
+/python/out/
+*.sqlite-journal
+*.db-journal
+
+# Synced examples are tracked, but local working dumps are not
+/python/out/complete_dump.json
+/python/out/scenes/
+/python/out/json/

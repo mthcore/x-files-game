@@ -1,0 +1,2502 @@
+{
+ "_source": "XFILES.GAM",
+ "_certainty": "byte-direct (literal NUL-terminated names)",
+ "_note": "runtime state-variable namespace; values live in the VCGameState array (separate grammar, not decoded here)",
+ "count": 608,
+ "by_scope": {
+  "(global)": [
+   {
+    "name": "bAllIdeasAsked",
+    "type": "bool"
+   },
+   {
+    "name": "bAllQuestionsAsked",
+    "type": "bool"
+   },
+   {
+    "name": "bAnsweredPhoneFromShanks",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutAutopsy",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutDollar",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutFBIAgents",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutGun",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutGunAfterProcessing",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutGunBeforeProcessed",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutMulder",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutPayroll",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutPlutonium",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutStiletto",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutTarakan",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutWarehouse",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutWife",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedAboutWong",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedCookAboutGun",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedCookAboutPayroll",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedCookToCover",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedHowDoYouFeel",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedSmolAboutGun",
+    "type": "bool"
+   },
+   {
+    "name": "bAskedSmolAboutPayroll",
+    "type": "bool"
+   },
+   {
+    "name": "bAstaL3FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bAstaSayGiveMeAMinute",
+    "type": "bool"
+   },
+   {
+    "name": "bAtBalcony3",
+    "type": "bool"
+   },
+   {
+    "name": "bAttempted2Talk2Asta",
+    "type": "bool"
+   },
+   {
+    "name": "bBarricadeGoonDead",
+    "type": "bool"
+   },
+   {
+    "name": "bBeenHere",
+    "type": "bool"
+   },
+   {
+    "name": "bCanPDAEscape",
+    "type": "bool"
+   },
+   {
+    "name": "bCanShowLogFax",
+    "type": "bool"
+   },
+   {
+    "name": "bCookIsDead",
+    "type": "bool"
+   },
+   {
+    "name": "bCookN4FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bCrateOpen",
+    "type": "bool"
+   },
+   {
+    "name": "bCrimeLabIsAmisHere",
+    "type": "bool"
+   },
+   {
+    "name": "bDisablePDA",
+    "type": "bool"
+   },
+   {
+    "name": "bDoesClerkKnowNames",
+    "type": "bool"
+   },
+   {
+    "name": "bEastOffClsCls",
+    "type": "bool"
+   },
+   {
+    "name": "bEastOnClsCls",
+    "type": "bool"
+   },
+   {
+    "name": "bEastOnClsOpn",
+    "type": "bool"
+   },
+   {
+    "name": "bFALSE",
+    "type": "bool"
+   },
+   {
+    "name": "bFinishedTalk2Arley",
+    "type": "bool"
+   },
+   {
+    "name": "bFirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bFirstTimeAstaL3",
+    "type": "bool"
+   },
+   {
+    "name": "bFirstTimeHere",
+    "type": "bool"
+   },
+   {
+    "name": "bFirstTimeInFieldOffice",
+    "type": "bool"
+   },
+   {
+    "name": "bFirstTimeRightClickJC",
+    "type": "bool"
+   },
+   {
+    "name": "bFixJumpCutOnExit",
+    "type": "bool"
+   },
+   {
+    "name": "bFoundAndDiscussedPayrollLog",
+    "type": "bool"
+   },
+   {
+    "name": "bFoundAndDiscussedSphere",
+    "type": "bool"
+   },
+   {
+    "name": "bFoundSmolnikoff",
+    "type": "bool"
+   },
+   {
+    "name": "bGameStateSaved",
+    "type": "bool"
+   },
+   {
+    "name": "bGoonOnStairsDead",
+    "type": "bool"
+   },
+   {
+    "name": "bGotTravelReqFromSkinner",
+    "type": "bool"
+   },
+   {
+    "name": "bGrowingFoodAllFound",
+    "type": "bool"
+   },
+   {
+    "name": "bGuard1Dead",
+    "type": "bool"
+   },
+   {
+    "name": "bGuard2Dead",
+    "type": "bool"
+   },
+   {
+    "name": "bGuard3Dead",
+    "type": "bool"
+   },
+   {
+    "name": "bHadFlashlight",
+    "type": "bool"
+   },
+   {
+    "name": "bHadWhiteShadowsConversation",
+    "type": "bool"
+   },
+   {
+    "name": "bHasAsked",
+    "type": "bool"
+   },
+   {
+    "name": "bHasFinishedClip",
+    "type": "bool"
+   },
+   {
+    "name": "bHasGameBegun",
+    "type": "bool"
+   },
+   {
+    "name": "bHasNOTSeenNSAPhil",
+    "type": "bool"
+   },
+   {
+    "name": "bHasNOTSeenWoman",
+    "type": "bool"
+   },
+   {
+    "name": "bHasNOTShownLeadSphereFax",
+    "type": "bool"
+   },
+   {
+    "name": "bHasNOTShownLogFax",
+    "type": "bool"
+   },
+   {
+    "name": "bHaveAnyPhoneMessages",
+    "type": "bool"
+   },
+   {
+    "name": "bHaveAsked",
+    "type": "bool"
+   },
+   {
+    "name": "bHaveNOTFinishedN3Conversation",
+    "type": "bool"
+   },
+   {
+    "name": "bHaveShovel",
+    "type": "bool"
+   },
+   {
+    "name": "bHaveStarted",
+    "type": "bool"
+   },
+   {
+    "name": "bHaveStartedN3Conversation",
+    "type": "bool"
+   },
+   {
+    "name": "bHaveWireCutters",
+    "type": "bool"
+   },
+   {
+    "name": "bIntroduceNSA",
+    "type": "bool"
+   },
+   {
+    "name": "bIs18",
+    "type": "bool"
+   },
+   {
+    "name": "bIs19",
+    "type": "bool"
+   },
+   {
+    "name": "bIs20",
+    "type": "bool"
+   },
+   {
+    "name": "bIs21",
+    "type": "bool"
+   },
+   {
+    "name": "bIsFirstPage",
+    "type": "bool"
+   },
+   {
+    "name": "bIsGovt",
+    "type": "bool"
+   },
+   {
+    "name": "bIsHeld",
+    "type": "bool"
+   },
+   {
+    "name": "bIsIRightTimer",
+    "type": "bool"
+   },
+   {
+    "name": "bIsInventoryTheFax",
+    "type": "bool"
+   },
+   {
+    "name": "bIsLastPage",
+    "type": "bool"
+   },
+   {
+    "name": "bIsLink1",
+    "type": "bool"
+   },
+   {
+    "name": "bIsLink2",
+    "type": "bool"
+   },
+   {
+    "name": "bIsMilitaryDatabase",
+    "type": "bool"
+   },
+   {
+    "name": "bIsNOTFBI",
+    "type": "bool"
+   },
+   {
+    "name": "bIsNOTGovt",
+    "type": "bool"
+   },
+   {
+    "name": "bIsNOTLink1FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bIsNOTLink2FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bIsNOTMilitaryDatabase",
+    "type": "bool"
+   },
+   {
+    "name": "bIsNode2",
+    "type": "bool"
+   },
+   {
+    "name": "bIsTimer16",
+    "type": "bool"
+   },
+   {
+    "name": "bIsTimer24",
+    "type": "bool"
+   },
+   {
+    "name": "bIsWillmoreSleeping",
+    "type": "bool"
+   },
+   {
+    "name": "bIsoChamberEastClosed",
+    "type": "bool"
+   },
+   {
+    "name": "bIsoChamberEastOpen",
+    "type": "bool"
+   },
+   {
+    "name": "bIsoChamberWestClosed",
+    "type": "bool"
+   },
+   {
+    "name": "bIsoChamberWestOpen",
+    "type": "bool"
+   },
+   {
+    "name": "bKeyGuardDead",
+    "type": "bool"
+   },
+   {
+    "name": "bL1FlashlightOfDeath",
+    "type": "bool"
+   },
+   {
+    "name": "bL3HasAstaArrived",
+    "type": "bool"
+   },
+   {
+    "name": "bL3HasCheckedMessages",
+    "type": "bool"
+   },
+   {
+    "name": "bL3PlayedXPhoneMessageBack",
+    "type": "bool"
+   },
+   {
+    "name": "bL4BeenToHangar",
+    "type": "bool"
+   },
+   {
+    "name": "bL4HangarEmotionIconChosen",
+    "type": "bool"
+   },
+   {
+    "name": "bLiedToCook",
+    "type": "bool"
+   },
+   {
+    "name": "bLifeSupportPowerOn",
+    "type": "bool"
+   },
+   {
+    "name": "bLightsOn",
+    "type": "bool"
+   },
+   {
+    "name": "bLink1FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bMentionedWarehouse",
+    "type": "bool"
+   },
+   {
+    "name": "bMessagesUseLossVersion",
+    "type": "bool"
+   },
+   {
+    "name": "bMulderIsChasing",
+    "type": "bool"
+   },
+   {
+    "name": "bMulderWaiting",
+    "type": "bool"
+   },
+   {
+    "name": "bMusicPlaying",
+    "type": "bool"
+   },
+   {
+    "name": "bN1CaseFilesFirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bN1CookHasAskedAboutAPB",
+    "type": "bool"
+   },
+   {
+    "name": "bN1GreetedAmis",
+    "type": "bool"
+   },
+   {
+    "name": "bN1HasNOTBeenToSeeShanks",
+    "type": "bool"
+   },
+   {
+    "name": "bN1HasTalkedToShanks",
+    "type": "bool"
+   },
+   {
+    "name": "bN1HasWillmoreFiledAPB",
+    "type": "bool"
+   },
+   {
+    "name": "bN1ReturningToFieldOffice",
+    "type": "bool"
+   },
+   {
+    "name": "bN1ToldCookAboutCaseFiles",
+    "type": "bool"
+   },
+   {
+    "name": "bN1WillmoreGiveCaseFilesToCook",
+    "type": "bool"
+   },
+   {
+    "name": "bN2BeenInsideWarehouse",
+    "type": "bool"
+   },
+   {
+    "name": "bN2FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bN2HadEncounterWithNSA",
+    "type": "bool"
+   },
+   {
+    "name": "bN2HasAllNode2EvidenceBeenCollected",
+    "type": "bool"
+   },
+   {
+    "name": "bN2HaveBeenToWongsBoat",
+    "type": "bool"
+   },
+   {
+    "name": "bN2IsWongHere",
+    "type": "bool"
+   },
+   {
+    "name": "bN2RetrievedLaptop",
+    "type": "bool"
+   },
+   {
+    "name": "bN2TalkedToSkinnerLeadPowder",
+    "type": "bool"
+   },
+   {
+    "name": "bN2TalkedToSkinnerWong",
+    "type": "bool"
+   },
+   {
+    "name": "bN2TookPictureOfNSADudes",
+    "type": "bool"
+   },
+   {
+    "name": "bN2TriedFaithOnThePowerbook",
+    "type": "bool"
+   },
+   {
+    "name": "bN2WongIdeaIconActive",
+    "type": "bool"
+   },
+   {
+    "name": "bN3AskedStearnsForWongPhotos",
+    "type": "bool"
+   },
+   {
+    "name": "bN3CoronerGotSlug",
+    "type": "bool"
+   },
+   {
+    "name": "bN3DidFieldOfficeCookThing",
+    "type": "bool"
+   },
+   {
+    "name": "bN3DiscussedCyrillicDocuments",
+    "type": "bool"
+   },
+   {
+    "name": "bN3DiscussedWhiteShadows",
+    "type": "bool"
+   },
+   {
+    "name": "bN3FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bN3GaveCyrillicDocs",
+    "type": "bool"
+   },
+   {
+    "name": "bN3HaveCaptainsJournal",
+    "type": "bool"
+   },
+   {
+    "name": "bN3HaveNOTDiscussedCyrillicDocuments",
+    "type": "bool"
+   },
+   {
+    "name": "bN3HaveNoticedFingerprints",
+    "type": "bool"
+   },
+   {
+    "name": "bN3HavePayrollLog",
+    "type": "bool"
+   },
+   {
+    "name": "bN3SnoopedInOffice",
+    "type": "bool"
+   },
+   {
+    "name": "bN3TalkedToPendrell",
+    "type": "bool"
+   },
+   {
+    "name": "bN3TarakanCallingAmis",
+    "type": "bool"
+   },
+   {
+    "name": "bN3TarakanNOTInCrimeLab",
+    "type": "bool"
+   },
+   {
+    "name": "bN3WillmoreCalledAmisAboutTarakanPrints",
+    "type": "bool"
+   },
+   {
+    "name": "bN3WongCopsAround",
+    "type": "bool"
+   },
+   {
+    "name": "bN3WongFinishedDrugsLine",
+    "type": "bool"
+   },
+   {
+    "name": "bN3WongFinishedTarakanLine",
+    "type": "bool"
+   },
+   {
+    "name": "bN4CookFirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bN4DidNOTCheckMessages",
+    "type": "bool"
+   },
+   {
+    "name": "bN4FirstTimeHere",
+    "type": "bool"
+   },
+   {
+    "name": "bN4FirstTimeSoSendAmisEmail",
+    "type": "bool"
+   },
+   {
+    "name": "bN4HasCookNOTArrived",
+    "type": "bool"
+   },
+   {
+    "name": "bN4HeardAmisFingerprintsMessage",
+    "type": "bool"
+   },
+   {
+    "name": "bN4InApartment",
+    "type": "bool"
+   },
+   {
+    "name": "bN4SelectedEmotionIcon",
+    "type": "bool"
+   },
+   {
+    "name": "bN4ShowingCook",
+    "type": "bool"
+   },
+   {
+    "name": "bN4WillmoreKnowsAboutCooksPrintsOnTarakan",
+    "type": "bool"
+   },
+   {
+    "name": "bN5BeenToCoroners",
+    "type": "bool"
+   },
+   {
+    "name": "bN5FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bN5HYFirstTimeThrough",
+    "type": "bool"
+   },
+   {
+    "name": "bN5HYReplayClip1",
+    "type": "bool"
+   },
+   {
+    "name": "bN5HYReplayClip2",
+    "type": "bool"
+   },
+   {
+    "name": "bN5HYReplayClip3",
+    "type": "bool"
+   },
+   {
+    "name": "bN5HYReplayClip4",
+    "type": "bool"
+   },
+   {
+    "name": "bN5HYReplayClip5",
+    "type": "bool"
+   },
+   {
+    "name": "bN5HaulingYardBombActivated",
+    "type": "bool"
+   },
+   {
+    "name": "bN5HaulingYardTriedKiss",
+    "type": "bool"
+   },
+   {
+    "name": "bN6ArrestedSmolnikoff",
+    "type": "bool"
+   },
+   {
+    "name": "bN6BeenToSmolnikoff",
+    "type": "bool"
+   },
+   {
+    "name": "bN6FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bN6HaveStartedRaid",
+    "type": "bool"
+   },
+   {
+    "name": "bN6WarpToSmolnikoffsLair",
+    "type": "bool"
+   },
+   {
+    "name": "bN7FOHavePlayedPutItInClip",
+    "type": "bool"
+   },
+   {
+    "name": "bN7ShowedBadgeToNurse",
+    "type": "bool"
+   },
+   {
+    "name": "bN8DidNOTInterruptNSADudesMonologue",
+    "type": "bool"
+   },
+   {
+    "name": "bNOTAskedAboutDollar2",
+    "type": "bool"
+   },
+   {
+    "name": "bNOTAskedAboutGloria",
+    "type": "bool"
+   },
+   {
+    "name": "bNOTSaidAnything",
+    "type": "bool"
+   },
+   {
+    "name": "bNSAMenTakeCrate",
+    "type": "bool"
+   },
+   {
+    "name": "bNSAOutside",
+    "type": "bool"
+   },
+   {
+    "name": "bNotAvailable",
+    "type": "bool"
+   },
+   {
+    "name": "bNotRevivedCook",
+    "type": "bool"
+   },
+   {
+    "name": "bPlayedDontJustSitThere",
+    "type": "bool"
+   },
+   {
+    "name": "bPlayedNothing",
+    "type": "bool"
+   },
+   {
+    "name": "bPlayedRing",
+    "type": "bool"
+   },
+   {
+    "name": "bPlayedSaySomething",
+    "type": "bool"
+   },
+   {
+    "name": "bPlayedWantSomething",
+    "type": "bool"
+   },
+   {
+    "name": "bPutUpEmotionIcons",
+    "type": "bool"
+   },
+   {
+    "name": "bQuestionAsked",
+    "type": "bool"
+   },
+   {
+    "name": "bRYBoxcarEnabled",
+    "type": "bool"
+   },
+   {
+    "name": "bSaidAnything",
+    "type": "bool"
+   },
+   {
+    "name": "bSeenMatchingCrates",
+    "type": "bool"
+   },
+   {
+    "name": "bSeenRussianCrates",
+    "type": "bool"
+   },
+   {
+    "name": "bShowedBadge2Clerk",
+    "type": "bool"
+   },
+   {
+    "name": "bTRUE",
+    "type": "bool"
+   },
+   {
+    "name": "bTalked2AmisNode1",
+    "type": "bool"
+   },
+   {
+    "name": "bTalkedAboutLeadPowder",
+    "type": "bool"
+   },
+   {
+    "name": "bTalkedAboutWong",
+    "type": "bool"
+   },
+   {
+    "name": "bTimeToHide",
+    "type": "bool"
+   },
+   {
+    "name": "bTimeToSleep",
+    "type": "bool"
+   },
+   {
+    "name": "bToldCookHeWillPutLaptopInCabinet",
+    "type": "bool"
+   },
+   {
+    "name": "bUseNarcoCoverMe",
+    "type": "bool"
+   },
+   {
+    "name": "bVisitedWongBoatCrimeScene",
+    "type": "bool"
+   },
+   {
+    "name": "bWarehouseFirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bWestOffClsCls",
+    "type": "bool"
+   },
+   {
+    "name": "bWestOnClsCls",
+    "type": "bool"
+   },
+   {
+    "name": "bWestOnClsOpn",
+    "type": "bool"
+   },
+   {
+    "name": "bWestOnOpnCls",
+    "type": "bool"
+   },
+   {
+    "name": "bWestOnOpnOpn",
+    "type": "bool"
+   },
+   {
+    "name": "bWhiteShadowsIconFirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "bWillmoreBlasted",
+    "type": "bool"
+   },
+   {
+    "name": "bWillmoreDead",
+    "type": "bool"
+   },
+   {
+    "name": "bWillmoreTranslatedCyrillicDoc",
+    "type": "bool"
+   },
+   {
+    "name": "bWongBackgroundChecked",
+    "type": "bool"
+   },
+   {
+    "name": "bXL3FirstTime",
+    "type": "bool"
+   },
+   {
+    "name": "cN3MentionTheResidents",
+    "type": "counter"
+   },
+   {
+    "name": "cSubNode",
+    "type": "counter"
+   },
+   {
+    "name": "iAllAstaN5QuestionsAsked",
+    "type": "int"
+   },
+   {
+    "name": "iAllNode3QuestionsAsked",
+    "type": "int"
+   },
+   {
+    "name": "iAllQuestionsAsked",
+    "type": "int"
+   },
+   {
+    "name": "iAllQuestionsAskedSkinner",
+    "type": "int"
+   },
+   {
+    "name": "iAskedEverythingOfWong",
+    "type": "int"
+   },
+   {
+    "name": "iAstaScore",
+    "type": "int"
+   },
+   {
+    "name": "iAstaThresholdHigh",
+    "type": "int"
+   },
+   {
+    "name": "iAstaThresholdLow",
+    "type": "int"
+   },
+   {
+    "name": "iBarricadeGoonCount",
+    "type": "int"
+   },
+   {
+    "name": "iCallActionID",
+    "type": "int"
+   },
+   {
+    "name": "iCallTriggerID",
+    "type": "int"
+   },
+   {
+    "name": "iClickCounter",
+    "type": "int"
+   },
+   {
+    "name": "iCurrEmail",
+    "type": "int"
+   },
+   {
+    "name": "iCurrInventory",
+    "type": "int"
+   },
+   {
+    "name": "iCurrTime",
+    "type": "int"
+   },
+   {
+    "name": "iCurrViewHangarWithX",
+    "type": "int"
+   },
+   {
+    "name": "iCurrViewRailYard82434",
+    "type": "int"
+   },
+   {
+    "name": "iCurrViewSpecial",
+    "type": "int"
+   },
+   {
+    "name": "iCurrentMusic",
+    "type": "int"
+   },
+   {
+    "name": "iCurrviewHospitalScully",
+    "type": "int"
+   },
+   {
+    "name": "iCurrviewWarehouseNSACar",
+    "type": "int"
+   },
+   {
+    "name": "iDayNight",
+    "type": "int"
+   },
+   {
+    "name": "iFBIPasswordCount",
+    "type": "int"
+   },
+   {
+    "name": "iFirstTimeNewDay",
+    "type": "int"
+   },
+   {
+    "name": "iFrohikeCount",
+    "type": "int"
+   },
+   {
+    "name": "iFuture1",
+    "type": "int"
+   },
+   {
+    "name": "iFuture1JaneDoeHospFix",
+    "type": "int"
+   },
+   {
+    "name": "iFuture2",
+    "type": "int"
+   },
+   {
+    "name": "iFuture3",
+    "type": "int"
+   },
+   {
+    "name": "iFuture4",
+    "type": "int"
+   },
+   {
+    "name": "iFuture5",
+    "type": "int"
+   },
+   {
+    "name": "iGotLogAndJournal",
+    "type": "int"
+   },
+   {
+    "name": "iGrabAssCount",
+    "type": "int"
+   },
+   {
+    "name": "iGuesses",
+    "type": "int"
+   },
+   {
+    "name": "iIdeaCount",
+    "type": "int"
+   },
+   {
+    "name": "iLastDayNight",
+    "type": "int"
+   },
+   {
+    "name": "iMusicSelection",
+    "type": "int"
+   },
+   {
+    "name": "iN2AskedEverythingOfWong",
+    "type": "int"
+   },
+   {
+    "name": "iN3CookFOAllQuestionsAsked",
+    "type": "int"
+   },
+   {
+    "name": "iN5AptAllQuestionsAsked",
+    "type": "int"
+   },
+   {
+    "name": "iN5HaulingYardAskedAstaAllQuestions",
+    "type": "int"
+   },
+   {
+    "name": "iNumPhoneRings",
+    "type": "int"
+   },
+   {
+    "name": "iNumPreFrohikeQuestions",
+    "type": "int"
+   },
+   {
+    "name": "iNumQuestions",
+    "type": "int"
+   },
+   {
+    "name": "iNumWillmoreEMailsToCook",
+    "type": "int"
+   },
+   {
+    "name": "iNumberOfIdeas",
+    "type": "int"
+   },
+   {
+    "name": "iNumberOfTimes",
+    "type": "int"
+   },
+   {
+    "name": "iQuestionCount",
+    "type": "int"
+   },
+   {
+    "name": "iRandomSounds",
+    "type": "int"
+   },
+   {
+    "name": "iRauchPorchNSA",
+    "type": "int"
+   },
+   {
+    "name": "iRingBell",
+    "type": "int"
+   },
+   {
+    "name": "iScullyPasswordCount",
+    "type": "int"
+   },
+   {
+    "name": "iTimes",
+    "type": "int"
+   },
+   {
+    "name": "iToolsCounter",
+    "type": "int"
+   },
+   {
+    "name": "iTotalQuestions",
+    "type": "int"
+   },
+   {
+    "name": "iUberLoss",
+    "type": "int"
+   },
+   {
+    "name": "iUberLossThresholdHigh",
+    "type": "int"
+   },
+   {
+    "name": "iUberParanoia",
+    "type": "int"
+   },
+   {
+    "name": "iUberParanoiaThresholdHigh",
+    "type": "int"
+   },
+   {
+    "name": "iUberXTrack",
+    "type": "int"
+   },
+   {
+    "name": "iUberXTrackThresholdHigh",
+    "type": "int"
+   },
+   {
+    "name": "iUberXTrackThresholdLow",
+    "type": "int"
+   },
+   {
+    "name": "iWarehouseEvidenceCollected",
+    "type": "int"
+   },
+   {
+    "name": "iWhichBomb",
+    "type": "int"
+   },
+   {
+    "name": "nGunId",
+    "type": "id"
+   },
+   {
+    "name": "nPdaId",
+    "type": "id"
+   }
+  ],
+  "ANODE_": [
+   {
+    "name": "ANODE_iHasAllNode2EvidenceBeenProcessed",
+    "type": "int"
+   }
+  ],
+  "EMAIL_": [
+   {
+    "name": "EMAIL_bSentBallistics",
+    "type": "bool"
+   },
+   {
+    "name": "EMAIL_bSentCrewCutFingerprints",
+    "type": "bool"
+   },
+   {
+    "name": "EMAIL_bSentTheBomb",
+    "type": "bool"
+   },
+   {
+    "name": "EMAIL_bSentZirlinMajesticNumbers",
+    "type": "bool"
+   }
+  ],
+  "EndGame_": [
+   {
+    "name": "EndGame_bFadeToBlack",
+    "type": "bool"
+   },
+   {
+    "name": "EndGame_bPlayCancerManExplosion",
+    "type": "bool"
+   },
+   {
+    "name": "EndGame_bPlayCoronerBones",
+    "type": "bool"
+   },
+   {
+    "name": "EndGame_bPlayFBIShot",
+    "type": "bool"
+   }
+  ],
+  "IFL_": [
+   {
+    "name": "IFL_bBulletinBoardDisplayed",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bEMailSetToInBox",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderHaveCarNote",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderHaveComityBill",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderHaveLeadSphereFax",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderHaveLogTranslationFax",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderHaveTravelReq",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderHaveTruckingManifest",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderIsDisplayed",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderReturnToFolder",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingBlueMulder",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingBlueScully",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingCarNote",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingComityBill",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingLeadSphereFax",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingLogTranslationFaxP1",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingLogTranslationFaxP2",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingLogTranslationFaxP3",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingLogTranslationFaxP4",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingLogTranslationFaxP5",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingMSPhoto",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingTravelReq",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bFolderShowingTruckingManifest",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bHasLoggedInToFBIComputer",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bHasWillmoreNOTCalledAmisForFaxes",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bHaveReadLogTranslation",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bINGHaveSearchedForNSACar",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bINGN7ExitToVideo",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bINGSearchingOnCook",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bINGSearchingOnCrewCutMan",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bINGVideoRequestActive",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bJournalIsFirstPage",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bJournalIsLastPage",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bJournalStartAtFront",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bLetterIFLAlreadyActivated",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bLetterLowerLoopActivated",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bOffToFileTheAPB",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPDAEmailedCookAboutNSA",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPDAIsNavShowingJuneau",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPDASkinnerGoneInsideWarehouse",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPDASkinnerNOTGoneInsideWarehouse",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPasswordFBIConnect",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhoneEndCall",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhoneHasNOTCalledLoneGunmen",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhoneIsItAmisFaxCallTime",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhoneIsItAmisFingerprintCallTime",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhoneIsRightTimer",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhonePressedClear",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhonePressedDown",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhonePressedEnd",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhonePressedMenu",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhonePressedOff",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhonePressedSend",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bPhonePressedUp",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bSecretBaseAccessingFromControlRoom",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bSecretBaseAccessingFromCrateRoom",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bSecretBaseAccessingFromLifeSupport",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bSecretBaseAccessingFromLittleRoom",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bThisIsAnActionMovie",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_bWillmoreHasSeenMuldersCaseFiles",
+    "type": "bool"
+   },
+   {
+    "name": "IFL_cFontAlignCentered",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cFontAlignLeft",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cFontAlignRight",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cFontColorBlack",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cFontColorWhite",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cFontColorXBlue",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cFontCourier",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cFontShadowNo",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cFontShadowYes",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cINGSearchCategory",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cINGSearchDatabase",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPDAMapShowing",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone0",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone1",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone2",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone3",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone4",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone5",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone6",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone7",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone8",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhone9",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhoneClear",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhoneDown",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhoneEnd",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhoneMenu",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhoneOff",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhoneSend",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_cPhoneUp",
+    "type": "counter"
+   },
+   {
+    "name": "IFL_iINGFontLineHeight",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdAmis",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdArley",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdAstadourian",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdCook",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdMcIntyre",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdMendoza",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdRauch",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdShanks",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdSmolnikoff",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdStearns",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdTruitt",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdWallace",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdWillmore",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdWong",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGIdZirlin",
+    "type": "int"
+   },
+   {
+    "name": "IFL_iINGSearchDatabseLawEnforcement",
+    "type": "int"
+   },
+   {
+    "name": "IFL_scEmpty",
+    "type": "string"
+   },
+   {
+    "name": "IFL_scPhoneAmisNumber",
+    "type": "string"
+   },
+   {
+    "name": "IFL_scPhoneLoneGunmenNumber",
+    "type": "string"
+   },
+   {
+    "name": "IFL_scPhoneNumber",
+    "type": "string"
+   }
+  ],
+  "Inventory_": [
+   {
+    "name": "Inventory_None",
+    "type": "other"
+   },
+   {
+    "name": "Inventory_iBadge",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iBinoculars",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iCamera",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iCaseFiles",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iCattleProd",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iCrowbar",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iEvidenceKit",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iFaxLeadSphere",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iFaxLogTranslation",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iFlashlight",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iGun",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iHandcuffs",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iJoseChung",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iLaptop",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iLockpick",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iNightVision",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iNone",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iPDA",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iPaperFolder",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iPhone",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iPhotoNSACar",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iPhotoNSAGuy",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iPhotoRauch",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iPhotoSmolnikoff",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iPowerbook",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iScrewdriver",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iShovel",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iStiletto",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iTravelReq",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iVideotape",
+    "type": "int"
+   },
+   {
+    "name": "Inventory_iWirecutters",
+    "type": "int"
+   }
+  ],
+  "NAVTAG_": [
+   {
+    "name": "NAVTAG_bCoronersOffice",
+    "type": "bool"
+   },
+   {
+    "name": "NAVTAG_bHangar",
+    "type": "bool"
+   },
+   {
+    "name": "NAVTAG_bRuralRoute",
+    "type": "bool"
+   },
+   {
+    "name": "NAVTAG_bSmolnikoffs",
+    "type": "bool"
+   },
+   {
+    "name": "NAVTAG_bTarakan",
+    "type": "bool"
+   },
+   {
+    "name": "NAVTAG_bWarehouse",
+    "type": "bool"
+   }
+  ],
+  "NODE_": [
+   {
+    "name": "NODE_bHasFinishedHaulingYard",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bHasFinishedN2CookConversation",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bHasFinishedNode3CoronersOffice",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bHasFinishedNode4ConversationWithCook",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bHasFinishedNode5CoronersOffice",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bHasGunBeenProcessed",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bHasSkinnerLeftForDC",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bHasXCalled",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsItNode2",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsLink1Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsLink2Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsLink3Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsLink4Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsLink5Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsNode2Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsNode3Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsNode4Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsNode5Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsNode6Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bIsNode7Complete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bLink2WarehouseComplete",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bRailyardGotVideoTape",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bSkinnerIsInSeattle",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_bSmolFirstFloorClean",
+    "type": "bool"
+   },
+   {
+    "name": "NODE_iHasAllNode3EvidenceBeenProcessed",
+    "type": "int"
+   }
+  ],
+  "PDANOTES_": [
+   {
+    "name": "PDANOTES_bBeenToCoronersN5",
+    "type": "bool"
+   },
+   {
+    "name": "PDANOTES_bBeenToFON3",
+    "type": "bool"
+   },
+   {
+    "name": "PDANOTES_bToldAstaAboutWong",
+    "type": "bool"
+   },
+   {
+    "name": "PDANOTES_bWentToCoronersBeforeCrimeLab",
+    "type": "bool"
+   },
+   {
+    "name": "PDANOTES_bWentToCoronersBeforeFO",
+    "type": "bool"
+   },
+   {
+    "name": "PDANOTES_bWentToHaulingYardFirst",
+    "type": "bool"
+   },
+   {
+    "name": "PDANOTES_bWentToTarakanBeforeFO",
+    "type": "bool"
+   },
+   {
+    "name": "PDANOTES_bWentToWongBeforeFO",
+    "type": "bool"
+   },
+   {
+    "name": "PDANOTES_iCrimeLabN3PageNumber",
+    "type": "int"
+   },
+   {
+    "name": "PDANOTES_iFieldOfficeN3PageNumber",
+    "type": "int"
+   }
+  ],
+  "Pref_": [
+   {
+    "name": "Pref_b3DSound",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bArtificialIntuition",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bAutoRewind",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bClosedCaptioning",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bHighQualityVideo",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bLiveEnvironments",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bRolloverText",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bSkipClips",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bSkipIntro",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bSmoothText",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bSubliminalMessages",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bTransitions",
+    "type": "bool"
+   },
+   {
+    "name": "Pref_bTranslucency",
+    "type": "bool"
+   }
+  ],
+  "SHANKSN2_": [
+   {
+    "name": "SHANKSN2_bAllNode2ItemsCompleted",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bBeenToWarehouse",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bBloodToLab",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bBulletToLab",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bCalledComputerCrimes",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bDoneWithSkinner",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bDoneWithWong",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bFoundWarehouseInING",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bGotBlackPowder",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bGotBlood",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bGotBullet",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bGotLapTop",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bPowderToLab",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bSentWarehouseEmail",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bTalkedToWong",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bTellWillCallComputerCrimes",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bTellWillGoBackToComity",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bTellWillGoBackToWarehouse",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bTellWillLooksCompleteToMe",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bTellWillRunBackgroundCheck",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bTellWillTakeEvidenceToCrimeLab",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bTellWillTalkToWong",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN2_bWongBackgroundChecked",
+    "type": "bool"
+   }
+  ],
+  "SHANKSN3_": [
+   {
+    "name": "SHANKSN3_bAllQuestionsAskedHarborMaster",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bAllTarakanEvidenceCollected",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bAllWongBoatEvidenceCollected",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bGotWongBullet",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bHarbormasterQuestioned",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bKnowsBodiesAreMissing",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bKnowsMSDidAutopsies",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bLeadSphereToLab",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bLogBookToLab",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bTalkedToCoroner",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bTellWillGoBackToWong",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bTellWillHeMissedSomethingAtTarakan",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bTellWillTalkToCoroner",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bTellWillTalkToCoronerAgain",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bTellWillTalkToHarbormaster",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bVisitedTarakan",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN3_bWongBulletToLab",
+    "type": "bool"
+   }
+  ],
+  "SHANKSN6_": [
+   {
+    "name": "SHANKSN6_bBeenToSmolnikoffWarehouse",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN6_bGotPayrollLog",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN6_bGotSmolnikoffGun",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN6_bTellWillTakeYourEvidenceToCrimeLab",
+    "type": "bool"
+   },
+   {
+    "name": "SHANKSN6_bTellWillYouNeedSomethingToTieSmol",
+    "type": "bool"
+   }
+  ],
+  "bAIComity_": [
+   {
+    "name": "bAIComity_GetLaptop",
+    "type": "other"
+   },
+   {
+    "name": "bAIComity_PhoneIdeaIcon",
+    "type": "other"
+   },
+   {
+    "name": "bAIComity_SkinnerMentionedPhone",
+    "type": "other"
+   },
+   {
+    "name": "bAIComity_get_laptop",
+    "type": "other"
+   },
+   {
+    "name": "bAIComity_phone_idea",
+    "type": "int"
+   }
+  ],
+  "bAIFieldOfficeN2_": [
+   {
+    "name": "bAIFieldOfficeN2_SearchedForWarehouseAddress",
+    "type": "other"
+   }
+  ],
+  "bAIFieldOfficeN3_": [
+   {
+    "name": "bAIFieldOfficeN3_RevivedCook",
+    "type": "other"
+   },
+   {
+    "name": "bAIFieldOfficeN3_SearchedOffice",
+    "type": "other"
+   }
+  ],
+  "bAIFieldOffice_": [
+   {
+    "name": "bAIFieldOffice_CaseFiles2Cook",
+    "type": "other"
+   },
+   {
+    "name": "bAIFieldOffice_FiledAPB",
+    "type": "other"
+   },
+   {
+    "name": "bAIFieldOffice_GotDrawerInv",
+    "type": "other"
+   },
+   {
+    "name": "bAIFieldOffice_GotEquipInv",
+    "type": "other"
+   },
+   {
+    "name": "bAIFieldOffice_RetrievedCaseFiles",
+    "type": "other"
+   }
+  ],
+  "bAIGeneral_": [
+   {
+    "name": "bAIGeneral_ClickedSleepActionIcon",
+    "type": "other"
+   },
+   {
+    "name": "bAIGeneral_IsItTimeToSleep",
+    "type": "other"
+   }
+  ],
+  "bAIHauling_": [
+   {
+    "name": "bAIHauling_EscapeThruGrate",
+    "type": "other"
+   },
+   {
+    "name": "bAIHauling_GetShovel",
+    "type": "other"
+   },
+   {
+    "name": "bAIHauling_GetsLogManifest",
+    "type": "other"
+   }
+  ],
+  "bAILink1_": [
+   {
+    "name": "bAILink1_BackDoorOpen",
+    "type": "other"
+   }
+  ],
+  "bAILink2_": [
+   {
+    "name": "bAILink2_EnteredTruck",
+    "type": "other"
+   },
+   {
+    "name": "bAILink2_FoundClays",
+    "type": "other"
+   },
+   {
+    "name": "bAILink2_OpenedGloveCompartment",
+    "type": "other"
+   }
+  ],
+  "bAIRailyard_": [
+   {
+    "name": "bAIRailyard_ClimbedPole",
+    "type": "other"
+   }
+  ],
+  "bAIRauch_": [
+   {
+    "name": "bAIRauch_OpenedAttic",
+    "type": "other"
+   }
+  ],
+  "bAISecretB_": [
+   {
+    "name": "bAISecretB_ComputerAccessed",
+    "type": "other"
+   },
+   {
+    "name": "bAISecretB_GotKey",
+    "type": "other"
+   },
+   {
+    "name": "bAISecretB_IsoActionIconShowing",
+    "type": "other"
+   },
+   {
+    "name": "bAISecretB_IsoChamberOn",
+    "type": "other"
+   },
+   {
+    "name": "bAISecretB_IsoDoorEastOpen",
+    "type": "other"
+   },
+   {
+    "name": "bAISecretB_IsoDoorWestOpen",
+    "type": "other"
+   },
+   {
+    "name": "bAISecretB_LifeSupportOn",
+    "type": "other"
+   },
+   {
+    "name": "bAISecretB_LuredMulder",
+    "type": "other"
+   }
+  ],
+  "bAISmol_": [
+   {
+    "name": "bAISmol_CenterGoonDead",
+    "type": "other"
+   },
+   {
+    "name": "bAISmol_GotGun",
+    "type": "other"
+   },
+   {
+    "name": "bAISmol_LeftGoonDead",
+    "type": "other"
+   },
+   {
+    "name": "bAISmol_ProcessedGun",
+    "type": "other"
+   },
+   {
+    "name": "bAISmol_RightGoonDead",
+    "type": "other"
+   },
+   {
+    "name": "bAISmol_SeeEagleCrates",
+    "type": "other"
+   },
+   {
+    "name": "bAISmol_SeePayrollLog",
+    "type": "other"
+   }
+  ],
+  "bAITarakan_": [
+   {
+    "name": "bAITarakan_AllGrowingFoodFound",
+    "type": "other"
+   },
+   {
+    "name": "bAITarakan_BeenInHold",
+    "type": "other"
+   },
+   {
+    "name": "bAITarakan_BeenInWheelhouse",
+    "type": "other"
+   },
+   {
+    "name": "bAITarakan_GotLeadSphere",
+    "type": "other"
+   },
+   {
+    "name": "bAITarakan_GotLogAndJournal",
+    "type": "other"
+   },
+   {
+    "name": "bAITarakan_NOTInWheelhouse",
+    "type": "other"
+   },
+   {
+    "name": "bAITarakan_SeeEagleCrates",
+    "type": "other"
+   },
+   {
+    "name": "bAITarakan_SeeFingerPrints",
+    "type": "other"
+   },
+   {
+    "name": "bAITarakan_SeeWhiteShadow",
+    "type": "other"
+   }
+  ],
+  "bAIWarehouse_": [
+   {
+    "name": "bAIWarehouse_CollectedBlackPowder",
+    "type": "other"
+   },
+   {
+    "name": "bAIWarehouse_CollectedBlood",
+    "type": "other"
+   },
+   {
+    "name": "bAIWarehouse_CollectedBullet",
+    "type": "other"
+   },
+   {
+    "name": "bAIWarehouse_CollectedMorleyButt",
+    "type": "other"
+   },
+   {
+    "name": "bAIWarehouse_CrateOpen",
+    "type": "other"
+   },
+   {
+    "name": "bAIWarehouse_GetCrowbar",
+    "type": "other"
+   }
+  ],
+  "bAIWong_": [
+   {
+    "name": "bAIWong_BeginTalkArley",
+    "type": "other"
+   },
+   {
+    "name": "bAIWong_BeginTalkAsta",
+    "type": "other"
+   },
+   {
+    "name": "bAIWong_SeeDrugs",
+    "type": "other"
+   },
+   {
+    "name": "bAIWong_SeeSlicker",
+    "type": "other"
+   },
+   {
+    "name": "bAIWong_ShowBadge",
+    "type": "other"
+   },
+   {
+    "name": "bAIWong_Talk2Arley",
+    "type": "other"
+   },
+   {
+    "name": "bAIWong_Talk2Asta",
+    "type": "other"
+   }
+  ],
+  "bFieldOffice_": [
+   {
+    "name": "bFieldOffice_ReadBarbLetter",
+    "type": "other"
+   }
+  ],
+  "bN2Warehouse_": [
+   {
+    "name": "bN2Warehouse_SeenWong",
+    "type": "other"
+   }
+  ],
+  "bReplay_": [
+   {
+    "name": "bReplay_PadTimers",
+    "type": "other"
+   }
+  ]
+ }
+}

@@ -1,0 +1,58 @@
+// SPDX-License-Identifier: MIT
+// VCAssetCategory — 48-byte asset category descriptor.
+//
+// Byte-direct format layout :
+//   +0x00..+0x03 : vtable
+//   +0x04..+0x27 : VCObject base scratch (36B)
+//   +0x28..+0x2B : cache_e (uint32 tag 'e' 0x65)
+//   +0x2C        : cache_f (byte tag 'f' 0x66)
+//   +0x2D..+0x2F : pad
+
+#ifndef VC_VCASSET_CATEGORY_H
+#define VC_VCASSET_CATEGORY_H
+
+#include "vc/vc_object.h"
+#include "vc/_class_sizes.h"
+
+#include <cstdint>
+#include <cstddef>
+#include "vc/_size_assert.h"
+
+namespace xfiles {
+namespace vc {
+
+class VCAssetCategory : public VCObject {
+public:
+    VCAssetCategory() noexcept;
+    ~VCAssetCategory() override;
+
+    void vt_slot_01() override {} void vt_slot_02() override {} void vt_slot_03() override {}
+    void vt_slot_04() override {} void vt_slot_05() override {}
+    char is_leaf() const override { return 0; }
+    void vt_slot_07() override {} void vt_slot_08() override {}
+    VCObject* id_lookup(uint32_t) override { return nullptr; }
+    void vt_slot_10() override {}
+    uint32_t eval(uint32_t, uint32_t) override { return 0; }
+    void Read(HDBContext*, uint32_t) override;            // slot 12
+    void Write(HDBContext*) const override;
+    void vt_slot_14() override {} void vt_slot_15() override {} void vt_slot_16() override {}
+    void vt_slot_17() override {} void vt_slot_18() override {} void vt_slot_19() override {}
+    void vt_slot_20() override {} void vt_slot_21() override {} void vt_slot_22() override {}
+    void vt_slot_23() override {} void vt_slot_24() override {} void vt_slot_25() override {}
+    void vt_slot_26() override {} void vt_slot_27() override {}
+
+    uint8_t  _base_scratch[0x24];   // +0x04..+0x27 base
+    uint32_t cache_e;               // +0x28 tag 'e' (0x65)
+    uint8_t  cache_f;               // +0x2C tag 'f' (0x66) byte
+    uint8_t  _pad_2d[3];
+};
+
+XFILES_ASSERT_SIZE(VCAssetCategory, VCASSETCATEGORY_SIZE, "VCAssetCategory size 0x30 mismatch");
+XFILES_ASSERT_OFFSET(VCAssetCategory, _base_scratch, 0x04, "_base_scratch offset");
+XFILES_ASSERT_OFFSET(VCAssetCategory, cache_e, 0x28, "cache_e offset");
+XFILES_ASSERT_OFFSET(VCAssetCategory, cache_f, 0x2C, "cache_f offset");
+
+}  // namespace vc
+}  // namespace xfiles
+
+#endif  // VC_VCASSET_CATEGORY_H

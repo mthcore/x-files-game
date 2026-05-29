@@ -1,0 +1,288 @@
+{
+ "_source": "XFILES.GAM",
+ "_certainty": "byte-direct (value proven by ASCII-mnemonic pattern; phone keypad 0-9 == '0'-'9', font/phone codes == mnemonic letter)",
+ "count": 79,
+ "families": {
+  "font_style": {
+   "IFL_cFontAlignCentered": {
+    "value": 99,
+    "ascii": "c"
+   },
+   "IFL_cFontAlignLeft": {
+    "value": 108,
+    "ascii": "l"
+   },
+   "IFL_cFontAlignRight": {
+    "value": 114,
+    "ascii": "r"
+   },
+   "IFL_cFontColorBlack": {
+    "value": 98,
+    "ascii": "b"
+   },
+   "IFL_cFontColorWhite": {
+    "value": 119,
+    "ascii": "w"
+   },
+   "IFL_cFontColorXBlue": {
+    "value": 120,
+    "ascii": "x"
+   },
+   "IFL_cFontCourier": {
+    "value": 99,
+    "ascii": "c"
+   },
+   "IFL_cFontShadowNo": {
+    "value": 110,
+    "ascii": "n"
+   },
+   "IFL_cFontShadowYes": {
+    "value": 121,
+    "ascii": "y"
+   }
+  },
+  "phone_keypad": {
+   "IFL_cPhone0": {
+    "value": 48,
+    "ascii": "0"
+   },
+   "IFL_cPhone1": {
+    "value": 49,
+    "ascii": "1"
+   },
+   "IFL_cPhone2": {
+    "value": 50,
+    "ascii": "2"
+   },
+   "IFL_cPhone3": {
+    "value": 51,
+    "ascii": "3"
+   },
+   "IFL_cPhone4": {
+    "value": 52,
+    "ascii": "4"
+   },
+   "IFL_cPhone5": {
+    "value": 53,
+    "ascii": "5"
+   },
+   "IFL_cPhone6": {
+    "value": 54,
+    "ascii": "6"
+   },
+   "IFL_cPhone7": {
+    "value": 55,
+    "ascii": "7"
+   },
+   "IFL_cPhone8": {
+    "value": 56,
+    "ascii": "8"
+   },
+   "IFL_cPhone9": {
+    "value": 57,
+    "ascii": "9"
+   },
+   "IFL_cPhoneClear": {
+    "value": 67,
+    "ascii": "C"
+   },
+   "IFL_cPhoneDown": {
+    "value": 68,
+    "ascii": "D"
+   },
+   "IFL_cPhoneEnd": {
+    "value": 69,
+    "ascii": "E"
+   },
+   "IFL_cPhoneMenu": {
+    "value": 77,
+    "ascii": "M"
+   },
+   "IFL_cPhoneOff": {
+    "value": 79,
+    "ascii": "O"
+   },
+   "IFL_cPhoneSend": {
+    "value": 83,
+    "ascii": "S"
+   },
+   "IFL_cPhoneUp": {
+    "value": 85,
+    "ascii": "U"
+   }
+  },
+  "misc": {
+   "IFL_iINGFontLineHeight": {
+    "value": 14
+   },
+   "Kq": {
+    "value": 19
+   },
+   "Pref_b3DSound": {
+    "value": 10
+   },
+   "Pref_bAutoRewind": {
+    "value": 0
+   },
+   "Pref_bHighQualityVideo": {
+    "value": 1
+   },
+   "Pref_bLiveEnvironments": {
+    "value": 1
+   },
+   "Pref_bRolloverText": {
+    "value": 40,
+    "ascii": "("
+   },
+   "Pref_bSkipClips": {
+    "value": 13
+   },
+   "Pref_bSkipIntro": {
+    "value": 12
+   },
+   "Pref_bTransitions": {
+    "value": 65,
+    "ascii": "A"
+   },
+   "Pref_bTranslucency": {
+    "value": 1
+   },
+   "XFilesDbVersion": {
+    "value": 9
+   },
+   "bIs20": {
+    "value": 0
+   },
+   "iCurrViewRailYard82434": {
+    "value": 1
+   },
+   "iRauchPorchNSA": {
+    "value": 7
+   },
+   "iUberLoss": {
+    "value": 8
+   },
+   "iUberParanoia": {
+    "value": 7
+   },
+   "nGunId": {
+    "value": 9
+   },
+   "nPdaId": {
+    "value": 14
+   }
+  },
+  "npc_interrogation_id": {
+   "IFL_iINGIdAmis": {
+    "value": 0
+   },
+   "IFL_iINGIdArley": {
+    "value": 1
+   },
+   "IFL_iINGIdAstadourian": {
+    "value": 80,
+    "ascii": "P"
+   },
+   "IFL_iINGIdCook": {
+    "value": 3
+   },
+   "IFL_iINGIdMcIntyre": {
+    "value": 72,
+    "ascii": "H"
+   },
+   "IFL_iINGIdRauch": {
+    "value": 4
+   },
+   "IFL_iINGIdStearns": {
+    "value": 2
+   },
+   "IFL_iINGIdWong": {
+    "value": 5
+   }
+  },
+  "string_resource_id": {
+   "IFL_scEmpty": {
+    "value": 1911
+   },
+   "IFL_scPhoneAmisNumber": {
+    "value": 2633
+   },
+   "IFL_scPhoneLoneGunmenNumber": {
+    "value": 2628
+   }
+  },
+  "inventory_item_id": {
+   "Inventory_iBadge": {
+    "value": 0
+   },
+   "Inventory_iCaseFiles": {
+    "value": 4
+   },
+   "Inventory_iCattleProd": {
+    "value": 5
+   },
+   "Inventory_iCrowbar": {
+    "value": 6
+   },
+   "Inventory_iFaxLogTranslation": {
+    "value": 31
+   },
+   "Inventory_iGun": {
+    "value": 2
+   },
+   "Inventory_iJoseChung": {
+    "value": 11
+   },
+   "Inventory_iLaptop": {
+    "value": 29
+   },
+   "Inventory_iNone": {
+    "value": 0
+   },
+   "Inventory_iPDA": {
+    "value": 3
+   },
+   "Inventory_iPaperFolder": {
+    "value": 27
+   },
+   "Inventory_iPhotoNSACar": {
+    "value": 17
+   },
+   "Inventory_iScrewdriver": {
+    "value": 21
+   },
+   "Inventory_iShovel": {
+    "value": 22
+   },
+   "Inventory_iStiletto": {
+    "value": 20
+   },
+   "Inventory_iTravelReq": {
+    "value": 24
+   },
+   "Inventory_iVideotape": {
+    "value": 30
+   },
+   "Inventory_iWirecutters": {
+    "value": 25
+   }
+  },
+  "language_string_id": {
+   "scGameLanguageEnglish": {
+    "value": 3998
+   },
+   "scGameLanguageFrench": {
+    "value": 4071
+   },
+   "scGameLanguageGerman": {
+    "value": 4073
+   },
+   "scGameLanguageItalian": {
+    "value": 4069
+   },
+   "scGameLanguageSpanish": {
+    "value": 4067
+   }
+  }
+ }
+}

@@ -1,0 +1,339 @@
+{
+ "_about": "Per-scene reference for The X-Files: The Game (byte-direct).",
+ "scenes": [
+  {
+   "location": "Tarakan",
+   "views": 34,
+   "clips_xmv": 83,
+   "video_seconds": 516,
+   "phase_machine": null,
+   "phase_variable": null,
+   "checkpoints": [
+    "AllGrowingFoodFound",
+    "BeenInHold",
+    "BeenInWheelhouse",
+    "GotLeadSphere",
+    "GotLogAndJournal",
+    "NOTInWheelhouse",
+    "SeeEagleCrates",
+    "SeeFingerPrints",
+    "SeeWhiteShadow"
+   ],
+   "state_variables": [
+    "bAITarakan_AllGrowingFoodFound",
+    "bAITarakan_BeenInHold",
+    "bAITarakan_BeenInWheelhouse",
+    "bAITarakan_GotLeadSphere",
+    "bAITarakan_GotLogAndJournal",
+    "bAITarakan_NOTInWheelhouse",
+    "bAITarakan_SeeEagleCrates",
+    "bAITarakan_SeeFingerPrints",
+    "bAITarakan_SeeWhiteShadow"
+   ],
+   "n_triggers": 9
+  },
+  {
+   "location": "Field Office",
+   "views": 153,
+   "clips_xmv": 320,
+   "video_seconds": 1723,
+   "phase_machine": [
+    "P:Phone",
+    "A:APB/Case Files",
+    "E:Equipment",
+    "W:Warehouse",
+    "T:Node 3",
+    "N:None",
+    "D:Done"
+   ],
+   "phase_variable": "cAIFieldOfficeWhereAreWe",
+   "checkpoints": [
+    "SearchedForWare",
+    "RevivedCook",
+    "SearchedOffice",
+    "CaseFiles2Cook",
+    "FiledAPB",
+    "GotDrawerInv",
+    "GotEquipInv",
+    "RetrievedCaseFile"
+   ],
+   "state_variables": [
+    "SHANKSN2_bAllNode2ItemsCompleted",
+    "SHANKSN2_bBeenToWarehouse",
+    "SHANKSN2_bBloodToLab",
+    "SHANKSN2_bBulletToLab",
+    "SHANKSN2_bCalledComputerCrimes",
+    "SHANKSN2_bDoneWithSkinner",
+    "SHANKSN2_bDoneWithWong",
+    "SHANKSN2_bFoundWarehouseInING",
+    "SHANKSN2_bGotBlackPowder",
+    "SHANKSN2_bGotBlood",
+    "SHANKSN2_bGotBullet",
+    "SHANKSN2_bGotLapTop",
+    "SHANKSN2_bPowderToLab",
+    "SHANKSN2_bSentWarehouseEmail",
+    "SHANKSN2_bTalkedToWong",
+    "SHANKSN2_bTellWillCallComputerCrimes",
+    "SHANKSN2_bTellWillGoBackToComity",
+    "SHANKSN2_bTellWillGoBackToWarehouse",
+    "SHANKSN2_bTellWillLooksCompleteToMe",
+    "SHANKSN2_bTellWillRunBackgroundCheck",
+    "SHANKSN2_bTellWillTakeEvidenceToCrimeLab",
+    "SHANKSN2_bTellWillTalkToWong",
+    "SHANKSN2_bWongBackgroundChecked",
+    "SHANKSN3_bAllQuestionsAskedHarborMaster",
+    "SHANKSN3_bAllTarakanEvidenceCollected",
+    "SHANKSN3_bAllWongBoatEvidenceCollected",
+    "SHANKSN3_bGotWongBullet",
+    "SHANKSN3_bHarbormasterQuestioned",
+    "SHANKSN3_bKnowsBodiesAreMissing",
+    "SHANKSN3_bKnowsMSDidAutopsies",
+    "SHANKSN3_bLeadSphereToLab",
+    "SHANKSN3_bLogBookToLab",
+    "SHANKSN3_bTalkedToCoroner",
+    "SHANKSN3_bTellWillGoBackToWong",
+    "SHANKSN3_bTellWillHeMissedSomethingAtTarakan",
+    "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab",
+    "SHANKSN3_bTellWillTalkToCoroner",
+    "SHANKSN3_bTellWillTalkToCoronerAgain",
+    "SHANKSN3_bTellWillTalkToHarbormaster",
+    "SHANKSN3_bVisitedTarakan",
+    "SHANKSN3_bWongBulletToLab",
+    "SHANKSN6_bBeenToSmolnikoffWarehouse",
+    "SHANKSN6_bGotPayrollLog",
+    "SHANKSN6_bGotSmolnikoffGun",
+    "SHANKSN6_bTellWillTakeYourEvidenceToCrimeLab",
+    "SHANKSN6_bTellWillYouNeedSomethingToTieSmol",
+    "bAIFieldOfficeN2_SearchedForWarehouseAddress",
+    "bAIFieldOfficeN3_RevivedCook",
+    "bAIFieldOfficeN3_SearchedOffice",
+    "bAIFieldOffice_CaseFiles2Cook",
+    "bAIFieldOffice_FiledAPB",
+    "bAIFieldOffice_GotDrawerInv",
+    "bAIFieldOffice_GotEquipInv",
+    "bAIFieldOffice_RetrievedCaseFiles",
+    "bFieldOffice_ReadBarbLetter"
+   ],
+   "n_triggers": 8
+  },
+  {
+   "location": "Secret Base",
+   "views": 18,
+   "clips_xmv": 89,
+   "video_seconds": 711,
+   "phase_machine": null,
+   "phase_variable": null,
+   "checkpoints": [
+    "ComputerAccessed",
+    "GotKey",
+    "IsoActionIconShowing",
+    "IsoChamberOn",
+    "IsoDoorEastOpen",
+    "IsoDoorWestOpen",
+    "LifeSupportOn",
+    "LuredMulder"
+   ],
+   "state_variables": [
+    "bAISecretB_ComputerAccessed",
+    "bAISecretB_GotKey",
+    "bAISecretB_IsoActionIconShowing",
+    "bAISecretB_IsoChamberOn",
+    "bAISecretB_IsoDoorEastOpen",
+    "bAISecretB_IsoDoorWestOpen",
+    "bAISecretB_LifeSupportOn",
+    "bAISecretB_LuredMulder"
+   ],
+   "n_triggers": 8
+  },
+  {
+   "location": "Wong",
+   "views": 84,
+   "clips_xmv": 230,
+   "video_seconds": 1070,
+   "phase_machine": [
+    "B:Badge",
+    "A:Arley",
+    "a:Asta",
+    "b:boat",
+    "N:None",
+    "D:Done"
+   ],
+   "phase_variable": "cAIWongsBoatWhereAreWe",
+   "checkpoints": [
+    "BeginTalkArley",
+    "BeginTalkAsta",
+    "SeeDrugs",
+    "SeeSlicker",
+    "ShowBadge",
+    "Talk2Arley",
+    "Talk2Asta"
+   ],
+   "state_variables": [
+    "bAIWong_BeginTalkArley",
+    "bAIWong_BeginTalkAsta",
+    "bAIWong_SeeDrugs",
+    "bAIWong_SeeSlicker",
+    "bAIWong_ShowBadge",
+    "bAIWong_Talk2Arley",
+    "bAIWong_Talk2Asta"
+   ],
+   "n_triggers": 7
+  },
+  {
+   "location": "Smolnikoff",
+   "views": 15,
+   "clips_xmv": 40,
+   "video_seconds": 258,
+   "phase_machine": [
+    "C:Cover Me",
+    "G:Goons",
+    "E:Clues",
+    "P:Process Gun",
+    "N:None",
+    "D:Done"
+   ],
+   "phase_variable": "cAISmolnikoffWhereAreWe",
+   "checkpoints": [
+    "CenterGoonDead",
+    "GotGun",
+    "LeftGoonDead",
+    "ProcessedGun",
+    "RightGoonDead",
+    "SeeEagleCrates",
+    "SeePayrollLog"
+   ],
+   "state_variables": [
+    "bAISmol_CenterGoonDead",
+    "bAISmol_GotGun",
+    "bAISmol_LeftGoonDead",
+    "bAISmol_ProcessedGun",
+    "bAISmol_RightGoonDead",
+    "bAISmol_SeeEagleCrates",
+    "bAISmol_SeePayrollLog"
+   ],
+   "n_triggers": 7
+  },
+  {
+   "location": "Warehouse",
+   "views": 29,
+   "clips_xmv": 128,
+   "video_seconds": 545,
+   "phase_machine": null,
+   "phase_variable": null,
+   "checkpoints": [
+    "CollectedBlackPowde",
+    "CollectedBlood",
+    "CollectedBullet",
+    "CollectedMorleyButt",
+    "CrateOpen",
+    "GetCrowbar"
+   ],
+   "state_variables": [
+    "bAIWarehouse_CollectedBlackPowder",
+    "bAIWarehouse_CollectedBlood",
+    "bAIWarehouse_CollectedBullet",
+    "bAIWarehouse_CollectedMorleyButt",
+    "bAIWarehouse_CrateOpen",
+    "bAIWarehouse_GetCrowbar",
+    "bN2Warehouse_SeenWong"
+   ],
+   "n_triggers": 6
+  },
+  {
+   "location": "Comity",
+   "views": 32,
+   "clips_xmv": 76,
+   "video_seconds": 340,
+   "phase_machine": [
+    "N:None",
+    "P:Phone",
+    "D:Done"
+   ],
+   "phase_variable": "cAIComityWhereAreWe",
+   "checkpoints": [
+    "GetLaptop",
+    "PhoneIdeaIcon",
+    "SkinnerMentionedPhone",
+    "get_laptop",
+    "phone_idea"
+   ],
+   "state_variables": [
+    "bAIComity_GetLaptop",
+    "bAIComity_PhoneIdeaIcon",
+    "bAIComity_SkinnerMentionedPhone",
+    "bAIComity_get_laptop",
+    "bAIComity_phone_idea"
+   ],
+   "n_triggers": 5
+  },
+  {
+   "location": "Hauling Yard",
+   "views": 24,
+   "clips_xmv": 52,
+   "video_seconds": 565,
+   "phase_machine": null,
+   "phase_variable": null,
+   "checkpoints": [
+    "EscapeThruGrate",
+    "GetShovel",
+    "GetsLogManifest"
+   ],
+   "state_variables": [
+    "bAIHauling_EscapeThruGrate",
+    "bAIHauling_GetShovel",
+    "bAIHauling_GetsLogManifest"
+   ],
+   "n_triggers": 3
+  },
+  {
+   "location": "Link 1",
+   "views": 4,
+   "clips_xmv": 13,
+   "video_seconds": 263,
+   "phase_machine": null,
+   "phase_variable": null,
+   "checkpoints": [
+    "EnteredTruck",
+    "FoundClays",
+    "OpenedGloveCompartment"
+   ],
+   "state_variables": [
+    "bAILink1_BackDoorOpen",
+    "bAILink2_EnteredTruck",
+    "bAILink2_FoundClays",
+    "bAILink2_OpenedGloveCompartment"
+   ],
+   "n_triggers": 1
+  },
+  {
+   "location": "Rail Yard",
+   "views": 50,
+   "clips_xmv": 85,
+   "video_seconds": 466,
+   "phase_machine": null,
+   "phase_variable": null,
+   "checkpoints": [
+    "ClimbedPole"
+   ],
+   "state_variables": [
+    "bAIRailyard_ClimbedPole"
+   ],
+   "n_triggers": 1
+  },
+  {
+   "location": "Rauch",
+   "views": 21,
+   "clips_xmv": 44,
+   "video_seconds": 387,
+   "phase_machine": null,
+   "phase_variable": null,
+   "checkpoints": [
+    "OpenedAttic"
+   ],
+   "state_variables": [
+    "bAIRauch_OpenedAttic"
+   ],
+   "n_triggers": 1
+  }
+ ]
+}

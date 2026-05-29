@@ -1,0 +1,1069 @@
+{
+ "_about": "Complete canonical game flow of The X-Files: The Game, fused from walkthroughs (order/objectives/items/puzzles) and byte-direct decode (per-scene mechanics).",
+ "story": "FBI agent Craig Willmore investigates the disappearance of agents Mulder & Scully near Seattle.",
+ "login": {
+  "user": "CRAIG WILLMORE",
+  "password": "SHILOH"
+ },
+ "total_steps": 29,
+ "days": [
+  {
+   "day": "April 2",
+   "scenes": [
+    {
+     "step": 1,
+     "location": "Field Office",
+     "actions": "Cook warns of 'big gun from D.C.'; sit at desk -> phone (Shanks); meet Skinner. Login CRAIG WILLMORE / SHILOH. Talk to Cook, hand case files; take gun/badge/cuffs.",
+     "items": [
+      "gun",
+      "badge",
+      "cuffs",
+      "case files"
+     ],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 153,
+      "clips": 320,
+      "phase_machine": [
+       "P:Phone",
+       "A:APB/Case Files",
+       "E:Equipment",
+       "W:Warehouse",
+       "T:Node 3",
+       "N:None",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "SearchedForWare",
+       "RevivedCook",
+       "SearchedOffice",
+       "CaseFiles2Cook",
+       "FiledAPB",
+       "GotDrawerInv",
+       "GotEquipInv",
+       "RetrievedCaseFile"
+      ],
+      "state_variables": [
+       "SHANKSN2_bAllNode2ItemsCompleted",
+       "SHANKSN2_bBeenToWarehouse",
+       "SHANKSN2_bBloodToLab",
+       "SHANKSN2_bBulletToLab",
+       "SHANKSN2_bCalledComputerCrimes",
+       "SHANKSN2_bDoneWithSkinner",
+       "SHANKSN2_bDoneWithWong",
+       "SHANKSN2_bFoundWarehouseInING",
+       "SHANKSN2_bGotBlackPowder",
+       "SHANKSN2_bGotBlood",
+       "SHANKSN2_bGotBullet",
+       "SHANKSN2_bGotLapTop",
+       "SHANKSN2_bPowderToLab",
+       "SHANKSN2_bSentWarehouseEmail",
+       "SHANKSN2_bTalkedToWong",
+       "SHANKSN2_bTellWillCallComputerCrimes",
+       "SHANKSN2_bTellWillGoBackToComity",
+       "SHANKSN2_bTellWillGoBackToWarehouse",
+       "SHANKSN2_bTellWillLooksCompleteToMe",
+       "SHANKSN2_bTellWillRunBackgroundCheck",
+       "SHANKSN2_bTellWillTakeEvidenceToCrimeLab",
+       "SHANKSN2_bTellWillTalkToWong",
+       "SHANKSN2_bWongBackgroundChecked",
+       "SHANKSN3_bAllQuestionsAskedHarborMaster",
+       "SHANKSN3_bAllTarakanEvidenceCollected",
+       "SHANKSN3_bAllWongBoatEvidenceCollected",
+       "SHANKSN3_bGotWongBullet",
+       "SHANKSN3_bHarbormasterQuestioned",
+       "SHANKSN3_bKnowsBodiesAreMissing",
+       "SHANKSN3_bKnowsMSDidAutopsies",
+       "SHANKSN3_bLeadSphereToLab",
+       "SHANKSN3_bLogBookToLab",
+       "SHANKSN3_bTalkedToCoroner",
+       "SHANKSN3_bTellWillGoBackToWong",
+       "SHANKSN3_bTellWillHeMissedSomethingAtTarakan",
+       "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN3_bTellWillTalkToCoroner",
+       "SHANKSN3_bTellWillTalkToCoronerAgain",
+       "SHANKSN3_bTellWillTalkToHarbormaster",
+       "SHANKSN3_bVisitedTarakan",
+       "SHANKSN3_bWongBulletToLab",
+       "SHANKSN6_bBeenToSmolnikoffWarehouse",
+       "SHANKSN6_bGotPayrollLog",
+       "SHANKSN6_bGotSmolnikoffGun",
+       "SHANKSN6_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN6_bTellWillYouNeedSomethingToTieSmol",
+       "bAIFieldOfficeN2_SearchedForWarehouseAddress",
+       "bAIFieldOfficeN3_RevivedCook",
+       "bAIFieldOfficeN3_SearchedOffice",
+       "bAIFieldOffice_CaseFiles2Cook",
+       "bAIFieldOffice_FiledAPB",
+       "bAIFieldOffice_GotDrawerInv",
+       "bAIFieldOffice_GotEquipInv",
+       "bAIFieldOffice_RetrievedCaseFiles",
+       "bFieldOffice_ReadBarbLetter"
+      ]
+     }
+    },
+    {
+     "step": 2,
+     "location": "Comity",
+     "actions": "Question the motel clerk; search Mulder & Scully's rooms; suggest phone records when the phone icon appears.",
+     "items": [
+      "case file",
+      "brochure",
+      "book",
+      "sunflower seeds",
+      "newspaper",
+      "bible"
+     ],
+     "puzzles_codes": [
+      "phone records"
+     ],
+     "mechanics_byte_direct": {
+      "views": 32,
+      "clips": 76,
+      "phase_machine": [
+       "N:None",
+       "P:Phone",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "GetLaptop",
+       "PhoneIdeaIcon",
+       "SkinnerMentionedPhone",
+       "get_laptop",
+       "phone_idea"
+      ],
+      "state_variables": [
+       "bAIComity_GetLaptop",
+       "bAIComity_PhoneIdeaIcon",
+       "bAIComity_SkinnerMentionedPhone",
+       "bAIComity_get_laptop",
+       "bAIComity_phone_idea"
+      ]
+     }
+    },
+    {
+     "step": 3,
+     "location": "Field Office",
+     "actions": "ING lookup: phones 202-555-0149 / 206-555-0182, plate 621517.",
+     "items": [],
+     "puzzles_codes": [
+      "202-555-0149",
+      "206-555-0182",
+      "plate 621517"
+     ],
+     "mechanics_byte_direct": {
+      "views": 153,
+      "clips": 320,
+      "phase_machine": [
+       "P:Phone",
+       "A:APB/Case Files",
+       "E:Equipment",
+       "W:Warehouse",
+       "T:Node 3",
+       "N:None",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "SearchedForWare",
+       "RevivedCook",
+       "SearchedOffice",
+       "CaseFiles2Cook",
+       "FiledAPB",
+       "GotDrawerInv",
+       "GotEquipInv",
+       "RetrievedCaseFile"
+      ],
+      "state_variables": [
+       "SHANKSN2_bAllNode2ItemsCompleted",
+       "SHANKSN2_bBeenToWarehouse",
+       "SHANKSN2_bBloodToLab",
+       "SHANKSN2_bBulletToLab",
+       "SHANKSN2_bCalledComputerCrimes",
+       "SHANKSN2_bDoneWithSkinner",
+       "SHANKSN2_bDoneWithWong",
+       "SHANKSN2_bFoundWarehouseInING",
+       "SHANKSN2_bGotBlackPowder",
+       "SHANKSN2_bGotBlood",
+       "SHANKSN2_bGotBullet",
+       "SHANKSN2_bGotLapTop",
+       "SHANKSN2_bPowderToLab",
+       "SHANKSN2_bSentWarehouseEmail",
+       "SHANKSN2_bTalkedToWong",
+       "SHANKSN2_bTellWillCallComputerCrimes",
+       "SHANKSN2_bTellWillGoBackToComity",
+       "SHANKSN2_bTellWillGoBackToWarehouse",
+       "SHANKSN2_bTellWillLooksCompleteToMe",
+       "SHANKSN2_bTellWillRunBackgroundCheck",
+       "SHANKSN2_bTellWillTakeEvidenceToCrimeLab",
+       "SHANKSN2_bTellWillTalkToWong",
+       "SHANKSN2_bWongBackgroundChecked",
+       "SHANKSN3_bAllQuestionsAskedHarborMaster",
+       "SHANKSN3_bAllTarakanEvidenceCollected",
+       "SHANKSN3_bAllWongBoatEvidenceCollected",
+       "SHANKSN3_bGotWongBullet",
+       "SHANKSN3_bHarbormasterQuestioned",
+       "SHANKSN3_bKnowsBodiesAreMissing",
+       "SHANKSN3_bKnowsMSDidAutopsies",
+       "SHANKSN3_bLeadSphereToLab",
+       "SHANKSN3_bLogBookToLab",
+       "SHANKSN3_bTalkedToCoroner",
+       "SHANKSN3_bTellWillGoBackToWong",
+       "SHANKSN3_bTellWillHeMissedSomethingAtTarakan",
+       "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN3_bTellWillTalkToCoroner",
+       "SHANKSN3_bTellWillTalkToCoronerAgain",
+       "SHANKSN3_bTellWillTalkToHarbormaster",
+       "SHANKSN3_bVisitedTarakan",
+       "SHANKSN3_bWongBulletToLab",
+       "SHANKSN6_bBeenToSmolnikoffWarehouse",
+       "SHANKSN6_bGotPayrollLog",
+       "SHANKSN6_bGotSmolnikoffGun",
+       "SHANKSN6_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN6_bTellWillYouNeedSomethingToTieSmol",
+       "bAIFieldOfficeN2_SearchedForWarehouseAddress",
+       "bAIFieldOfficeN3_RevivedCook",
+       "bAIFieldOfficeN3_SearchedOffice",
+       "bAIFieldOffice_CaseFiles2Cook",
+       "bAIFieldOffice_FiledAPB",
+       "bAIFieldOffice_GotDrawerInv",
+       "bAIFieldOffice_GotEquipInv",
+       "bAIFieldOffice_RetrievedCaseFiles",
+       "bFieldOffice_ReadBarbLetter"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "location": "Warehouse",
+     "actions": "Lockpick padlock; collect bullet/blood/cigarette/crowbar/powder; talk to Wong; photograph car plate 240-EAK.",
+     "items": [
+      "bullet",
+      "blood",
+      "cigarette butt",
+      "crowbar",
+      "powder"
+     ],
+     "puzzles_codes": [
+      "plate 240-EAK"
+     ],
+     "mechanics_byte_direct": {
+      "views": 29,
+      "clips": 128,
+      "phase_machine": null,
+      "checkpoints": [
+       "CollectedBlackPowde",
+       "CollectedBlood",
+       "CollectedBullet",
+       "CollectedMorleyButt",
+       "CrateOpen",
+       "GetCrowbar"
+      ],
+      "state_variables": [
+       "bAIWarehouse_CollectedBlackPowder",
+       "bAIWarehouse_CollectedBlood",
+       "bAIWarehouse_CollectedBullet",
+       "bAIWarehouse_CollectedMorleyButt",
+       "bAIWarehouse_CrateOpen",
+       "bAIWarehouse_GetCrowbar",
+       "bN2Warehouse_SeenWong"
+      ]
+     }
+    },
+    {
+     "step": 5,
+     "location": "Crime Lab",
+     "actions": "Give bullet/blood/cigarette/powder to Amis.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    },
+    {
+     "step": 6,
+     "location": "Field Office",
+     "actions": "Download photos; ING: car is Gov/Military restricted + Wong record; PDA notes to Skinner/Shanks; refuse Cook.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 153,
+      "clips": 320,
+      "phase_machine": [
+       "P:Phone",
+       "A:APB/Case Files",
+       "E:Equipment",
+       "W:Warehouse",
+       "T:Node 3",
+       "N:None",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "SearchedForWare",
+       "RevivedCook",
+       "SearchedOffice",
+       "CaseFiles2Cook",
+       "FiledAPB",
+       "GotDrawerInv",
+       "GotEquipInv",
+       "RetrievedCaseFile"
+      ],
+      "state_variables": [
+       "SHANKSN2_bAllNode2ItemsCompleted",
+       "SHANKSN2_bBeenToWarehouse",
+       "SHANKSN2_bBloodToLab",
+       "SHANKSN2_bBulletToLab",
+       "SHANKSN2_bCalledComputerCrimes",
+       "SHANKSN2_bDoneWithSkinner",
+       "SHANKSN2_bDoneWithWong",
+       "SHANKSN2_bFoundWarehouseInING",
+       "SHANKSN2_bGotBlackPowder",
+       "SHANKSN2_bGotBlood",
+       "SHANKSN2_bGotBullet",
+       "SHANKSN2_bGotLapTop",
+       "SHANKSN2_bPowderToLab",
+       "SHANKSN2_bSentWarehouseEmail",
+       "SHANKSN2_bTalkedToWong",
+       "SHANKSN2_bTellWillCallComputerCrimes",
+       "SHANKSN2_bTellWillGoBackToComity",
+       "SHANKSN2_bTellWillGoBackToWarehouse",
+       "SHANKSN2_bTellWillLooksCompleteToMe",
+       "SHANKSN2_bTellWillRunBackgroundCheck",
+       "SHANKSN2_bTellWillTakeEvidenceToCrimeLab",
+       "SHANKSN2_bTellWillTalkToWong",
+       "SHANKSN2_bWongBackgroundChecked",
+       "SHANKSN3_bAllQuestionsAskedHarborMaster",
+       "SHANKSN3_bAllTarakanEvidenceCollected",
+       "SHANKSN3_bAllWongBoatEvidenceCollected",
+       "SHANKSN3_bGotWongBullet",
+       "SHANKSN3_bHarbormasterQuestioned",
+       "SHANKSN3_bKnowsBodiesAreMissing",
+       "SHANKSN3_bKnowsMSDidAutopsies",
+       "SHANKSN3_bLeadSphereToLab",
+       "SHANKSN3_bLogBookToLab",
+       "SHANKSN3_bTalkedToCoroner",
+       "SHANKSN3_bTellWillGoBackToWong",
+       "SHANKSN3_bTellWillHeMissedSomethingAtTarakan",
+       "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN3_bTellWillTalkToCoroner",
+       "SHANKSN3_bTellWillTalkToCoronerAgain",
+       "SHANKSN3_bTellWillTalkToHarbormaster",
+       "SHANKSN3_bVisitedTarakan",
+       "SHANKSN3_bWongBulletToLab",
+       "SHANKSN6_bBeenToSmolnikoffWarehouse",
+       "SHANKSN6_bGotPayrollLog",
+       "SHANKSN6_bGotSmolnikoffGun",
+       "SHANKSN6_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN6_bTellWillYouNeedSomethingToTieSmol",
+       "bAIFieldOfficeN2_SearchedForWarehouseAddress",
+       "bAIFieldOfficeN3_RevivedCook",
+       "bAIFieldOfficeN3_SearchedOffice",
+       "bAIFieldOffice_CaseFiles2Cook",
+       "bAIFieldOffice_FiledAPB",
+       "bAIFieldOffice_GotDrawerInv",
+       "bAIFieldOffice_GotEquipInv",
+       "bAIFieldOffice_RetrievedCaseFiles",
+       "bFieldOffice_ReadBarbLetter"
+      ]
+     }
+    },
+    {
+     "step": 7,
+     "location": "Warehouse",
+     "actions": "Night surveillance: men remove item from floor hatch (found empty).",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 29,
+      "clips": 128,
+      "phase_machine": null,
+      "checkpoints": [
+       "CollectedBlackPowde",
+       "CollectedBlood",
+       "CollectedBullet",
+       "CollectedMorleyButt",
+       "CrateOpen",
+       "GetCrowbar"
+      ],
+      "state_variables": [
+       "bAIWarehouse_CollectedBlackPowder",
+       "bAIWarehouse_CollectedBlood",
+       "bAIWarehouse_CollectedBullet",
+       "bAIWarehouse_CollectedMorleyButt",
+       "bAIWarehouse_CrateOpen",
+       "bAIWarehouse_GetCrowbar",
+       "bN2Warehouse_SeenWong"
+      ]
+     }
+    },
+    {
+     "step": 8,
+     "location": "Apt",
+     "actions": "Sleep.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    }
+   ]
+  },
+  {
+   "day": "April 3",
+   "scenes": [
+    {
+     "step": 9,
+     "location": "Warehouse",
+     "actions": "Show badge; Wong's body; board the Agrippa: yellow slicker, pills.",
+     "items": [
+      "yellow slicker",
+      "pills"
+     ],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 29,
+      "clips": 128,
+      "phase_machine": null,
+      "checkpoints": [
+       "CollectedBlackPowde",
+       "CollectedBlood",
+       "CollectedBullet",
+       "CollectedMorleyButt",
+       "CrateOpen",
+       "GetCrowbar"
+      ],
+      "state_variables": [
+       "bAIWarehouse_CollectedBlackPowder",
+       "bAIWarehouse_CollectedBlood",
+       "bAIWarehouse_CollectedBullet",
+       "bAIWarehouse_CollectedMorleyButt",
+       "bAIWarehouse_CrateOpen",
+       "bAIWarehouse_GetCrowbar",
+       "bN2Warehouse_SeenWong"
+      ]
+     }
+    },
+    {
+     "step": 10,
+     "location": "Tarakan",
+     "actions": "Three levels: lead sphere (chest), phoenix crates, 2 Russian books (payroll+journal). Phone Amis for prints.",
+     "items": [
+      "lead sphere",
+      "payroll book",
+      "journal"
+     ],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 34,
+      "clips": 83,
+      "phase_machine": null,
+      "checkpoints": [
+       "AllGrowingFoodFound",
+       "BeenInHold",
+       "BeenInWheelhouse",
+       "GotLeadSphere",
+       "GotLogAndJournal",
+       "NOTInWheelhouse",
+       "SeeEagleCrates",
+       "SeeFingerPrints",
+       "SeeWhiteShadow"
+      ],
+      "state_variables": [
+       "bAITarakan_AllGrowingFoodFound",
+       "bAITarakan_BeenInHold",
+       "bAITarakan_BeenInWheelhouse",
+       "bAITarakan_GotLeadSphere",
+       "bAITarakan_GotLogAndJournal",
+       "bAITarakan_NOTInWheelhouse",
+       "bAITarakan_SeeEagleCrates",
+       "bAITarakan_SeeFingerPrints",
+       "bAITarakan_SeeWhiteShadow"
+      ]
+     }
+    },
+    {
+     "step": 11,
+     "location": "Coroner",
+     "actions": "Body, bullet from trays; bodies stolen; Astadourian becomes partner.",
+     "items": [
+      "bullet"
+     ],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    },
+    {
+     "step": 12,
+     "location": "Crime Lab",
+     "actions": "Give bullet + sphere to Amis.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    },
+    {
+     "step": 13,
+     "location": "Field Office",
+     "actions": "Wake Cook; Scully's laptop missing; DC message; ING media on Tarakan.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 153,
+      "clips": 320,
+      "phase_machine": [
+       "P:Phone",
+       "A:APB/Case Files",
+       "E:Equipment",
+       "W:Warehouse",
+       "T:Node 3",
+       "N:None",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "SearchedForWare",
+       "RevivedCook",
+       "SearchedOffice",
+       "CaseFiles2Cook",
+       "FiledAPB",
+       "GotDrawerInv",
+       "GotEquipInv",
+       "RetrievedCaseFile"
+      ],
+      "state_variables": [
+       "SHANKSN2_bAllNode2ItemsCompleted",
+       "SHANKSN2_bBeenToWarehouse",
+       "SHANKSN2_bBloodToLab",
+       "SHANKSN2_bBulletToLab",
+       "SHANKSN2_bCalledComputerCrimes",
+       "SHANKSN2_bDoneWithSkinner",
+       "SHANKSN2_bDoneWithWong",
+       "SHANKSN2_bFoundWarehouseInING",
+       "SHANKSN2_bGotBlackPowder",
+       "SHANKSN2_bGotBlood",
+       "SHANKSN2_bGotBullet",
+       "SHANKSN2_bGotLapTop",
+       "SHANKSN2_bPowderToLab",
+       "SHANKSN2_bSentWarehouseEmail",
+       "SHANKSN2_bTalkedToWong",
+       "SHANKSN2_bTellWillCallComputerCrimes",
+       "SHANKSN2_bTellWillGoBackToComity",
+       "SHANKSN2_bTellWillGoBackToWarehouse",
+       "SHANKSN2_bTellWillLooksCompleteToMe",
+       "SHANKSN2_bTellWillRunBackgroundCheck",
+       "SHANKSN2_bTellWillTakeEvidenceToCrimeLab",
+       "SHANKSN2_bTellWillTalkToWong",
+       "SHANKSN2_bWongBackgroundChecked",
+       "SHANKSN3_bAllQuestionsAskedHarborMaster",
+       "SHANKSN3_bAllTarakanEvidenceCollected",
+       "SHANKSN3_bAllWongBoatEvidenceCollected",
+       "SHANKSN3_bGotWongBullet",
+       "SHANKSN3_bHarbormasterQuestioned",
+       "SHANKSN3_bKnowsBodiesAreMissing",
+       "SHANKSN3_bKnowsMSDidAutopsies",
+       "SHANKSN3_bLeadSphereToLab",
+       "SHANKSN3_bLogBookToLab",
+       "SHANKSN3_bTalkedToCoroner",
+       "SHANKSN3_bTellWillGoBackToWong",
+       "SHANKSN3_bTellWillHeMissedSomethingAtTarakan",
+       "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN3_bTellWillTalkToCoroner",
+       "SHANKSN3_bTellWillTalkToCoronerAgain",
+       "SHANKSN3_bTellWillTalkToHarbormaster",
+       "SHANKSN3_bVisitedTarakan",
+       "SHANKSN3_bWongBulletToLab",
+       "SHANKSN6_bBeenToSmolnikoffWarehouse",
+       "SHANKSN6_bGotPayrollLog",
+       "SHANKSN6_bGotSmolnikoffGun",
+       "SHANKSN6_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN6_bTellWillYouNeedSomethingToTieSmol",
+       "bAIFieldOfficeN2_SearchedForWarehouseAddress",
+       "bAIFieldOfficeN3_RevivedCook",
+       "bAIFieldOfficeN3_SearchedOffice",
+       "bAIFieldOffice_CaseFiles2Cook",
+       "bAIFieldOffice_FiledAPB",
+       "bAIFieldOffice_GotDrawerInv",
+       "bAIFieldOffice_GotEquipInv",
+       "bAIFieldOffice_RetrievedCaseFiles",
+       "bFieldOffice_ReadBarbLetter"
+      ]
+     }
+    },
+    {
+     "step": 14,
+     "location": "Apt",
+     "actions": "Email: Cook's fingerprints on the boat; confront Cook; PDA notes.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    },
+    {
+     "step": 15,
+     "location": "Warehouse",
+     "actions": "Parking: truck 'Gordon's Hauling'; glove-box paper 'RR#1121 82434'.",
+     "items": [
+      "paper RR#1121 82434"
+     ],
+     "puzzles_codes": [
+      "RR#1121 82434"
+     ],
+     "mechanics_byte_direct": {
+      "views": 29,
+      "clips": 128,
+      "phase_machine": null,
+      "checkpoints": [
+       "CollectedBlackPowde",
+       "CollectedBlood",
+       "CollectedBullet",
+       "CollectedMorleyButt",
+       "CrateOpen",
+       "GetCrowbar"
+      ],
+      "state_variables": [
+       "bAIWarehouse_CollectedBlackPowder",
+       "bAIWarehouse_CollectedBlood",
+       "bAIWarehouse_CollectedBullet",
+       "bAIWarehouse_CollectedMorleyButt",
+       "bAIWarehouse_CrateOpen",
+       "bAIWarehouse_GetCrowbar",
+       "bN2Warehouse_SeenWong"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "day": "April 4",
+   "scenes": [
+    {
+     "step": 16,
+     "location": "Coroner",
+     "actions": "Question coroner thoroughly.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    },
+    {
+     "step": 17,
+     "location": "Hauling Yard",
+     "actions": "Pick up shovel + floor paper. TRAP: beat out the vent panel (left wall, near floor) with the shovel to escape. Talk to Astadourian; PDA notes.",
+     "items": [
+      "shovel",
+      "log manifest"
+     ],
+     "puzzles_codes": [
+      "vent panel escape"
+     ],
+     "mechanics_byte_direct": {
+      "views": 24,
+      "clips": 52,
+      "phase_machine": null,
+      "checkpoints": [
+       "EscapeThruGrate",
+       "GetShovel",
+       "GetsLogManifest"
+      ],
+      "state_variables": [
+       "bAIHauling_EscapeThruGrate",
+       "bAIHauling_GetShovel",
+       "bAIHauling_GetsLogManifest"
+      ]
+     }
+    },
+    {
+     "step": 18,
+     "location": "Apt",
+     "actions": "Email; sleep.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    }
+   ]
+  },
+  {
+   "day": "April 5",
+   "scenes": [
+    {
+     "step": 19,
+     "location": "Field Office",
+     "actions": "Brief with Cook in the conference room; go to warehouse.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 153,
+      "clips": 320,
+      "phase_machine": [
+       "P:Phone",
+       "A:APB/Case Files",
+       "E:Equipment",
+       "W:Warehouse",
+       "T:Node 3",
+       "N:None",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "SearchedForWare",
+       "RevivedCook",
+       "SearchedOffice",
+       "CaseFiles2Cook",
+       "FiledAPB",
+       "GotDrawerInv",
+       "GotEquipInv",
+       "RetrievedCaseFile"
+      ],
+      "state_variables": [
+       "SHANKSN2_bAllNode2ItemsCompleted",
+       "SHANKSN2_bBeenToWarehouse",
+       "SHANKSN2_bBloodToLab",
+       "SHANKSN2_bBulletToLab",
+       "SHANKSN2_bCalledComputerCrimes",
+       "SHANKSN2_bDoneWithSkinner",
+       "SHANKSN2_bDoneWithWong",
+       "SHANKSN2_bFoundWarehouseInING",
+       "SHANKSN2_bGotBlackPowder",
+       "SHANKSN2_bGotBlood",
+       "SHANKSN2_bGotBullet",
+       "SHANKSN2_bGotLapTop",
+       "SHANKSN2_bPowderToLab",
+       "SHANKSN2_bSentWarehouseEmail",
+       "SHANKSN2_bTalkedToWong",
+       "SHANKSN2_bTellWillCallComputerCrimes",
+       "SHANKSN2_bTellWillGoBackToComity",
+       "SHANKSN2_bTellWillGoBackToWarehouse",
+       "SHANKSN2_bTellWillLooksCompleteToMe",
+       "SHANKSN2_bTellWillRunBackgroundCheck",
+       "SHANKSN2_bTellWillTakeEvidenceToCrimeLab",
+       "SHANKSN2_bTellWillTalkToWong",
+       "SHANKSN2_bWongBackgroundChecked",
+       "SHANKSN3_bAllQuestionsAskedHarborMaster",
+       "SHANKSN3_bAllTarakanEvidenceCollected",
+       "SHANKSN3_bAllWongBoatEvidenceCollected",
+       "SHANKSN3_bGotWongBullet",
+       "SHANKSN3_bHarbormasterQuestioned",
+       "SHANKSN3_bKnowsBodiesAreMissing",
+       "SHANKSN3_bKnowsMSDidAutopsies",
+       "SHANKSN3_bLeadSphereToLab",
+       "SHANKSN3_bLogBookToLab",
+       "SHANKSN3_bTalkedToCoroner",
+       "SHANKSN3_bTellWillGoBackToWong",
+       "SHANKSN3_bTellWillHeMissedSomethingAtTarakan",
+       "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN3_bTellWillTalkToCoroner",
+       "SHANKSN3_bTellWillTalkToCoronerAgain",
+       "SHANKSN3_bTellWillTalkToHarbormaster",
+       "SHANKSN3_bVisitedTarakan",
+       "SHANKSN3_bWongBulletToLab",
+       "SHANKSN6_bBeenToSmolnikoffWarehouse",
+       "SHANKSN6_bGotPayrollLog",
+       "SHANKSN6_bGotSmolnikoffGun",
+       "SHANKSN6_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN6_bTellWillYouNeedSomethingToTieSmol",
+       "bAIFieldOfficeN2_SearchedForWarehouseAddress",
+       "bAIFieldOfficeN3_RevivedCook",
+       "bAIFieldOfficeN3_SearchedOffice",
+       "bAIFieldOffice_CaseFiles2Cook",
+       "bAIFieldOffice_FiledAPB",
+       "bAIFieldOffice_GotDrawerInv",
+       "bAIFieldOffice_GotEquipInv",
+       "bAIFieldOffice_RetrievedCaseFiles",
+       "bFieldOffice_ReadBarbLetter"
+      ]
+     }
+    },
+    {
+     "step": 20,
+     "location": "Smolnikoff",
+     "actions": "Cook covers; shoot 3 enemies (ground), 2 (upstairs); corner Smolnikoff. Get gun, logbook, phoenix crates; interrogate.",
+     "items": [
+      "gun",
+      "logbook"
+     ],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 15,
+      "clips": 40,
+      "phase_machine": [
+       "C:Cover Me",
+       "G:Goons",
+       "E:Clues",
+       "P:Process Gun",
+       "N:None",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "CenterGoonDead",
+       "GotGun",
+       "LeftGoonDead",
+       "ProcessedGun",
+       "RightGoonDead",
+       "SeeEagleCrates",
+       "SeePayrollLog"
+      ],
+      "state_variables": [
+       "bAISmol_CenterGoonDead",
+       "bAISmol_GotGun",
+       "bAISmol_LeftGoonDead",
+       "bAISmol_ProcessedGun",
+       "bAISmol_RightGoonDead",
+       "bAISmol_SeeEagleCrates",
+       "bAISmol_SeePayrollLog"
+      ]
+     }
+    },
+    {
+     "step": 21,
+     "location": "Crime Lab",
+     "actions": "Give gun to Amis (bullets match).",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    },
+    {
+     "step": 22,
+     "location": "Smolnikoff",
+     "actions": "Question again; Cook arrests Smolnikoff.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 15,
+      "clips": 40,
+      "phase_machine": [
+       "C:Cover Me",
+       "G:Goons",
+       "E:Clues",
+       "P:Process Gun",
+       "N:None",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "CenterGoonDead",
+       "GotGun",
+       "LeftGoonDead",
+       "ProcessedGun",
+       "RightGoonDead",
+       "SeeEagleCrates",
+       "SeePayrollLog"
+      ],
+      "state_variables": [
+       "bAISmol_CenterGoonDead",
+       "bAISmol_GotGun",
+       "bAISmol_LeftGoonDead",
+       "bAISmol_ProcessedGun",
+       "bAISmol_RightGoonDead",
+       "bAISmol_SeeEagleCrates",
+       "bAISmol_SeePayrollLog"
+      ]
+     }
+    },
+    {
+     "step": 23,
+     "location": "Apt",
+     "actions": "Messages; Gov/Mil fingerprint email; sleep.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    }
+   ]
+  },
+  {
+   "day": "April 6",
+   "scenes": [
+    {
+     "step": 24,
+     "location": "Hangar",
+     "actions": "Meet 'X'; answer politely/promptly -> weapon; decline to follow; meet Astadourian.",
+     "items": [
+      "weapon"
+     ],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {}
+    },
+    {
+     "step": 25,
+     "location": "Hospital",
+     "actions": "Badge to doctor; identify Scully & Skinner; enter Scully's room; show weapon.",
+     "items": [],
+     "puzzles_codes": [
+      "names: Scully, Skinner"
+     ],
+     "mechanics_byte_direct": {}
+    },
+    {
+     "step": 26,
+     "location": "Rail Yard",
+     "actions": "Climb the telephone pole; binoculars to spot the car (view RailYard82434); get the videotape.",
+     "items": [
+      "videotape"
+     ],
+     "puzzles_codes": [
+      "climb pole"
+     ],
+     "mechanics_byte_direct": {
+      "views": 50,
+      "clips": 85,
+      "phase_machine": null,
+      "checkpoints": [
+       "ClimbedPole"
+      ],
+      "state_variables": [
+       "bAIRailyard_ClimbedPole"
+      ]
+     }
+    },
+    {
+     "step": 27,
+     "location": "Field Office",
+     "actions": "Play tape; ING identifies surgeon Colonel Rauch; video conference; PDA notes.",
+     "items": [],
+     "puzzles_codes": [],
+     "mechanics_byte_direct": {
+      "views": 153,
+      "clips": 320,
+      "phase_machine": [
+       "P:Phone",
+       "A:APB/Case Files",
+       "E:Equipment",
+       "W:Warehouse",
+       "T:Node 3",
+       "N:None",
+       "D:Done"
+      ],
+      "checkpoints": [
+       "SearchedForWare",
+       "RevivedCook",
+       "SearchedOffice",
+       "CaseFiles2Cook",
+       "FiledAPB",
+       "GotDrawerInv",
+       "GotEquipInv",
+       "RetrievedCaseFile"
+      ],
+      "state_variables": [
+       "SHANKSN2_bAllNode2ItemsCompleted",
+       "SHANKSN2_bBeenToWarehouse",
+       "SHANKSN2_bBloodToLab",
+       "SHANKSN2_bBulletToLab",
+       "SHANKSN2_bCalledComputerCrimes",
+       "SHANKSN2_bDoneWithSkinner",
+       "SHANKSN2_bDoneWithWong",
+       "SHANKSN2_bFoundWarehouseInING",
+       "SHANKSN2_bGotBlackPowder",
+       "SHANKSN2_bGotBlood",
+       "SHANKSN2_bGotBullet",
+       "SHANKSN2_bGotLapTop",
+       "SHANKSN2_bPowderToLab",
+       "SHANKSN2_bSentWarehouseEmail",
+       "SHANKSN2_bTalkedToWong",
+       "SHANKSN2_bTellWillCallComputerCrimes",
+       "SHANKSN2_bTellWillGoBackToComity",
+       "SHANKSN2_bTellWillGoBackToWarehouse",
+       "SHANKSN2_bTellWillLooksCompleteToMe",
+       "SHANKSN2_bTellWillRunBackgroundCheck",
+       "SHANKSN2_bTellWillTakeEvidenceToCrimeLab",
+       "SHANKSN2_bTellWillTalkToWong",
+       "SHANKSN2_bWongBackgroundChecked",
+       "SHANKSN3_bAllQuestionsAskedHarborMaster",
+       "SHANKSN3_bAllTarakanEvidenceCollected",
+       "SHANKSN3_bAllWongBoatEvidenceCollected",
+       "SHANKSN3_bGotWongBullet",
+       "SHANKSN3_bHarbormasterQuestioned",
+       "SHANKSN3_bKnowsBodiesAreMissing",
+       "SHANKSN3_bKnowsMSDidAutopsies",
+       "SHANKSN3_bLeadSphereToLab",
+       "SHANKSN3_bLogBookToLab",
+       "SHANKSN3_bTalkedToCoroner",
+       "SHANKSN3_bTellWillGoBackToWong",
+       "SHANKSN3_bTellWillHeMissedSomethingAtTarakan",
+       "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN3_bTellWillTalkToCoroner",
+       "SHANKSN3_bTellWillTalkToCoronerAgain",
+       "SHANKSN3_bTellWillTalkToHarbormaster",
+       "SHANKSN3_bVisitedTarakan",
+       "SHANKSN3_bWongBulletToLab",
+       "SHANKSN6_bBeenToSmolnikoffWarehouse",
+       "SHANKSN6_bGotPayrollLog",
+       "SHANKSN6_bGotSmolnikoffGun",
+       "SHANKSN6_bTellWillTakeYourEvidenceToCrimeLab",
+       "SHANKSN6_bTellWillYouNeedSomethingToTieSmol",
+       "bAIFieldOfficeN2_SearchedForWarehouseAddress",
+       "bAIFieldOfficeN3_RevivedCook",
+       "bAIFieldOfficeN3_SearchedOffice",
+       "bAIFieldOffice_CaseFiles2Cook",
+       "bAIFieldOffice_FiledAPB",
+       "bAIFieldOffice_GotDrawerInv",
+       "bAIFieldOffice_GotEquipInv",
+       "bAIFieldOffice_RetrievedCaseFiles",
+       "bFieldOffice_ReadBarbLetter"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "day": "April 7",
+   "scenes": [
+    {
+     "step": 28,
+     "location": "Rauch",
+     "actions": "Body upstairs; pull ceiling skeleton -> attic ladder; find Mulder; Scully calls. Woods chase: right, straight x2, hide in tree hollow.",
+     "items": [],
+     "puzzles_codes": [
+      "woods: right, straight, straight, tree hollow"
+     ],
+     "mechanics_byte_direct": {
+      "views": 21,
+      "clips": 44,
+      "phase_machine": null,
+      "checkpoints": [
+       "OpenedAttic"
+      ],
+      "state_variables": [
+       "bAIRauch_OpenedAttic"
+      ]
+     }
+    },
+    {
+     "step": 29,
+     "location": "Secret Base",
+     "actions": "Cattle prod (side table). Zap Cook, avoid Mulder, shoot operatives. Push central button; pull green button (Scully's room); open glass-room doors; lure Mulder through glass room & close door; throw weapon to Scully to take out Cook at the double-key station. END.",
+     "items": [
+      "cattle prod",
+      "key"
+     ],
+     "puzzles_codes": [
+      "central button",
+      "green button",
+      "double-key station"
+     ],
+     "mechanics_byte_direct": {
+      "views": 18,
+      "clips": 89,
+      "phase_machine": null,
+      "checkpoints": [
+       "ComputerAccessed",
+       "GotKey",
+       "IsoActionIconShowing",
+       "IsoChamberOn",
+       "IsoDoorEastOpen",
+       "IsoDoorWestOpen",
+       "LifeSupportOn",
+       "LuredMulder"
+      ],
+      "state_variables": [
+       "bAISecretB_ComputerAccessed",
+       "bAISecretB_GotKey",
+       "bAISecretB_IsoActionIconShowing",
+       "bAISecretB_IsoChamberOn",
+       "bAISecretB_IsoDoorEastOpen",
+       "bAISecretB_IsoDoorWestOpen",
+       "bAISecretB_LifeSupportOn",
+       "bAISecretB_LuredMulder"
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "notes": {
+  "dialogue_text": "complete: 1025 lines in loc_XFilest.json / DIALOGUE_LINES.md",
+  "conversation_graph": "VCConversation fields (id/topic/prompt/response/next) are NeoPersist index references, not flat scalars; resolving the per-conversation branch wiring needs the NeoPersist ID-index resolution (see docs/DIALOGUES.md). Dialogue text, per-scene mechanics and the scene flow are complete."
+ },
+ "sources": [
+  "https://www.walkthroughking.com/text/xfiles.aspx",
+  "https://www.gameboomers.com/wtcheats/pcXx/XfilesWT1.htm",
+  "https://gamefaqs.gamespot.com/pc/37002-the-x-files-game/faqs/47902",
+  "byte-direct decode + live RAM capture (this workspace)"
+ ]
+}

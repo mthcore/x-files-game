@@ -1,0 +1,1915 @@
+{
+ "_source": "XFILES.GAM (shipped default save)",
+ "_certainty": "byte-direct (value at record magic+8; validated by bool 0/1 distribution + cross-save flips)",
+ "count": 477,
+ "values": {
+  "EMAIL_bSentBallistics": {
+   "value": 0,
+   "type": "bool"
+  },
+  "EMAIL_bSentCrewCutFingerprints": {
+   "value": 0,
+   "type": "bool"
+  },
+  "EndGame_bFadeToBlack": {
+   "value": 0,
+   "type": "bool"
+  },
+  "EndGame_bPlayCancerManExplosion": {
+   "value": 1,
+   "type": "bool"
+  },
+  "EndGame_bPlayCoronerBones": {
+   "value": 0,
+   "type": "bool"
+  },
+  "EndGame_bPlayFBIShot": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bBulletinBoardDisplayed": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bEMailSetToInBox": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderHaveCarNote": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderHaveComityBill": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderHaveLeadSphereFax": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderHaveTruckingManifest": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderIsDisplayed": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderReturnToFolder": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingBlueMulder": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingBlueScully": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingCarNote": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingComityBill": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingLeadSphereFax": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingLogTranslationFaxP1": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingLogTranslationFaxP2": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingLogTranslationFaxP3": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingLogTranslationFaxP4": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingLogTranslationFaxP5": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingMSPhoto": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingTravelReq": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bFolderShowingTruckingManifest": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bHasLoggedInToFBIComputer": {
+   "value": 1,
+   "type": "bool"
+  },
+  "IFL_bHasWillmoreNOTCalledAmisForFaxes": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bHaveReadLogTranslation": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bINGHaveSearchedForNSACar": {
+   "value": 1,
+   "type": "bool"
+  },
+  "IFL_bINGN7ExitToVideo": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bINGSearchingOnCook": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bINGSearchingOnCrewCutMan": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bINGVideoRequestActive": {
+   "value": 1,
+   "type": "bool"
+  },
+  "IFL_bJournalIsFirstPage": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bJournalIsLastPage": {
+   "value": 1,
+   "type": "bool"
+  },
+  "IFL_bLetterLowerLoopActivated": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bOffToFileTheAPB": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPDAEmailedCookAboutNSA": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPDAIsNavShowingJuneau": {
+   "value": 1,
+   "type": "bool"
+  },
+  "IFL_bPDASkinnerNOTGoneInsideWarehouse": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPasswordFBIConnect": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPhoneEndCall": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPhoneIsRightTimer": {
+   "value": 106,
+   "type": "bool"
+  },
+  "IFL_bPhonePressedClear": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPhonePressedDown": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPhonePressedEnd": {
+   "value": 1,
+   "type": "bool"
+  },
+  "IFL_bPhonePressedMenu": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPhonePressedOff": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPhonePressedSend": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bPhonePressedUp": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bSecretBaseAccessingFromControlRoom": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bSecretBaseAccessingFromCrateRoom": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bSecretBaseAccessingFromLifeSupport": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bSecretBaseAccessingFromLittleRoom": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_bWillmoreHasSeenMuldersCaseFiles": {
+   "value": 0,
+   "type": "bool"
+  },
+  "IFL_cFontAlignCentered": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cFontAlignLeft": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cFontAlignRight": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cFontColorWhite": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cFontColorXBlue": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cFontShadowNo": {
+   "value": 1,
+   "type": "counter"
+  },
+  "IFL_cFontShadowYes": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cINGSearchDatabase": {
+   "value": 247,
+   "type": "counter"
+  },
+  "IFL_cPDAMapShowing": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone0": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone1": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone2": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone3": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone4": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone5": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone6": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone7": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone8": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhone9": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhoneClear": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhoneDown": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhoneEnd": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhoneMenu": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhoneOff": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhoneSend": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_cPhoneUp": {
+   "value": 0,
+   "type": "counter"
+  },
+  "IFL_iINGFontLineHeight": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdAmis": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdArley": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdAstadourian": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdCook": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdMcIntyre": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdMendoza": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdRauch": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdSmolnikoff": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdStearns": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_iINGIdWong": {
+   "value": 0,
+   "type": "int"
+  },
+  "IFL_scEmpty": {
+   "value": 0,
+   "type": "string"
+  },
+  "IFL_scPhoneAmisNumber": {
+   "value": 0,
+   "type": "string"
+  },
+  "IFL_scPhoneNumber": {
+   "value": 0,
+   "type": "string"
+  },
+  "Inventory_None": {
+   "value": 0,
+   "type": "other"
+  },
+  "Inventory_iBinoculars": {
+   "value": 1,
+   "type": "int"
+  },
+  "Inventory_iCaseFiles": {
+   "value": 0,
+   "type": "int"
+  },
+  "Inventory_iCattleProd": {
+   "value": 0,
+   "type": "int"
+  },
+  "Inventory_iCrowbar": {
+   "value": 0,
+   "type": "int"
+  },
+  "Inventory_iGun": {
+   "value": 0,
+   "type": "int"
+  },
+  "Inventory_iJoseChung": {
+   "value": 1,
+   "type": "int"
+  },
+  "Inventory_iLaptop": {
+   "value": 0,
+   "type": "int"
+  },
+  "Inventory_iNone": {
+   "value": 1,
+   "type": "int"
+  },
+  "Inventory_iPaperFolder": {
+   "value": 1,
+   "type": "int"
+  },
+  "Inventory_iPhotoNSACar": {
+   "value": 0,
+   "type": "int"
+  },
+  "Inventory_iPhotoSmolnikoff": {
+   "value": 1,
+   "type": "int"
+  },
+  "Inventory_iScrewdriver": {
+   "value": 0,
+   "type": "int"
+  },
+  "Inventory_iShovel": {
+   "value": 0,
+   "type": "int"
+  },
+  "Inventory_iStiletto": {
+   "value": 1,
+   "type": "int"
+  },
+  "Inventory_iTravelReq": {
+   "value": 83,
+   "type": "int"
+  },
+  "Inventory_iVideotape": {
+   "value": 1,
+   "type": "int"
+  },
+  "Inventory_iWirecutters": {
+   "value": 0,
+   "type": "int"
+  },
+  "NAVTAG_bCoronersOffice": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NAVTAG_bRuralRoute": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NAVTAG_bWarehouse": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bHasFinishedHaulingYard": {
+   "value": 1,
+   "type": "bool"
+  },
+  "NODE_bHasFinishedN2CookConversation": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bHasFinishedNode3CoronersOffice": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bHasFinishedNode4ConversationWithCook": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bHasFinishedNode5CoronersOffice": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bHasSkinnerLeftForDC": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsItNode2": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsLink1Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsLink2Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsLink3Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsLink4Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsLink5Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsNode2Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsNode3Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsNode4Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsNode5Complete": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bIsNode6Complete": {
+   "value": 13,
+   "type": "bool"
+  },
+  "NODE_bLink2WarehouseComplete": {
+   "value": 1,
+   "type": "bool"
+  },
+  "NODE_bRailyardGotVideoTape": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_bSmolFirstFloorClean": {
+   "value": 0,
+   "type": "bool"
+  },
+  "NODE_iHasAllNode3EvidenceBeenProcessed": {
+   "value": 0,
+   "type": "int"
+  },
+  "PDANOTES_bBeenToCoronersN5": {
+   "value": 0,
+   "type": "bool"
+  },
+  "PDANOTES_bBeenToFON3": {
+   "value": 0,
+   "type": "bool"
+  },
+  "PDANOTES_bToldAstaAboutWong": {
+   "value": 0,
+   "type": "bool"
+  },
+  "PDANOTES_bWentToCoronersBeforeCrimeLab": {
+   "value": 0,
+   "type": "bool"
+  },
+  "PDANOTES_bWentToTarakanBeforeFO": {
+   "value": 0,
+   "type": "bool"
+  },
+  "PDANOTES_bWentToWongBeforeFO": {
+   "value": 0,
+   "type": "bool"
+  },
+  "PDANOTES_iCrimeLabN3PageNumber": {
+   "value": 0,
+   "type": "int"
+  },
+  "PDANOTES_iFieldOfficeN3PageNumber": {
+   "value": 0,
+   "type": "int"
+  },
+  "Pref_b3DSound": {
+   "value": 0,
+   "type": "bool"
+  },
+  "Pref_bArtificialIntuition": {
+   "value": 0,
+   "type": "bool"
+  },
+  "Pref_bHighQualityVideo": {
+   "value": 0,
+   "type": "bool"
+  },
+  "Pref_bLiveEnvironments": {
+   "value": 0,
+   "type": "bool"
+  },
+  "Pref_bRolloverText": {
+   "value": 0,
+   "type": "bool"
+  },
+  "Pref_bSkipClips": {
+   "value": 0,
+   "type": "bool"
+  },
+  "Pref_bSkipIntro": {
+   "value": 0,
+   "type": "bool"
+  },
+  "Pref_bTransitions": {
+   "value": 0,
+   "type": "bool"
+  },
+  "Pref_bTranslucency": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bBeenToWarehouse": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bBloodToLab": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bBulletToLab": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bCalledComputerCrimes": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bDoneWithSkinner": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bDoneWithWong": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bFoundWarehouseInING": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bGotBlood": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bGotBullet": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bGotLapTop": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bPowderToLab": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bSentWarehouseEmail": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bTalkedToWong": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bTellWillCallComputerCrimes": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bTellWillGoBackToWarehouse": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bTellWillLooksCompleteToMe": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bTellWillRunBackgroundCheck": {
+   "value": 25,
+   "type": "bool"
+  },
+  "SHANKSN2_bTellWillTalkToWong": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN2_bWongBackgroundChecked": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bAllQuestionsAskedHarborMaster": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bAllTarakanEvidenceCollected": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bAllWongBoatEvidenceCollected": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bGotWongBullet": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bKnowsBodiesAreMissing": {
+   "value": 200,
+   "type": "bool"
+  },
+  "SHANKSN3_bKnowsMSDidAutopsies": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bLeadSphereToLab": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bLogBookToLab": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bTellWillGoBackToWong": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bTellWillHeMissedSomethingAtTarakan": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bTellWillTakeYourEvidenceToCrimeLab": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bTellWillTalkToCoroner": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bTellWillTalkToHarbormaster": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN3_bWongBulletToLab": {
+   "value": 30,
+   "type": "bool"
+  },
+  "SHANKSN6_bBeenToSmolnikoffWarehouse": {
+   "value": 0,
+   "type": "bool"
+  },
+  "SHANKSN6_bGotPayrollLog": {
+   "value": 1,
+   "type": "bool"
+  },
+  "SHANKSN6_bTellWillYouNeedSomethingToTieSmol": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAIComity_GetLaptop": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIComity_PhoneIdeaIcon": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIComity_SkinnerMentionedPhone": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIComity_get_laptop": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIComity_phone_idea": {
+   "value": 0,
+   "type": "int"
+  },
+  "bAIFieldOfficeN2_SearchedForWarehouseAddress": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIFieldOfficeN3_RevivedCook": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIFieldOfficeN3_SearchedOffice": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIFieldOffice_CaseFiles2Cook": {
+   "value": 127,
+   "type": "other"
+  },
+  "bAIFieldOffice_FiledAPB": {
+   "value": 1,
+   "type": "other"
+  },
+  "bAIFieldOffice_GotDrawerInv": {
+   "value": 1,
+   "type": "other"
+  },
+  "bAIFieldOffice_GotEquipInv": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIGeneral_ClickedSleepActionIcon": {
+   "value": 1,
+   "type": "other"
+  },
+  "bAIHauling_EscapeThruGrate": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIHauling_GetShovel": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIHauling_GetsLogManifest": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAILink1_BackDoorOpen": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAILink2_EnteredTruck": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAILink2_FoundClays": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAILink2_OpenedGloveCompartment": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIRailyard_ClimbedPole": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISecretB_ComputerAccessed": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISecretB_GotKey": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISecretB_IsoActionIconShowing": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISecretB_IsoChamberOn": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISecretB_IsoDoorWestOpen": {
+   "value": 168,
+   "type": "other"
+  },
+  "bAISmol_CenterGoonDead": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISmol_GotGun": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISmol_LeftGoonDead": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISmol_ProcessedGun": {
+   "value": 1,
+   "type": "other"
+  },
+  "bAISmol_RightGoonDead": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISmol_SeeEagleCrates": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAISmol_SeePayrollLog": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAITarakan_AllGrowingFoodFound": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAITarakan_BeenInHold": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAITarakan_BeenInWheelhouse": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAITarakan_GotLogAndJournal": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAITarakan_NOTInWheelhouse": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAITarakan_SeeEagleCrates": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAITarakan_SeeFingerPrints": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAITarakan_SeeWhiteShadow": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIWarehouse_CollectedBlackPowder": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIWarehouse_CollectedBlood": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIWarehouse_CollectedBullet": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIWarehouse_CrateOpen": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIWong_BeginTalkArley": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIWong_SeeSlicker": {
+   "value": 1,
+   "type": "other"
+  },
+  "bAIWong_ShowBadge": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIWong_Talk2Arley": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAIWong_Talk2Asta": {
+   "value": 0,
+   "type": "other"
+  },
+  "bAllIdeasAsked": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAllQuestionsAsked": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutAutopsy": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutDollar": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutFBIAgents": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutGun": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutGunAfterProcessing": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutGunBeforeProcessed": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutMulder": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutPlutonium": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutStiletto": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutTarakan": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutWarehouse": {
+   "value": 149,
+   "type": "bool"
+  },
+  "bAskedAboutWife": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedAboutWong": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedCookAboutPayroll": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bAskedHowDoYouFeel": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedSmolAboutGun": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAskedSmolAboutPayroll": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAstaSayGiveMeAMinute": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bAtBalcony3": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bAttempted2Talk2Asta": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bBarricadeGoonDead": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bBeenHere": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bCanPDAEscape": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bCookIsDead": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bCrimeLabIsAmisHere": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bDisablePDA": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bDoesClerkKnowNames": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bFieldOffice_ReadBarbLetter": {
+   "value": 9,
+   "type": "other"
+  },
+  "bFinishedTalk2Arley": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bFirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bFirstTimeHere": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bFirstTimeInFieldOffice": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bFirstTimeRightClickJC": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bFixJumpCutOnExit": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bFoundAndDiscussedPayrollLog": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bGameStateSaved": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bGoonOnStairsDead": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bGrowingFoodAllFound": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bGuard1Dead": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bGuard2Dead": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bGuard3Dead": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHadFlashlight": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHadWhiteShadowsConversation": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHasAsked": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHasGameBegun": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHasNOTSeenNSAPhil": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHasNOTShownLeadSphereFax": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHasNOTShownLogFax": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHaveAnyPhoneMessages": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHaveAsked": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHaveNOTFinishedN3Conversation": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHaveShovel": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bHaveStartedN3Conversation": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bHaveWireCutters": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIntroduceNSA": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIs18": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIs19": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bIs20": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIs21": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsGovt": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsHeld": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsIRightTimer": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsInventoryTheFax": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsLastPage": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsMilitaryDatabase": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsNOTFBI": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bIsNOTLink1FirstTime": {
+   "value": 64,
+   "type": "bool"
+  },
+  "bIsNOTLink2FirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsNOTMilitaryDatabase": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bIsTimer16": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsTimer24": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsWillmoreSleeping": {
+   "value": 85,
+   "type": "bool"
+  },
+  "bIsoChamberEastClosed": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsoChamberEastOpen": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bIsoChamberWestClosed": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bIsoChamberWestOpen": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bKeyGuardDead": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bL1FlashlightOfDeath": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bL3HasAstaArrived": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bL3HasCheckedMessages": {
+   "value": 73,
+   "type": "bool"
+  },
+  "bL3PlayedXPhoneMessageBack": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bL4HangarEmotionIconChosen": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bLiedToCook": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bLifeSupportPowerOn": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bLightsOn": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bLink1FirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bMentionedWarehouse": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bMessagesUseLossVersion": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bMusicPlaying": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN1CaseFilesFirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN1GreetedAmis": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN1HasNOTBeenToSeeShanks": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN1HasTalkedToShanks": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN1HasWillmoreFiledAPB": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN1ReturningToFieldOffice": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN1ToldCookAboutCaseFiles": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN1WillmoreGiveCaseFilesToCook": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2BeenInsideWarehouse": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2FirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2HadEncounterWithNSA": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2HasAllNode2EvidenceBeenCollected": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2HaveBeenToWongsBoat": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2RetrievedLaptop": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2TalkedToSkinnerLeadPowder": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2TalkedToSkinnerWong": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2TookPictureOfNSADudes": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2TriedFaithOnThePowerbook": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN2Warehouse_SeenWong": {
+   "value": 0,
+   "type": "other"
+  },
+  "bN2WongIdeaIconActive": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3CoronerGotSlug": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3DidFieldOfficeCookThing": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3DiscussedCyrillicDocuments": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3DiscussedWhiteShadows": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3FirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3GaveCyrillicDocs": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3HaveCaptainsJournal": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3HaveNOTDiscussedCyrillicDocuments": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3HaveNoticedFingerprints": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3HavePayrollLog": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3SnoopedInOffice": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bN3TalkedToPendrell": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3TarakanCallingAmis": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3WongCopsAround": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bN3WongFinishedDrugsLine": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN3WongFinishedTarakanLine": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN4DidNOTCheckMessages": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN4FirstTimeSoSendAmisEmail": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bN4HasCookNOTArrived": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bN4InApartment": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN4SelectedEmotionIcon": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN4ShowingCook": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN4WillmoreKnowsAboutCooksPrintsOnTarakan": {
+   "value": 233,
+   "type": "bool"
+  },
+  "bN5BeenToCoroners": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN5FirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN5HYFirstTimeThrough": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN5HYReplayClip2": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN5HYReplayClip3": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN5HYReplayClip4": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN5HYReplayClip5": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN5HaulingYardBombActivated": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN6ArrestedSmolnikoff": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN6BeenToSmolnikoff": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN6FirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN6HaveStartedRaid": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN6WarpToSmolnikoffsLair": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN7FOHavePlayedPutItInClip": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bN7ShowedBadgeToNurse": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bN8DidNOTInterruptNSADudesMonologue": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bNOTAskedAboutDollar2": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bNOTAskedAboutGloria": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bNSAOutside": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bNotAvailable": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bNotRevivedCook": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bPlayedDontJustSitThere": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bPlayedNothing": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bPlayedRing": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bPlayedSaySomething": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bPlayedWantSomething": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bPutUpEmotionIcons": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bQuestionAsked": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bRYBoxcarEnabled": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bReplay_PadTimers": {
+   "value": 0,
+   "type": "other"
+  },
+  "bSaidAnything": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bSeenMatchingCrates": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bSeenRussianCrates": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bShowedBadge2Clerk": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bTRUE": {
+   "value": 9,
+   "type": "bool"
+  },
+  "bTalked2AmisNode1": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bTalkedAboutLeadPowder": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bTimeToHide": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bTimeToSleep": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bToldCookHeWillPutLaptopInCabinet": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bVisitedWongBoatCrimeScene": {
+   "value": 34,
+   "type": "bool"
+  },
+  "bWestOffClsCls": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bWestOnClsCls": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bWestOnClsOpn": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bWestOnOpnCls": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bWestOnOpnOpn": {
+   "value": 1,
+   "type": "bool"
+  },
+  "bWhiteShadowsIconFirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bWillmoreDead": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bWillmoreTranslatedCyrillicDoc": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bWongBackgroundChecked": {
+   "value": 0,
+   "type": "bool"
+  },
+  "bXL3FirstTime": {
+   "value": 0,
+   "type": "bool"
+  },
+  "cN3MentionTheResidents": {
+   "value": 1,
+   "type": "counter"
+  },
+  "iAllNode3QuestionsAsked": {
+   "value": 0,
+   "type": "int"
+  },
+  "iAllQuestionsAsked": {
+   "value": 0,
+   "type": "int"
+  },
+  "iAllQuestionsAskedSkinner": {
+   "value": 0,
+   "type": "int"
+  },
+  "iAskedEverythingOfWong": {
+   "value": 0,
+   "type": "int"
+  },
+  "iAstaScore": {
+   "value": 0,
+   "type": "int"
+  },
+  "iAstaThresholdLow": {
+   "value": 0,
+   "type": "int"
+  },
+  "iBarricadeGoonCount": {
+   "value": 0,
+   "type": "int"
+  },
+  "iCallActionID": {
+   "value": 1,
+   "type": "int"
+  },
+  "iCallTriggerID": {
+   "value": 0,
+   "type": "int"
+  },
+  "iClickCounter": {
+   "value": 0,
+   "type": "int"
+  },
+  "iCurrEmail": {
+   "value": 0,
+   "type": "int"
+  },
+  "iCurrInventory": {
+   "value": 0,
+   "type": "int"
+  },
+  "iCurrTime": {
+   "value": 0,
+   "type": "int"
+  },
+  "iCurrViewHangarWithX": {
+   "value": 0,
+   "type": "int"
+  },
+  "iCurrViewRailYard82434": {
+   "value": 0,
+   "type": "int"
+  },
+  "iCurrViewSpecial": {
+   "value": 0,
+   "type": "int"
+  },
+  "iCurrentMusic": {
+   "value": 0,
+   "type": "int"
+  },
+  "iDayNight": {
+   "value": 1,
+   "type": "int"
+  },
+  "iFBIPasswordCount": {
+   "value": 0,
+   "type": "int"
+  },
+  "iFrohikeCount": {
+   "value": 0,
+   "type": "int"
+  },
+  "iGotLogAndJournal": {
+   "value": 0,
+   "type": "int"
+  },
+  "iGrabAssCount": {
+   "value": 0,
+   "type": "int"
+  },
+  "iGuesses": {
+   "value": 0,
+   "type": "int"
+  },
+  "iIdeaCount": {
+   "value": 0,
+   "type": "int"
+  },
+  "iLastDayNight": {
+   "value": 0,
+   "type": "int"
+  },
+  "iMusicSelection": {
+   "value": 1,
+   "type": "int"
+  },
+  "iN3CookFOAllQuestionsAsked": {
+   "value": 0,
+   "type": "int"
+  },
+  "iN5HaulingYardAskedAstaAllQuestions": {
+   "value": 0,
+   "type": "int"
+  },
+  "iNumPhoneRings": {
+   "value": 1,
+   "type": "int"
+  },
+  "iNumPreFrohikeQuestions": {
+   "value": 0,
+   "type": "int"
+  },
+  "iNumQuestions": {
+   "value": 0,
+   "type": "int"
+  },
+  "iNumWillmoreEMailsToCook": {
+   "value": 1,
+   "type": "int"
+  },
+  "iNumberOfIdeas": {
+   "value": 83,
+   "type": "int"
+  },
+  "iNumberOfTimes": {
+   "value": 0,
+   "type": "int"
+  },
+  "iQuestionCount": {
+   "value": 0,
+   "type": "int"
+  },
+  "iRandomSounds": {
+   "value": 1,
+   "type": "int"
+  },
+  "iRauchPorchNSA": {
+   "value": 0,
+   "type": "int"
+  },
+  "iRingBell": {
+   "value": 0,
+   "type": "int"
+  },
+  "iScullyPasswordCount": {
+   "value": 0,
+   "type": "int"
+  },
+  "iTimes": {
+   "value": 1,
+   "type": "int"
+  },
+  "iToolsCounter": {
+   "value": 0,
+   "type": "int"
+  },
+  "iTotalQuestions": {
+   "value": 0,
+   "type": "int"
+  },
+  "iUberLoss": {
+   "value": 0,
+   "type": "int"
+  },
+  "iUberLossThresholdHigh": {
+   "value": 0,
+   "type": "int"
+  },
+  "iUberParanoia": {
+   "value": 0,
+   "type": "int"
+  },
+  "iUberXTrackThresholdHigh": {
+   "value": 0,
+   "type": "int"
+  },
+  "iWhichBomb": {
+   "value": 227,
+   "type": "int"
+  },
+  "nGunId": {
+   "value": 0,
+   "type": "id"
+  },
+  "nPdaId": {
+   "value": 0,
+   "type": "id"
+  }
+ }
+}

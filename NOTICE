@@ -1,0 +1,60 @@
+# NOTICE
+
+This project (The X-Files HDB Decoder, hereafter "the Project") is distributed
+under the MIT License (see LICENSE). This NOTICE clarifies third-party content,
+trademarks, and the scope of the Project.
+
+## 1. The HDB binary is NOT redistributed
+
+The Project decodes the `XFILES.HDB` data file shipped with the 1997 game
+*The X-Files: The Game*. The data file `XFILES.HDB` is the
+intellectual property of its publisher and is **not** redistributed by this
+Project. Users must legally possess a copy of the game to apply the decoder.
+
+The Project does not contain any game asset (video, audio, text, image,
+script). All test fixtures use either synthetic data or empirical checksums.
+
+## 2. NeoPersist 3.0 reference headers
+
+The directory `headers/neopersist_3.0/` contains 13 C++ header files plus
+`CNeoStream.cp` and `NeoAccess.cp`. These were authored by NeoLogic Systems
+Inc. between 1992 and 1996 and were publicly distributed as part of the
+CodeWarrior 7 SDK (Metrowerks, ~1996) and inside the *Doom for Macintosh*
+source code release (id Software).
+
+They are included here verbatim, **without modification**, for the sole
+purpose of interoperability — specifically, to allow developers to verify
+and extend the byte-direct decoder against the original API contract.
+Their inclusion is in keeping with the interoperability provisions of
+17 U.S.C. § 1201(f) (DMCA, USA), Article 6 of Directive 2009/24/EC
+(Computer Programs Directive, EU), and equivalent statutes elsewhere.
+
+If you are the copyright holder of these files and prefer they be removed,
+please open an issue and they will be deleted promptly.
+
+See `headers/neopersist_3.0/NOTICE.md` for file-by-file provenance.
+
+## 3. Trademarks and trade names
+
+- *The X-Files* and related marks are trademarks of Twentieth Century Fox
+  Film Corporation.
+- *HyperBole Studios* and *VirtualCinema* are trademarks of HyperBole
+  Studios Inc.
+- *NeoAccess*, *NeoPersist*, *NeoLogic*, and *Hammer* are trademarks of
+  NeoLogic Systems Inc.
+
+The Project is **not affiliated with, endorsed by, or sponsored by** any
+of these trademark holders. All trademarks remain the property of their
+respective owners. References are descriptive and nominative.
+
+## 4. Format-analysis disclosure
+
+The Project is the result of format analysis performed for purposes of
+interoperability (DMCA §1201(f), EU Directive 2009/24/EC Article 6), study,
+and historical preservation of a 1997 game. No anti-circumvention measures
+were bypassed: `XFILES.HDB` ships without encryption or DRM.
+
+## 5. No warranty
+
+This software is provided "AS IS" without warranty of any kind. See the
+LICENSE file for the full disclaimer.

@@ -1,0 +1,84 @@
+site_name: The X-Files - The Game - Decompilation Project
+site_description: Byte-direct decompilation/preservation project for The X-Files: The Game (1997)
+site_url: https://mthcore.github.io/x-files-game/
+repo_url: https://github.com/mthcore/x-files-game
+repo_name: mthcore/x-files-game
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - toc:
+      permalink: "#"
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.tilde
+  - pymdownx.mark
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Quickstart: QUICKSTART.md
+      - ISO files: ISO_FILES.md
+      - History: HISTORY.md
+      - Glossary: GLOSSARY.md
+      - Roadmap: ROADMAP.md
+  - HDB format:
+      - On-disk layout: FORMAT.md
+      - NeoPersist 3.0: NEOPERSIST.md
+      - Wire format (FOURCC mystery): WIRE_FORMAT.md
+      - Classes (51 VC*): CLASSES.md
+  - Game data:
+      - Game flow (scenes & order): GAME_FLOW.md
+      - Triggers: TRIGGERS.md
+      - Hotspots: HOTSPOTS.md
+      - Dialogues: DIALOGUES.md
+      - Decisions: DECISIONS.md
+  - Reference engine:
+      - How it works & rebuilding X-Files: REMAKE.md
+      - C++ game engine: ENGINE.md
+  - Other formats:
+      - PFF archives: PFF_FORMAT.md
+      - GAM savegames: GAM_FORMAT.md
+      - Localization DLLs: LOCALIZATION.md
+      - Video (XMV/NMV/AMV): VIDEO.md
+      - XT scripts: XT_SCRIPTS.md
+  - Reference (format notes):
+      - B-tree internals: reference/hdb_btree_internal.md
+      - Trigger system: reference/trigger_system_official.md
+      - W23.4 TLV per-class: reference/W23_4_hdb_tlv_per_class.md

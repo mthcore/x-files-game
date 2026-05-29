@@ -1,0 +1,1 @@
+// #define qNeoStandAlone 1#define qNeoPowerPlant 1#ifdef qNeoPowerPlant#include <MacHeaders.c>#endif#ifdef qNeoTCL#include <TCL #includes.cpp>#endif#include "NeoAccess.h"

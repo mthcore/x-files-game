@@ -1,0 +1,153 @@
+{
+ "_source": "XFILES.GAM + carved VM saves",
+ "_certainty": "byte-direct (literal authoring annotations)",
+ "documented_variables": {
+  "Pref_cInventory": "H=hide,V=visible",
+  "Pref_cFlashlightBrightness": "M=med,B=bright,D=dim",
+  "Pref_cFlashlightBeam": "M=med,W=wide,S=small",
+  "Pref_cActionSceneDifficulty": "S=std,E=easy,H=hard",
+  "Pref_bSaveGameOnExit": "A=ask,Y=yes,N=no",
+  "Pref_iVolumeDialog": "0-100",
+  "Pref_iVolumeMusic": "0-100",
+  "Pref_iVolumeEffect": "0-100",
+  "Pref_cAutoSetDepth": "A=ask,Y=yes,N=no",
+  "bSuperAgent": "TRUE=All equipment",
+  "cHowIsWillmoreSleeping": "B=like a baby, W=not a wink",
+  "iCurrNode": "+10 for links",
+  "cViewState": "a=default,b=both,d=darkNSA,t=tanNSA",
+  "iAstaIdeaCounter": "0-3",
+  "iIdeaAskCounter": "6 = done",
+  "iWhichWayDidWeGo": "0=neither, 1=left, 2=right",
+  "Pref_cAutoSetResolution": "A=Ask, Y=Yes, N=No",
+  "IFL_cINGHasFoundRauch": "Y=Yes, N=No, D=Done with this var",
+  "Pref_iVolumeGame": "0-100",
+  "IFL_bHasWillmoreReadLetter": "TRUE at start, FALSE if loss falls",
+  "IFL_cGotSomethingFromWarehouseN2": "Y=Yes,N=No,D=Done With Var",
+  "cBlastEffect": "a=normal, k=key, n=no key",
+  "IFL_bINGShowCook": "fingerprint sequence",
+  "iN3CoronerEnableTarakanIdeaIcon": "3 or greater",
+  "IFL_bINGShowCrewCutMessage": "fingerprint sequence II",
+  "bReadBarbaraLetter": "specifically for Cook N2",
+  "bN3WongTravellingOnFoot": "no PDA",
+  "cAIWongsBoatWhereAreWe": "B=Badge, A=Arley, a=Asta, b=boat, N=None, D=Done",
+  "cAIComityWhereAreWe": "N=None, P=Phone, D=Done",
+  "cAISmolnikoffWhereAreWe": "C=Cover Me, G=Goons, E=Clues, P=Process Gun, N=None, D=Done",
+  "cAIFieldOfficeWhereAreWe": "P=Phone, A=APB/Case Files, E=Equipment, W=Warehouse, T=Node 3, N=None, D=Done",
+  "IFL_cDBoxWhereAreWe": "F=FBI Password, P=Photo Viewer, S=Scully's Laptop, N=Nowhere"
+ },
+ "enum_legends": {
+  "Pref_cInventory": {
+   "H": "hide",
+   "V": "visible"
+  },
+  "Pref_cFlashlightBrightness": {
+   "M": "med",
+   "B": "bright",
+   "D": "dim"
+  },
+  "Pref_cFlashlightBeam": {
+   "M": "med",
+   "W": "wide",
+   "S": "small"
+  },
+  "Pref_cActionSceneDifficulty": {
+   "S": "std",
+   "E": "easy",
+   "H": "hard"
+  },
+  "Pref_bSaveGameOnExit": {
+   "A": "ask",
+   "Y": "yes",
+   "N": "no"
+  },
+  "Pref_cAutoSetDepth": {
+   "A": "ask",
+   "Y": "yes",
+   "N": "no"
+  },
+  "cHowIsWillmoreSleeping": {
+   "B": "like a baby",
+   "W": "not a wink"
+  },
+  "cViewState": {
+   "a": "default",
+   "b": "both",
+   "d": "darkNSA",
+   "t": "tanNSA"
+  },
+  "iWhichWayDidWeGo": {
+   "0": "neither",
+   "1": "left",
+   "2": "right"
+  },
+  "Pref_cAutoSetResolution": {
+   "A": "Ask",
+   "Y": "Yes",
+   "N": "No"
+  },
+  "IFL_cINGHasFoundRauch": {
+   "Y": "Yes",
+   "N": "No",
+   "D": "Done with this var"
+  },
+  "IFL_cGotSomethingFromWarehouseN2": {
+   "Y": "Yes",
+   "N": "No",
+   "D": "Done With Var"
+  },
+  "cBlastEffect": {
+   "a": "normal",
+   "k": "key",
+   "n": "no key"
+  },
+  "cAIWongsBoatWhereAreWe": {
+   "B": "Badge",
+   "A": "Arley",
+   "a": "Asta",
+   "b": "boat",
+   "N": "None",
+   "D": "Done"
+  },
+  "cAIComityWhereAreWe": {
+   "N": "None",
+   "P": "Phone",
+   "D": "Done"
+  },
+  "cAISmolnikoffWhereAreWe": {
+   "C": "Cover Me",
+   "G": "Goons",
+   "E": "Clues",
+   "P": "Process Gun",
+   "N": "None",
+   "D": "Done"
+  },
+  "cAIFieldOfficeWhereAreWe": {
+   "P": "Phone",
+   "A": "APB/Case Files",
+   "E": "Equipment",
+   "W": "Warehouse",
+   "T": "Node 3",
+   "N": "None",
+   "D": "Done"
+  },
+  "IFL_cDBoxWhereAreWe": {
+   "F": "FBI Password",
+   "P": "Photo Viewer",
+   "S": "Scully's Laptop",
+   "N": "Nowhere"
+  }
+ },
+ "condition_labels": [
+  "Has talked to Shanks?",
+  "Is phone NOT ringing?",
+  "b Asked If Romantically involved?",
+  "b Has Shanks NOT phoned?",
+  "b Has W retrieved case files?",
+  "b Has Willmore spoken with Skinner?",
+  "b Is Cook in doorway?",
+  "b Is phone NOT ringing?",
+  "b Is warehouse locked?",
+  "b NSA car spotted?",
+  "b Searched Box Car?"
+ ]
+}

@@ -1,0 +1,845 @@
+{
+  "total_classes": 51,
+  "classes": [
+    {
+      "class_id": "0x27",
+      "class_id_int": 39,
+      "name": "VCTitle",
+      "size_bytes": 128,
+      "parent": "VCObject",
+      "n_ops": 10,
+      "ops_summary": [
+        "BaseInit",
+        "Versioned(v>1,1 ops)",
+        "SubObj(sub_f)",
+        "SubObj(sub_h)",
+        "SubObj(sub_g)",
+        "SubObj(sub_i)",
+        "Dword(tag=0x6a,j)",
+        "Dword(tag=0x6b,k)",
+        "Short(tag=0x6c,l)",
+        "Short(tag=0x6d,m)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). v>1 adds children list. Read order : f,h,g,i (NOT alphabetical)."
+    },
+    {
+      "class_id": "0x28",
+      "class_id_int": 40,
+      "name": "VCNode",
+      "size_bytes": 112,
+      "parent": "VCObject",
+      "n_ops": 4,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(children)",
+        "Dword(tag=0x66,f)",
+        "Dword(tag=0x67,g)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). children list + 2 dwords."
+    },
+    {
+      "class_id": "0x29",
+      "class_id_int": 41,
+      "name": "VCLocaton",
+      "size_bytes": 112,
+      "parent": "VCObject",
+      "n_ops": 6,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(children)",
+        "Dword(tag=0x66,f)",
+        "Dword(tag=0x67,g)",
+        "Dword(tag=0x68,h)",
+        "Byte(tag=0x69,i)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). (sic: 'VCLocaton' typo from binary)"
+    },
+    {
+      "class_id": "0x2a",
+      "class_id_int": 42,
+      "name": "VCViewPoint",
+      "size_bytes": 96,
+      "parent": "VCObject",
+      "n_ops": 5,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)",
+        "SubObj(sub_f)",
+        "Dword(tag=0x67,g)",
+        "Dword(tag=0x68,h)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x2b",
+      "class_id_int": 43,
+      "name": "VCView",
+      "size_bytes": 96,
+      "parent": "VCObject",
+      "n_ops": 7,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e_at_0x28)",
+        "Dword(tag=0x66,f_at_0x2c)",
+        "Dword(tag=0x67,g_at_0x30)",
+        "Dword(tag=0x68,h_at_0x34)",
+        "Dword(tag=0x69,i_at_0x38)",
+        "Dword(tag=0x6a,j_at_0x3c)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). 6 dwords sequential."
+    },
+    {
+      "class_id": "0x2c",
+      "class_id_int": 44,
+      "name": "VCCharacter",
+      "size_bytes": 48,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). 1 dword."
+    },
+    {
+      "class_id": "0x2d",
+      "class_id_int": 45,
+      "name": "VCCharView",
+      "size_bytes": 96,
+      "parent": "VCObject",
+      "n_ops": 7,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e)",
+        "SubObj(sub_f)",
+        "Dword(tag=0x67,g)",
+        "Dword(tag=0x68,h)",
+        "Dword(tag=0x69,i)",
+        "Dword(tag=0x6a,j)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x2e",
+      "class_id_int": 46,
+      "name": "VCCharViewList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x30",
+      "class_id_int": 48,
+      "name": "VCName",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 3,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)",
+        "SubObj(sub_f)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). 2 polymorphic sub-objects."
+    },
+    {
+      "class_id": "0x31",
+      "class_id_int": 49,
+      "name": "VCConversation",
+      "size_bytes": 128,
+      "parent": "VCObject",
+      "n_ops": 7,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e_at_0x28)",
+        "Dword(tag=0x66,f_at_0x2c)",
+        "Dword(tag=0x68,h_at_0x34)",
+        "Dword(tag=0x6a,j_at_0x3c)",
+        "Versioned(v>2,2 ops)",
+        "Versioned(v>3,1 ops)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). v>2 adds g,i; v>3 adds k (byte_alt slot 0x7c)."
+    },
+    {
+      "class_id": "0x32",
+      "class_id_int": 50,
+      "name": "VCConversationList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x33",
+      "class_id_int": 51,
+      "name": "VCNav",
+      "size_bytes": 56,
+      "parent": "VCObject",
+      "n_ops": 4,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e_at_0x28)",
+        "Dword(tag=0x66,f_at_0x2c)",
+        "Dword(tag=0x67,g_at_0x30)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). 3 sequential dwords."
+    },
+    {
+      "class_id": "0x34",
+      "class_id_int": 52,
+      "name": "VCNav_List",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x35",
+      "class_id_int": 53,
+      "name": "VCAssetRef",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 6,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)",
+        "Dword(tag=0x66,f)",
+        "Dword(tag=0x67,g)",
+        "Byte(tag=0x68,h)",
+        "Byte(tag=0x69,i)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x36",
+      "class_id_int": 54,
+      "name": "VCAssetRefList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x37",
+      "class_id_int": 55,
+      "name": "VCExplorable",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 3,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)",
+        "Dword(tag=0x66,f)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x38",
+      "class_id_int": 56,
+      "name": "VCExplorableList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x39",
+      "class_id_int": 57,
+      "name": "VCHotSpot",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 3,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)",
+        "Dword(tag=0x66,f)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). coords + action_ids carried in sub_e VCAssetRef sub-object."
+    },
+    {
+      "class_id": "0x3a",
+      "class_id_int": 58,
+      "name": "VCHotSpotList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x3b",
+      "class_id_int": 59,
+      "name": "VCStdHotSpotList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x3c",
+      "class_id_int": 60,
+      "name": "VCAssetCategory",
+      "size_bytes": 48,
+      "parent": "VCObject",
+      "n_ops": 3,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e)",
+        "Byte(tag=0x66,f)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x3d",
+      "class_id_int": 61,
+      "name": "VCCursor",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 4,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)",
+        "Dword(tag=0x66,f)",
+        "Dword(tag=0x67,g)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x3e",
+      "class_id_int": 62,
+      "name": "VCDefaultCursors",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). Inline sub-collection."
+    },
+    {
+      "class_id": "0x3f",
+      "class_id_int": 63,
+      "name": "VCDefaultHotSpots",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x41",
+      "class_id_int": 65,
+      "name": "VCAction",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 3,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(expr)",
+        "Byte(tag=0x66,action_type)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). expr = polymorphic Expression sub-object."
+    },
+    {
+      "class_id": "0x42",
+      "class_id_int": 66,
+      "name": "VCActionList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x43",
+      "class_id_int": 67,
+      "name": "VCBlob",
+      "size_bytes": 48,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)"
+      ],
+      "instances_seen": 0,
+      "notes": "base + 1 polymorphic sub-object at +0x28."
+    },
+    {
+      "class_id": "0x44",
+      "class_id_int": 68,
+      "name": "VCPlayer",
+      "size_bytes": 48,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal) (thunks to VCCharacter::Read)."
+    },
+    {
+      "class_id": "0x45",
+      "class_id_int": 69,
+      "name": "VCEnabled",
+      "size_bytes": 48,
+      "parent": "VCObject",
+      "n_ops": 4,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e)",
+        "Byte(tag=0x66,f)",
+        "Byte(tag=0x67,g)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x46",
+      "class_id_int": 70,
+      "name": "VCEmotionIcon",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 8,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e_at_0x28)",
+        "Dword(tag=0x66,f_at_0x2c)",
+        "Dword(tag=0x67,g_at_0x30)",
+        "Dword(tag=0x68,h_at_0x34)",
+        "Dword(tag=0x69,i_at_0x3c)",
+        "Dword(tag=0x6a,j_at_0x40)",
+        "Versioned(v>3,1 ops)"
+      ],
+      "instances_seen": 0,
+      "notes": "Icon family \u2014 shared (internal) reader, 7 dwords."
+    },
+    {
+      "class_id": "0x47",
+      "class_id_int": 71,
+      "name": "VCActionIcon",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 8,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e_at_0x28)",
+        "Dword(tag=0x66,f_at_0x2c)",
+        "Dword(tag=0x67,g_at_0x30)",
+        "Dword(tag=0x68,h_at_0x34)",
+        "Dword(tag=0x69,i_at_0x3c)",
+        "Dword(tag=0x6a,j_at_0x40)",
+        "Versioned(v>3,1 ops)"
+      ],
+      "instances_seen": 0,
+      "notes": "Icon family \u2014 shared (internal) reader, 7 dwords."
+    },
+    {
+      "class_id": "0x48",
+      "class_id_int": 72,
+      "name": "VCIdeaIcon",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 8,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e_at_0x28)",
+        "Dword(tag=0x66,f_at_0x2c)",
+        "Dword(tag=0x67,g_at_0x30)",
+        "Dword(tag=0x68,h_at_0x34)",
+        "Dword(tag=0x69,i_at_0x3c)",
+        "Dword(tag=0x6a,j_at_0x40)",
+        "Versioned(v>3,1 ops)"
+      ],
+      "instances_seen": 0,
+      "notes": "Icon family \u2014 shared (internal) reader, 7 dwords."
+    },
+    {
+      "class_id": "0x49",
+      "class_id_int": 73,
+      "name": "VCEvidenceIcon",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 8,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e_at_0x28)",
+        "Dword(tag=0x66,f_at_0x2c)",
+        "Dword(tag=0x67,g_at_0x30)",
+        "Dword(tag=0x68,h_at_0x34)",
+        "Dword(tag=0x69,i_at_0x3c)",
+        "Dword(tag=0x6a,j_at_0x40)",
+        "Versioned(v>3,1 ops)"
+      ],
+      "instances_seen": 0,
+      "notes": "Icon family \u2014 shared (internal) reader, 7 dwords."
+    },
+    {
+      "class_id": "0x4b",
+      "class_id_int": 75,
+      "name": "VCInventory",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 8,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e_at_0x28)",
+        "Dword(tag=0x66,f_at_0x2c)",
+        "Dword(tag=0x67,g_at_0x30)",
+        "Dword(tag=0x68,h_at_0x34)",
+        "Dword(tag=0x69,i_at_0x3c)",
+        "Dword(tag=0x6a,j_at_0x40)",
+        "Versioned(v>3,1 ops)"
+      ],
+      "instances_seen": 0,
+      "notes": "Icon family \u2014 shared (internal) reader, 7 dwords."
+    },
+    {
+      "class_id": "0x4c",
+      "class_id_int": 76,
+      "name": "VCIdeaMap",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 3,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e)",
+        "Dword(tag=0x66,f)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x4d",
+      "class_id_int": 77,
+      "name": "VCIdeaMapList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x4e",
+      "class_id_int": 78,
+      "name": "VCIFaceLayout",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 4,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)",
+        "Dword(tag=0x66,f)",
+        "Byte(tag=0x67,g)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x4f",
+      "class_id_int": 79,
+      "name": "VCInterfaceItem",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 6,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)",
+        "Dword(tag=0x66,f)",
+        "Dword(tag=0x67,g)",
+        "Short(tag=0x68,h)",
+        "Versioned(v>4,1 ops)"
+      ],
+      "instances_seen": 0,
+      "notes": "v>4 adds short i. On disk slot 0xc0 carries h ; the decoder uses read_short."
+    },
+    {
+      "class_id": "0x50",
+      "class_id_int": 80,
+      "name": "VCString",
+      "size_bytes": 48,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). 1 polymorphic sub-object."
+    },
+    {
+      "class_id": "0x51",
+      "class_id_int": 81,
+      "name": "VCTrigger",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 1,
+      "ops_summary": [
+        "BaseInit"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal) is NOP \u2014 VCTrigger has only the base init, no extra fields. Trigger composition lives in its parent VCNode hierarchy."
+    },
+    {
+      "class_id": "0x52",
+      "class_id_int": 82,
+      "name": "VCTriggerList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x53",
+      "class_id_int": 83,
+      "name": "VCVariable",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 6,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)",
+        "Dword(tag=0x67,g)",
+        "Dword(tag=0x69,i)",
+        "Byte(tag=0x68,h)",
+        "Byte(tag=0x66,f)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). NOTE order : e(sub),g,i,h,f."
+    },
+    {
+      "class_id": "0x54",
+      "class_id_int": 84,
+      "name": "VCStdAction",
+      "size_bytes": 64,
+      "parent": "VCObject",
+      "n_ops": 4,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,e)",
+        "Dword(tag=0x66,f)",
+        "Dword(tag=0x68,h)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). Skips tag 'g' (intentional)."
+    },
+    {
+      "class_id": "0x55",
+      "class_id_int": 85,
+      "name": "VCStdActionList",
+      "size_bytes": 68,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "ObjList(items)"
+      ],
+      "instances_seen": 0,
+      "notes": "List family \u2014 iterates polymorphic children via (internal)."
+    },
+    {
+      "class_id": "0x56",
+      "class_id_int": 86,
+      "name": "VCConversationHistory",
+      "size_bytes": 128,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_f_at_0x3c)"
+      ],
+      "instances_seen": 0,
+      "notes": "Family pda methods \u2014 sub-object via (internal)."
+    },
+    {
+      "class_id": "0x57",
+      "class_id_int": 87,
+      "name": "VCGameState",
+      "size_bytes": 428,
+      "parent": "VCObject",
+      "n_ops": 34,
+      "ops_summary": [
+        "BaseInit",
+        "Dword(tag=0x65,flag_e)",
+        "Dword(tag=0x66,flag_f)",
+        "Dword(tag=0x67,flag_g)",
+        "Dword(tag=0x68,flag_h)",
+        "Dword(tag=0x69,flag_i)",
+        "Dword(tag=0x6a,flag_j)",
+        "Dword(tag=0x6b,flag_k)",
+        "Dword(tag=0x6c,flag_l)",
+        "Dword(tag=0x6d,flag_m)",
+        "Dword(tag=0x6e,flag_n)",
+        "Dword(tag=0x6f,flag_o)",
+        "Dword(tag=0x70,flag_p)",
+        "Dword(tag=0x71,flag_q)",
+        "Dword(tag=0x72,flag_r)",
+        "Dword(tag=0x73,flag_s)",
+        "SubObj(sub_t)",
+        "SubObj(sub_u)",
+        "SubObj(sub_v)",
+        "SubObj(sub_w)",
+        "SubObj(sub_x)",
+        "Byte(tag=0x79,byte_flag_0)",
+        "Byte(tag=0x7a,byte_flag_1)",
+        "Byte(tag=0x7b,byte_flag_2)",
+        "Byte(tag=0x7c,byte_flag_3)",
+        "Byte(tag=0x7d,byte_flag_4)",
+        "Byte(tag=0x7e,byte_flag_5)",
+        "Byte(tag=0x7f,byte_flag_6)",
+        "Dword(tag=0x80,dword_0x80)",
+        "Byte(tag=0x81,byte_0x81)",
+        "Dword(tag=0x82,dword_0x82)",
+        "Dword(tag=0x83,counter_0)",
+        "Dword(tag=0x84,counter_1)",
+        "Short(tag=0x85,short_value)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal). Master singleton \u2014 670 GAM-style game vars accessed via this."
+    },
+    {
+      "class_id": "0x58",
+      "class_id_int": 88,
+      "name": "VCPDANotes",
+      "size_bytes": 128,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_f_at_0x3c)"
+      ],
+      "instances_seen": 0,
+      "notes": "Family pda methods \u2014 sub-object via (internal)."
+    },
+    {
+      "class_id": "0x59",
+      "class_id_int": 89,
+      "name": "VCPhoto",
+      "size_bytes": 120,
+      "parent": "VCObject",
+      "n_ops": 7,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_e)",
+        "Dword(tag=0x66,f)",
+        "Dword(tag=0x67,g)",
+        "SubObj(sub_h)",
+        "Byte(tag=0x69,i)",
+        "Byte(tag=0x6a,j)"
+      ],
+      "instances_seen": 0,
+      "notes": "(internal)."
+    },
+    {
+      "class_id": "0x5a",
+      "class_id_int": 90,
+      "name": "VCEmail",
+      "size_bytes": 120,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_f_at_0x3c)"
+      ],
+      "instances_seen": 0,
+      "notes": "Email family \u2014 single polymorphic sub-object at +0x3c via (internal)."
+    },
+    {
+      "class_id": "0x5b",
+      "class_id_int": 91,
+      "name": "VCEmailRead",
+      "size_bytes": 120,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_f_at_0x3c)"
+      ],
+      "instances_seen": 0,
+      "notes": "Email family \u2014 single polymorphic sub-object at +0x3c via (internal)."
+    },
+    {
+      "class_id": "0x5c",
+      "class_id_int": 92,
+      "name": "VCEmailPending",
+      "size_bytes": 120,
+      "parent": "VCObject",
+      "n_ops": 2,
+      "ops_summary": [
+        "BaseInit",
+        "SubObj(sub_f_at_0x3c)"
+      ],
+      "instances_seen": 0,
+      "notes": "Email family \u2014 single polymorphic sub-object at +0x3c via (internal)."
+    }
+  ]
+}

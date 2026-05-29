@@ -1,0 +1,1571 @@
+{
+ "_source": "XFILES.HDB class 0x54 VCStdAction records",
+ "_about": "Every VCStdAction record is decoded byte-direct as a 4xBE-u16 header (persistent_record_id, reserved=0, action_opcode, flags) followed by opcode-specific argument bytes. Distinct opcodes are tabulated with their flags, argument-size histogram, and embedded ASCII runs.",
+ "_grammar": {
+  "byte_0_1": "BE u16 persistent_record_id (intra-class id)",
+  "byte_2_3": "BE u16 reserved (observed 0 in all 60 records)",
+  "byte_4_5": "BE u16 action_opcode (the action verb)",
+  "byte_6_7": "BE u16 flags (0, 1, or 0x8xxx variants)",
+  "byte_8_plus": "opcode-specific argument bytes"
+ },
+ "_honesty": "candidate_effect is 'undetermined' for every opcode because the opcode->verb mapping is not part of the public format. The byte-direct fields (opcode, flags, args_hex, ASCII runs) are emitted as evidence for downstream analysis.",
+ "stats": {
+  "vcstdaction_records_total": 60,
+  "vcstdaction_records_decoded": 60,
+  "vcstdaction_short_records": 0,
+  "distinct_action_types": 23,
+  "action_types_byte_direct_effect": 0,
+  "action_types_undetermined": 23,
+  "distinct_persistent_record_ids": 60,
+  "persistent_record_id_collisions": 0,
+  "flags_histogram": {
+   "0": 32,
+   "1": 14,
+   "768": 2,
+   "895": 2,
+   "32768": 1,
+   "33024": 7,
+   "33536": 1,
+   "34304": 1
+  },
+  "csv_action_ids_loaded": 807
+ },
+ "action_types": [
+  {
+   "action_type": 9,
+   "count": 4,
+   "flags_seen": [
+    768,
+    895
+   ],
+   "arg_size_min": 0,
+   "arg_size_max": 104,
+   "arg_size_histogram": {
+    "0": 1,
+    "16": 1,
+    "24": 1,
+    "104": 1
+   },
+   "sample_args": [
+    "0000085d00000000013134206e657720",
+    "00000862000000000101300130013802000027100000025d010000786d7601300130000000010001023334566964656f7f4e6f646520387f52617563687f53633130387061727432462e6d6f760130013702313258567f32313730342e786d760130013000013000",
+    "00000876000000000100000000000000d676000000010054"
+   ],
+   "ascii_runs_seen": [
+    "14 new ",
+    "xmv",
+    "34Video",
+    "Node 8",
+    "Rauch"
+   ],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 9 carries ASCII arguments in some records but the opcode->verb table is not in the public format; no claim made",
+   "persistent_record_ids": [
+    7320,
+    7352,
+    24584,
+    50464
+   ]
+  },
+  {
+   "action_type": 11,
+   "count": 3,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 48,
+   "arg_size_histogram": {
+    "8": 2,
+    "48": 1
+   },
+   "sample_args": [
+    "000005d7000000610003000000000000d2f200000001005411f80000000b0000000005d7000000610003000000000000",
+    "000005d700000061",
+    "0000000000000000"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 11 byte-direct decoded over 3 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    4568,
+    4632,
+    9400
+   ]
+  },
+  {
+   "action_type": 13,
+   "count": 4,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "8": 4
+   },
+   "sample_args": [
+    "0000000000000000",
+    "0000000000000000",
+    "0000000000000000",
+    "0000000000000000"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 13 byte-direct decoded over 4 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    56872,
+    56888,
+    56904,
+    56920
+   ]
+  },
+  {
+   "action_type": 15,
+   "count": 4,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "8": 4
+   },
+   "sample_args": [
+    "0000000000000000",
+    "0000000000000000",
+    "0000000000000000",
+    "0000000000000000"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 15 byte-direct decoded over 4 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    56696,
+    56856,
+    64760,
+    65336
+   ]
+  },
+  {
+   "action_type": 16,
+   "count": 4,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 0,
+   "arg_size_max": 96,
+   "arg_size_histogram": {
+    "0": 1,
+    "8": 2,
+    "96": 1
+   },
+   "sample_args": [
+    "0000000000000000",
+    "00000000000000008e000000000100200054eab000014fb60054ebe800014fb80054ec1800014fba0054ec4800014fbc0054ec7800014fbe0054eca800014fc00054ecd800014fc20054ed0800014fc40054ed3800014fc60054ed6800014fc8",
+    "0000000000000000"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 16 byte-direct decoded over 4 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    56680,
+    56760,
+    64824,
+    64968
+   ]
+  },
+  {
+   "action_type": 17,
+   "count": 8,
+   "flags_seen": [
+    0,
+    33024
+   ],
+   "arg_size_min": 0,
+   "arg_size_max": 32,
+   "arg_size_histogram": {
+    "0": 5,
+    "24": 1,
+    "32": 2
+   },
+   "sample_args": [
+    "0000000000000000d2f600000001004ea348000000100600",
+    "d40000000001000000010054ad100000000b4944202000000001ff0000000000",
+    "0000000000000000dc0000000001005505400000001800014fcc000000000443"
+   ],
+   "ascii_runs_seen": [
+    "ID  "
+   ],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 17 carries ASCII arguments in some records but the opcode->verb table is not in the public format; no claim made",
+   "persistent_record_ids": [
+    8248,
+    14632,
+    39128,
+    39336,
+    39544,
+    44440,
+    45688,
+    65008
+   ]
+  },
+  {
+   "action_type": 18,
+   "count": 6,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 32,
+   "arg_size_histogram": {
+    "8": 5,
+    "32": 1
+   },
+   "sample_args": [
+    "0000000000000000",
+    "0000000000000000",
+    "0000000000000000",
+    "0000000000000000df0000000001005503d00000001b00014fb4000000000443"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 18 byte-direct decoded over 6 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    56712,
+    56736,
+    57336,
+    64776,
+    64800,
+    65352
+   ]
+  },
+  {
+   "action_type": 20,
+   "count": 5,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 24,
+   "arg_size_histogram": {
+    "8": 4,
+    "24": 1
+   },
+   "sample_args": [
+    "0000000000000000",
+    "0000000000000000",
+    "0000000000000000d0690000000100550578000000180001",
+    "0000000000000000"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 20 byte-direct decoded over 5 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    56656,
+    65032,
+    65056,
+    65272,
+    65296
+   ]
+  },
+  {
+   "action_type": 21,
+   "count": 2,
+   "flags_seen": [
+    0,
+    33536
+   ],
+   "arg_size_min": 16,
+   "arg_size_max": 192,
+   "arg_size_histogram": {
+    "16": 1,
+    "192": 1
+   },
+   "sample_args": [
+    "00000757000000000000000000000000",
+    "0000000000000000d6f6000000010054e8400000001b00014f9a0000000004438c6c0000000100200054d96800014f990054daa000014f9b0054dad000014f9d0054db0000014f9f0054e8b800014fa10054e8e800014fa30054e91800014fa50054e94800014fa70054e97800014fa90054e9a800014fab0054e9d800014fad0054ea0800014faf0054ea3800014fb10054ea6800014fb30054ea9800014fb50054ebd000014fb70054ec0000014fb90054ec3000014fbb0054ec6000014fbd"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 21 appears with high-byte flags [0, 33536] which indicate a chained variant; verb semantics not in public format",
+   "persistent_record_ids": [
+    5048,
+    57360
+   ]
+  },
+  {
+   "action_type": 24,
+   "count": 3,
+   "flags_seen": [
+    1
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "8": 3
+   },
+   "sample_args": [
+    "4f64000000000443",
+    "4f68000000000443",
+    "4f98000000000443"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 24 byte-direct decoded over 3 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    58656,
+    58712,
+    59432
+   ]
+  },
+  {
+   "action_type": 25,
+   "count": 1,
+   "flags_seen": [
+    1
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "8": 1
+   },
+   "sample_args": [
+    "4f52000000000443"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 25 byte-direct decoded over 1 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    58384
+   ]
+  },
+  {
+   "action_type": 27,
+   "count": 4,
+   "flags_seen": [
+    1
+   ],
+   "arg_size_min": 0,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "0": 1,
+    "8": 3
+   },
+   "sample_args": [
+    "4f50000000000443",
+    "4f54000000000443",
+    "4f62000000000443"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 27 byte-direct decoded over 4 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    58352,
+    58416,
+    58624,
+    58768
+   ]
+  },
+  {
+   "action_type": 30,
+   "count": 2,
+   "flags_seen": [
+    1
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "8": 2
+   },
+   "sample_args": [
+    "4f66000000000443",
+    "4f6a000000000443"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 30 byte-direct decoded over 2 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    58680,
+    58736
+   ]
+  },
+  {
+   "action_type": 32,
+   "count": 1,
+   "flags_seen": [
+    1
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "8": 1
+   },
+   "sample_args": [
+    "4f4e000000000443"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 32 byte-direct decoded over 1 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    58320
+   ]
+  },
+  {
+   "action_type": 33,
+   "count": 1,
+   "flags_seen": [
+    34304
+   ],
+   "arg_size_min": 0,
+   "arg_size_max": 0,
+   "arg_size_histogram": {
+    "0": 1
+   },
+   "sample_args": [],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 33 appears with high-byte flags [34304] which indicate a chained variant; verb semantics not in public format",
+   "persistent_record_ids": [
+    11048
+   ]
+  },
+  {
+   "action_type": 38,
+   "count": 1,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 240,
+   "arg_size_max": 240,
+   "arg_size_histogram": {
+    "240": 1
+   },
+   "sample_args": [
+    "0000000000000000023335566964656f7f4e6f646520367f4372696d65204c61627f53633838263839412e6d6f760130013502313258567f32313132302e786d7601300130003036023335566964656f7f4e6f646520367f4372696d65204c61627f53633838263839452e6d6f760130013502313258567f32313132382e786d7601300130003556023335566964656f7f4e6f646520367f4372696d65204c61627f53633838263839482e6d6f760130013002313258567f32313133342e786d7601300130006f76023335566964656f7f4e6f646520367f4372696d65204c61627f536338382638394b2e6d6f760130"
+   ],
+   "ascii_runs_seen": [
+    "35Video",
+    "Node 6",
+    "Crime Lab",
+    "Sc88&89A.mov",
+    "12XV"
+   ],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 38 carries ASCII arguments in some records but the opcode->verb table is not in the public format; no claim made",
+   "persistent_record_ids": [
+    49528
+   ]
+  },
+  {
+   "action_type": 44,
+   "count": 1,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 176,
+   "arg_size_max": 176,
+   "arg_size_histogram": {
+    "176": 1
+   },
+   "sample_args": [
+    "0000000000000000d3710000000100522b6000000099000082c93f000000090d42756c6c657420262043616e63657220477574730000000000000aed0000025d000000000000db8401cb000000008906d6f6000000010026e2d0000000330000000000000000000000000b2b0000025d0000000000000b240000025d00000006dcac00000001004468380000003e040134d000000000035200000b2c0000025d0000000000000b240000025d00000006"
+   ],
+   "ascii_runs_seen": [
+    "R+`",
+    "Bullet & Cancer Guts",
+    "Dh8"
+   ],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 44 carries ASCII arguments in some records but the opcode->verb table is not in the public format; no claim made",
+   "persistent_record_ids": [
+    25280
+   ]
+  },
+  {
+   "action_type": 55,
+   "count": 1,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 240,
+   "arg_size_max": 240,
+   "arg_size_histogram": {
+    "240": 1
+   },
+   "sample_args": [
+    "000000000000000047726170686963735c636f6d70757465722d73637265656e735c67656e6572616c5c47656e6572616c5f53656e64696e6750726f674261722e6d6f7600000000566964656f5c4e6f646520355c4170743a4761732053746174696f6e3a4c756b652067657473206672696564204e4152434f000000000000566964656f5c4e6f646520355c4170743a57696c6c6d6f726520225468617420636f756c64206265204d756c64657222206e6172636f0000566964656f5c4e6f646520355c4170743a57696c6c6d6f726520225468617420636f756c64206265204d756c64657222206e6172636f0000"
+   ],
+   "ascii_runs_seen": [
+    "Graphics\\computer-screens\\general\\General_SendingProgBar.mov",
+    "Video\\Node 5\\Apt:Gas Station:Luke gets fried NARCO",
+    "Video\\Node 5\\Apt:Willmore \"That could be Mulder\" narco"
+   ],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 55 carries ASCII arguments in some records but the opcode->verb table is not in the public format; no claim made",
+   "persistent_record_ids": [
+    7656
+   ]
+  },
+  {
+   "action_type": 61,
+   "count": 1,
+   "flags_seen": [
+    32768
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "8": 1
+   },
+   "sample_args": [
+    "54c900010e4a1121"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 61 appears with high-byte flags [32768] which indicate a chained variant; verb semantics not in public format",
+   "persistent_record_ids": [
+    7392
+   ]
+  },
+  {
+   "action_type": 73,
+   "count": 1,
+   "flags_seen": [
+    1
+   ],
+   "arg_size_min": 64,
+   "arg_size_max": 64,
+   "arg_size_histogram": {
+    "64": 1
+   },
+   "sample_args": [
+    "4a19100000000319023336566964656f7f4e6f646520337f436f726f6e65727f736330363070617274314e2e6d6f760130043233333301300000000000000000"
+   ],
+   "ascii_runs_seen": [
+    "36Video",
+    "Node 3",
+    "Coroner",
+    "sc060part1N.mov",
+    "2333"
+   ],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 73 carries ASCII arguments in some records but the opcode->verb table is not in the public format; no claim made",
+   "persistent_record_ids": [
+    19456
+   ]
+  },
+  {
+   "action_type": 82,
+   "count": 1,
+   "flags_seen": [
+    1
+   ],
+   "arg_size_min": 32,
+   "arg_size_max": 32,
+   "arg_size_histogram": {
+    "32": 1
+   },
+   "sample_args": [
+    "28ec02000000034b47726170686963733a47616d653a48454c50207363726565"
+   ],
+   "ascii_runs_seen": [
+    "KGraphics:Game:HELP scree"
+   ],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 82 carries ASCII arguments in some records but the opcode->verb table is not in the public format; no claim made",
+   "persistent_record_ids": [
+    8840
+   ]
+  },
+  {
+   "action_type": 133,
+   "count": 1,
+   "flags_seen": [
+    0
+   ],
+   "arg_size_min": 8,
+   "arg_size_max": 8,
+   "arg_size_histogram": {
+    "8": 1
+   },
+   "sample_args": [
+    "c22f1f000000091a"
+   ],
+   "ascii_runs_seen": [],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 133 byte-direct decoded over 1 record(s); no ground-truth opcode->verb table is publicly available",
+   "persistent_record_ids": [
+    10208
+   ]
+  },
+  {
+   "action_type": 159,
+   "count": 1,
+   "flags_seen": [
+    1
+   ],
+   "arg_size_min": 216,
+   "arg_size_max": 216,
+   "arg_size_histogram": {
+    "216": 1
+   },
+   "sample_args": [
+    "3ad71f00000043198e040000000100200022dcd8000134e000243ac0000134e100243ae0000134e200243b00000134e300243b58000134e400243b78000134e50025f760000134e80026c7f8000134e90026c818000134ea0026c838000134eb0026c858000134ec0026d078000134f20026d098000134f30026d0b8000134f40026d510000134f50026d530000134f60026d550000134f70026d5f8000134f80026d618000134f90026d638000134fa0026dc10000134fb0026dc30000134fc0026f978000134fd0028e730000134fe0028e750000134ff"
+   ],
+   "ascii_runs_seen": [
+    "$;X",
+    "$;x"
+   ],
+   "classification_hint": "absent_from_action_id_csv",
+   "candidate_effect": "undetermined",
+   "certainty": "undetermined",
+   "certainty_reason": "opcode 159 carries ASCII arguments in some records but the opcode->verb table is not in the public format; no claim made",
+   "persistent_record_ids": [
+    25768
+   ]
+  }
+ ],
+ "short_records": [],
+ "records": [
+  {
+   "payload_size": 16,
+   "page_relative": 224,
+   "args_hex": "54c900010e4a1121",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 7392,
+   "reserved_word": 0,
+   "action_opcode": 61,
+   "flags": 32768,
+   "page_id": 5479,
+   "byte_offset_in_record": 1402624
+  },
+  {
+   "payload_size": 184,
+   "page_relative": 56,
+   "args_hex": "0000000000000000d3710000000100522b6000000099000082c93f000000090d42756c6c657420262043616e63657220477574730000000000000aed0000025d000000000000db8401cb000000008906d6f6000000010026e2d0000000330000000000000000000000000b2b0000025d0000000000000b240000025d00000006dcac00000001004468380000003e040134d000000000035200000b2c0000025d0000000000000b240000025d00000006",
+   "arg_bytes_len": 176,
+   "ascii_runs": [
+    "R+`",
+    "Bullet & Cancer Guts",
+    "Dh8"
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 25280,
+   "reserved_word": 0,
+   "action_opcode": 44,
+   "flags": 0,
+   "page_id": 8547,
+   "byte_offset_in_record": 2188032
+  },
+  {
+   "payload_size": 24,
+   "page_relative": 64,
+   "args_hex": "00000757000000000000000000000000",
+   "arg_bytes_len": 16,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 5048,
+   "reserved_word": 0,
+   "action_opcode": 21,
+   "flags": 33536,
+   "page_id": 10655,
+   "byte_offset_in_record": 2727680
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 32,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 50464,
+   "reserved_word": 0,
+   "action_opcode": 9,
+   "flags": 768,
+   "page_id": 12814,
+   "byte_offset_in_record": 3280384
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 48,
+   "args_hex": "c22f1f000000091a",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 10208,
+   "reserved_word": 0,
+   "action_opcode": 133,
+   "flags": 0,
+   "page_id": 12859,
+   "byte_offset_in_record": 3291904
+  },
+  {
+   "payload_size": 40,
+   "page_relative": 240,
+   "args_hex": "28ec02000000034b47726170686963733a47616d653a48454c50207363726565",
+   "arg_bytes_len": 32,
+   "ascii_runs": [
+    "KGraphics:Game:HELP scree"
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 8840,
+   "reserved_word": 0,
+   "action_opcode": 82,
+   "flags": 1,
+   "page_id": 18486,
+   "byte_offset_in_record": 4732416
+  },
+  {
+   "payload_size": 224,
+   "page_relative": 56,
+   "args_hex": "3ad71f00000043198e040000000100200022dcd8000134e000243ac0000134e100243ae0000134e200243b00000134e300243b58000134e400243b78000134e50025f760000134e80026c7f8000134e90026c818000134ea0026c838000134eb0026c858000134ec0026d078000134f20026d098000134f30026d0b8000134f40026d510000134f50026d530000134f60026d550000134f70026d5f8000134f80026d618000134f90026d638000134fa0026dc10000134fb0026dc30000134fc0026f978000134fd0028e730000134fe0028e750000134ff",
+   "arg_bytes_len": 216,
+   "ascii_runs": [
+    "$;X",
+    "$;x"
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 25768,
+   "reserved_word": 0,
+   "action_opcode": 159,
+   "flags": 1,
+   "page_id": 19247,
+   "byte_offset_in_record": 4927232
+  },
+  {
+   "payload_size": 72,
+   "page_relative": 152,
+   "args_hex": "4a19100000000319023336566964656f7f4e6f646520337f436f726f6e65727f736330363070617274314e2e6d6f760130043233333301300000000000000000",
+   "arg_bytes_len": 64,
+   "ascii_runs": [
+    "36Video",
+    "Node 3",
+    "Coroner",
+    "sc060part1N.mov",
+    "2333"
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 19456,
+   "reserved_word": 0,
+   "action_opcode": 73,
+   "flags": 1,
+   "page_id": 20638,
+   "byte_offset_in_record": 5283328
+  },
+  {
+   "payload_size": 248,
+   "page_relative": 32,
+   "args_hex": "0000000000000000023335566964656f7f4e6f646520367f4372696d65204c61627f53633838263839412e6d6f760130013502313258567f32313132302e786d7601300130003036023335566964656f7f4e6f646520367f4372696d65204c61627f53633838263839452e6d6f760130013502313258567f32313132382e786d7601300130003556023335566964656f7f4e6f646520367f4372696d65204c61627f53633838263839482e6d6f760130013002313258567f32313133342e786d7601300130006f76023335566964656f7f4e6f646520367f4372696d65204c61627f536338382638394b2e6d6f760130",
+   "arg_bytes_len": 240,
+   "ascii_runs": [
+    "35Video",
+    "Node 6",
+    "Crime Lab",
+    "Sc88&89A.mov",
+    "12XV",
+    "21120.xmv",
+    "35Video",
+    "Node 6",
+    "Crime Lab",
+    "Sc88&89E.mov",
+    "12XV",
+    "21128.xmv",
+    "35Video",
+    "Node 6",
+    "Crime Lab",
+    "Sc88&89H.mov",
+    "12XV",
+    "21134.xmv",
+    "35Video",
+    "Node 6",
+    "Crime Lab",
+    "Sc88&89K.mov"
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 49528,
+   "reserved_word": 0,
+   "action_opcode": 38,
+   "flags": 0,
+   "page_id": 20795,
+   "byte_offset_in_record": 5323520
+  },
+  {
+   "payload_size": 56,
+   "page_relative": 200,
+   "args_hex": "000005d7000000610003000000000000d2f200000001005411f80000000b0000000005d7000000610003000000000000",
+   "arg_bytes_len": 48,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 4568,
+   "reserved_word": 0,
+   "action_opcode": 11,
+   "flags": 0,
+   "page_id": 21521,
+   "byte_offset_in_record": 5509376
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 8,
+   "args_hex": "000005d700000061",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 4632,
+   "reserved_word": 0,
+   "action_opcode": 11,
+   "flags": 0,
+   "page_id": 21521,
+   "byte_offset_in_record": 5509632
+  },
+  {
+   "payload_size": 24,
+   "page_relative": 136,
+   "args_hex": "0000085d00000000013134206e657720",
+   "arg_bytes_len": 16,
+   "ascii_runs": [
+    "14 new "
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 7320,
+   "reserved_word": 0,
+   "action_opcode": 9,
+   "flags": 895,
+   "page_id": 21532,
+   "byte_offset_in_record": 5512192
+  },
+  {
+   "payload_size": 112,
+   "page_relative": 168,
+   "args_hex": "00000862000000000101300130013802000027100000025d010000786d7601300130000000010001023334566964656f7f4e6f646520387f52617563687f53633130387061727432462e6d6f760130013702313258567f32313730342e786d760130013000013000",
+   "arg_bytes_len": 104,
+   "ascii_runs": [
+    "xmv",
+    "34Video",
+    "Node 8",
+    "Rauch",
+    "Sc108part2F.mov",
+    "12XV",
+    "21704.xmv"
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 7352,
+   "reserved_word": 0,
+   "action_opcode": 9,
+   "flags": 895,
+   "page_id": 21532,
+   "byte_offset_in_record": 5512192
+  },
+  {
+   "payload_size": 248,
+   "page_relative": 32,
+   "args_hex": "000000000000000047726170686963735c636f6d70757465722d73637265656e735c67656e6572616c5c47656e6572616c5f53656e64696e6750726f674261722e6d6f7600000000566964656f5c4e6f646520355c4170743a4761732053746174696f6e3a4c756b652067657473206672696564204e4152434f000000000000566964656f5c4e6f646520355c4170743a57696c6c6d6f726520225468617420636f756c64206265204d756c64657222206e6172636f0000566964656f5c4e6f646520355c4170743a57696c6c6d6f726520225468617420636f756c64206265204d756c64657222206e6172636f0000",
+   "arg_bytes_len": 240,
+   "ascii_runs": [
+    "Graphics\\computer-screens\\general\\General_SendingProgBar.mov",
+    "Video\\Node 5\\Apt:Gas Station:Luke gets fried NARCO",
+    "Video\\Node 5\\Apt:Willmore \"That could be Mulder\" narco",
+    "Video\\Node 5\\Apt:Willmore \"That could be Mulder\" narco"
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 7656,
+   "reserved_word": 0,
+   "action_opcode": 55,
+   "flags": 0,
+   "page_id": 21533,
+   "byte_offset_in_record": 5512448
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 248,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 8248,
+   "reserved_word": 0,
+   "action_opcode": 17,
+   "flags": 33024,
+   "page_id": 21534,
+   "byte_offset_in_record": 5512704
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 248,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 9400,
+   "reserved_word": 0,
+   "action_opcode": 11,
+   "flags": 0,
+   "page_id": 21539,
+   "byte_offset_in_record": 5513984
+  },
+  {
+   "payload_size": 32,
+   "page_relative": 192,
+   "args_hex": "0000000000000000d2f600000001004ea348000000100600",
+   "arg_bytes_len": 24,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 14632,
+   "reserved_word": 0,
+   "action_opcode": 17,
+   "flags": 33024,
+   "page_id": 21559,
+   "byte_offset_in_record": 5519104
+  },
+  {
+   "payload_size": 32,
+   "page_relative": 248,
+   "args_hex": "00000876000000000100000000000000d676000000010054",
+   "arg_bytes_len": 24,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 24584,
+   "reserved_word": 0,
+   "action_opcode": 9,
+   "flags": 768,
+   "page_id": 21599,
+   "byte_offset_in_record": 5529344
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 32,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 39128,
+   "reserved_word": 0,
+   "action_opcode": 17,
+   "flags": 33024,
+   "page_id": 21656,
+   "byte_offset_in_record": 5543936
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 240,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 39336,
+   "reserved_word": 0,
+   "action_opcode": 17,
+   "flags": 33024,
+   "page_id": 21656,
+   "byte_offset_in_record": 5543936
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 192,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 39544,
+   "reserved_word": 0,
+   "action_opcode": 17,
+   "flags": 33024,
+   "page_id": 21657,
+   "byte_offset_in_record": 5544192
+  },
+  {
+   "payload_size": 40,
+   "page_relative": 224,
+   "args_hex": "d40000000001000000010054ad100000000b4944202000000001ff0000000000",
+   "arg_bytes_len": 32,
+   "ascii_runs": [
+    "ID  "
+   ],
+   "certainty": "byte-direct",
+   "persistent_record_id": 44440,
+   "reserved_word": 0,
+   "action_opcode": 17,
+   "flags": 33024,
+   "page_id": 21676,
+   "byte_offset_in_record": 5549056
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 192,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 45688,
+   "reserved_word": 0,
+   "action_opcode": 17,
+   "flags": 33024,
+   "page_id": 21681,
+   "byte_offset_in_record": 5550336
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 32,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56656,
+   "reserved_word": 0,
+   "action_opcode": 20,
+   "flags": 0,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 56,
+   "args_hex": "4f4e000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58320,
+   "reserved_word": 0,
+   "action_opcode": 32,
+   "flags": 1,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 80,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56680,
+   "reserved_word": 0,
+   "action_opcode": 16,
+   "flags": 0,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 104,
+   "args_hex": "4f50000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58352,
+   "reserved_word": 0,
+   "action_opcode": 27,
+   "flags": 1,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 128,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56696,
+   "reserved_word": 0,
+   "action_opcode": 15,
+   "flags": 0,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 152,
+   "args_hex": "4f52000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58384,
+   "reserved_word": 0,
+   "action_opcode": 25,
+   "flags": 1,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 176,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56712,
+   "reserved_word": 0,
+   "action_opcode": 18,
+   "flags": 0,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 200,
+   "args_hex": "4f54000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58416,
+   "reserved_word": 0,
+   "action_opcode": 27,
+   "flags": 1,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 224,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56736,
+   "reserved_word": 0,
+   "action_opcode": 18,
+   "flags": 0,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558272
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 16,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56760,
+   "reserved_word": 0,
+   "action_opcode": 16,
+   "flags": 0,
+   "page_id": 21712,
+   "byte_offset_in_record": 5558528
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 32,
+   "args_hex": "4f62000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58624,
+   "reserved_word": 0,
+   "action_opcode": 27,
+   "flags": 1,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 56,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56856,
+   "reserved_word": 0,
+   "action_opcode": 15,
+   "flags": 0,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 80,
+   "args_hex": "4f64000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58656,
+   "reserved_word": 0,
+   "action_opcode": 24,
+   "flags": 1,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 104,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56872,
+   "reserved_word": 0,
+   "action_opcode": 13,
+   "flags": 0,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 128,
+   "args_hex": "4f66000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58680,
+   "reserved_word": 0,
+   "action_opcode": 30,
+   "flags": 1,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 152,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56888,
+   "reserved_word": 0,
+   "action_opcode": 13,
+   "flags": 0,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 176,
+   "args_hex": "4f68000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58712,
+   "reserved_word": 0,
+   "action_opcode": 24,
+   "flags": 1,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 200,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56904,
+   "reserved_word": 0,
+   "action_opcode": 13,
+   "flags": 0,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 224,
+   "args_hex": "4f6a000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58736,
+   "reserved_word": 0,
+   "action_opcode": 30,
+   "flags": 1,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 248,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 56920,
+   "reserved_word": 0,
+   "action_opcode": 13,
+   "flags": 0,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559040
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 16,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 58768,
+   "reserved_word": 0,
+   "action_opcode": 27,
+   "flags": 1,
+   "page_id": 21715,
+   "byte_offset_in_record": 5559296
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 32,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 57336,
+   "reserved_word": 0,
+   "action_opcode": 18,
+   "flags": 0,
+   "page_id": 21721,
+   "byte_offset_in_record": 5560576
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 56,
+   "args_hex": "4f98000000000443",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 59432,
+   "reserved_word": 0,
+   "action_opcode": 24,
+   "flags": 1,
+   "page_id": 21721,
+   "byte_offset_in_record": 5560576
+  },
+  {
+   "payload_size": 200,
+   "page_relative": 80,
+   "args_hex": "0000000000000000d6f6000000010054e8400000001b00014f9a0000000004438c6c0000000100200054d96800014f990054daa000014f9b0054dad000014f9d0054db0000014f9f0054e8b800014fa10054e8e800014fa30054e91800014fa50054e94800014fa70054e97800014fa90054e9a800014fab0054e9d800014fad0054ea0800014faf0054ea3800014fb10054ea6800014fb30054ea9800014fb50054ebd000014fb70054ec0000014fb90054ec3000014fbb0054ec6000014fbd",
+   "arg_bytes_len": 192,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 57360,
+   "reserved_word": 0,
+   "action_opcode": 21,
+   "flags": 0,
+   "page_id": 21721,
+   "byte_offset_in_record": 5560576
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 32,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 64760,
+   "reserved_word": 0,
+   "action_opcode": 15,
+   "flags": 0,
+   "page_id": 21738,
+   "byte_offset_in_record": 5564928
+  },
+  {
+   "payload_size": 40,
+   "page_relative": 80,
+   "args_hex": "0000000000000000df0000000001005503d00000001b00014fb4000000000443",
+   "arg_bytes_len": 32,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 64776,
+   "reserved_word": 0,
+   "action_opcode": 18,
+   "flags": 0,
+   "page_id": 21738,
+   "byte_offset_in_record": 5564928
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 128,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 64800,
+   "reserved_word": 0,
+   "action_opcode": 18,
+   "flags": 0,
+   "page_id": 21738,
+   "byte_offset_in_record": 5564928
+  },
+  {
+   "payload_size": 104,
+   "page_relative": 176,
+   "args_hex": "00000000000000008e000000000100200054eab000014fb60054ebe800014fb80054ec1800014fba0054ec4800014fbc0054ec7800014fbe0054eca800014fc00054ecd800014fc20054ed0800014fc40054ed3800014fc60054ed6800014fc8",
+   "arg_bytes_len": 96,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 64824,
+   "reserved_word": 0,
+   "action_opcode": 16,
+   "flags": 0,
+   "page_id": 21738,
+   "byte_offset_in_record": 5564928
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 56,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 64968,
+   "reserved_word": 0,
+   "action_opcode": 16,
+   "flags": 0,
+   "page_id": 21741,
+   "byte_offset_in_record": 5565696
+  },
+  {
+   "payload_size": 40,
+   "page_relative": 152,
+   "args_hex": "0000000000000000dc0000000001005505400000001800014fcc000000000443",
+   "arg_bytes_len": 32,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 65008,
+   "reserved_word": 0,
+   "action_opcode": 17,
+   "flags": 0,
+   "page_id": 21741,
+   "byte_offset_in_record": 5565696
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 200,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 65032,
+   "reserved_word": 0,
+   "action_opcode": 20,
+   "flags": 0,
+   "page_id": 21741,
+   "byte_offset_in_record": 5565696
+  },
+  {
+   "payload_size": 32,
+   "page_relative": 248,
+   "args_hex": "0000000000000000d0690000000100550578000000180001",
+   "arg_bytes_len": 24,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 65056,
+   "reserved_word": 0,
+   "action_opcode": 20,
+   "flags": 0,
+   "page_id": 21741,
+   "byte_offset_in_record": 5565696
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 56,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 65272,
+   "reserved_word": 0,
+   "action_opcode": 20,
+   "flags": 0,
+   "page_id": 21745,
+   "byte_offset_in_record": 5566720
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 104,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 65296,
+   "reserved_word": 0,
+   "action_opcode": 20,
+   "flags": 0,
+   "page_id": 21745,
+   "byte_offset_in_record": 5566720
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 200,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 65336,
+   "reserved_word": 0,
+   "action_opcode": 15,
+   "flags": 0,
+   "page_id": 21745,
+   "byte_offset_in_record": 5566720
+  },
+  {
+   "payload_size": 16,
+   "page_relative": 248,
+   "args_hex": "0000000000000000",
+   "arg_bytes_len": 8,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 65352,
+   "reserved_word": 0,
+   "action_opcode": 18,
+   "flags": 0,
+   "page_id": 21745,
+   "byte_offset_in_record": 5566720
+  },
+  {
+   "payload_size": 8,
+   "page_relative": 56,
+   "args_hex": "",
+   "arg_bytes_len": 0,
+   "ascii_runs": [],
+   "certainty": "byte-direct",
+   "persistent_record_id": 11048,
+   "reserved_word": 0,
+   "action_opcode": 33,
+   "flags": 34304,
+   "page_id": 23241,
+   "byte_offset_in_record": 5949696
+  }
+ ]
+}

@@ -1,0 +1,3543 @@
+{
+ "_source": "XFILES.HDB class 0x31 (VCConversation) + XFilest.dll dialogue strings 1..1105 + MasterHDBResolver extended index",
+ "_about": "Byte-direct walk of every VCConversation record. The grammar slots (e=conversation_id, f=topic, h=response_1, j=next, g=prompt, i=response_2, k=flags) are mapped from the read-order dwords of each on-disk payload. The 144B list container is split into its (token, dialogue_id) pairs and surfaced as list_container_entry records. Prompt / response / dialogue_id values are first resolved against the XFilest.dll string table; values outside that range are cross-referenced through the MasterHDBResolver extended index (CNeoIDList / CNeoIDIndex pair tables) and decorated with target_offset / target_class_id when the lookup hits a real CNeoPersist marker. Fields that resolve neither way keep their raw value and carry certainty=undetermined with a documented reason.",
+ "stats": {
+  "records_total": 45,
+  "graph_nodes": 45,
+  "with_resolved_text": 21,
+  "with_resolved_handle": 31,
+  "graph_edges": 82,
+  "conversation_records": 28,
+  "list_containers": 1,
+  "list_container_entries": 16,
+  "dll_strings_available": 1025,
+  "dll_resolved": 21,
+  "handles_resolved": 66,
+  "handles_resolved_extended": 16,
+  "handles_resolved_page_aligned": 46,
+  "handles_resolved_direct_offset": 4,
+  "handles_unresolved": 24,
+  "undetermined_total": 82,
+  "resolver_extension_added": 51316,
+  "resolver_extension_total": 79636,
+  "resolver_class_index_added": 0,
+  "resolver_class_index_classes_scanned": [
+   8,
+   16,
+   18,
+   19,
+   24,
+   25,
+   30,
+   34,
+   54,
+   58,
+   64,
+   67,
+   71,
+   73,
+   80,
+   81,
+   89,
+   90
+  ],
+  "resolver_class_index_total": 79636
+ },
+ "records": [
+  {
+   "record_offset": 358112,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 4130865152,
+    "value": 4130865152,
+    "certainty": "byte-direct",
+    "target_offset": 358112,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 7208960,
+    "value": 7208960,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 328925952,
+    "string_id": 328925952,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 17182,
+    "value": 17182,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    4130865152,
+    7208960,
+    328925952,
+    17182
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 359552,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 4195352576,
+    "value": 4195352576,
+    "certainty": "byte-direct",
+    "target_offset": 359552,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 7602176,
+    "value": 7602176,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 331416320,
+    "string_id": 331416320,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 17182,
+    "value": 17182,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    4195352576,
+    7602176,
+    331416320,
+    17182
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 369912,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 4268228608,
+    "value": 4268228608,
+    "certainty": "byte-direct",
+    "target_offset": 369912,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 7536640,
+    "value": 7536640,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 334103296,
+    "string_id": 334103296,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 17182,
+    "value": 17182,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    4268228608,
+    7536640,
+    334103296,
+    17182
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 452480,
+   "payload_size": 32,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 4282384384,
+    "value": 4282384384,
+    "certainty": "byte-direct",
+    "target_offset": 452480,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 5701632,
+    "value": 5701632,
+    "certainty": "byte-direct",
+    "target_offset": 2301400,
+    "target_class_id": 1,
+    "target_class_name": "NeoPersist",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": 3595436032,
+    "string_id": 3595436032,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_1": {
+    "raw_u32": 421856256,
+    "string_id": 421856256,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": 65536,
+    "string_id": 65536,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 9960,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "page-aligned"
+   },
+   "next_conversation_id": {
+    "raw_u32": 17181,
+    "value": 17181,
+    "certainty": "byte-direct",
+    "target_offset": 924712,
+    "target_class_id": 2,
+    "target_class_name": "NeoBlob",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "flags": {
+    "raw_u32": 3673753856,
+    "value": 3673753856,
+    "certainty": "byte-direct"
+   },
+   "raw_dwords": [
+    4282384384,
+    5701632,
+    421856256,
+    17181,
+    3595436032,
+    65536,
+    3673753856,
+    3670016
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 670912,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 4183293952,
+    "value": 4183293952,
+    "certainty": "byte-direct",
+    "target_offset": 670912,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 4390912,
+    "value": 4390912,
+    "certainty": "byte-direct",
+    "target_offset": 2101712,
+    "target_class_id": 1,
+    "target_class_name": "NeoPersist",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 3249963008,
+    "string_id": 3249963008,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 293,
+    "value": 293,
+    "certainty": "byte-direct",
+    "dll_text": "Quelles autres conditions?",
+    "dll_string_id": 293,
+    "target_offset": 1093576,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    4183293952,
+    4390912,
+    3249963008,
+    293
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 1229088,
+   "payload_size": 40,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 2416967680,
+    "value": 2416967680,
+    "certainty": "byte-direct",
+    "target_offset": 1229088,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 4259840,
+    "value": 4259840,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": 1231316321,
+    "string_id": 1231316321,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_1": {
+    "raw_u32": 1284210688,
+    "string_id": 1284210688,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": 541680495,
+    "string_id": 541680495,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "next_conversation_id": {
+    "raw_u32": 268,
+    "value": 268,
+    "certainty": "byte-direct",
+    "dll_text": "Où est Mulder?",
+    "dll_string_id": 268,
+    "target_offset": 1170472,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "flags": {
+    "raw_u32": 1853030400,
+    "value": 1853030400,
+    "certainty": "byte-direct"
+   },
+   "raw_dwords": [
+    2416967680,
+    4259840,
+    1284210688,
+    268,
+    1231316321,
+    541680495,
+    1853030400,
+    2424850,
+    843186277,
+    1862270976
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 1229880,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 4220518400,
+    "value": 4220518400,
+    "certainty": "byte-direct",
+    "target_offset": 841280,
+    "target_class_id": 22,
+    "target_class_name": "0x16",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 3932160,
+    "value": 3932160,
+    "certainty": "byte-direct",
+    "target_offset": 3932160,
+    "target_class_id": 59,
+    "target_class_name": "VCStdHotSpotList",
+    "resolver_source": "direct-offset",
+    "kind": "direct-offset"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 1285652480,
+    "string_id": 1285652480,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 268,
+    "value": 268,
+    "certainty": "byte-direct",
+    "dll_text": "Où est Mulder?",
+    "dll_string_id": 268,
+    "target_offset": 1170472,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    4220518400,
+    3932160,
+    1285652480,
+    268
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 1230528,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 4259840000,
+    "value": 4259840000,
+    "certainty": "byte-direct",
+    "target_offset": 261680,
+    "target_class_id": 3,
+    "target_class_name": "NeoClass",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 4063232,
+    "value": 4063232,
+    "certainty": "byte-direct",
+    "target_offset": 2048752,
+    "target_class_id": 1,
+    "target_class_name": "NeoPersist",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 1286701056,
+    "string_id": 1286701056,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 268,
+    "value": 268,
+    "certainty": "byte-direct",
+    "dll_text": "Où est Mulder?",
+    "dll_string_id": 268,
+    "target_offset": 1170472,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    4259840000,
+    4063232,
+    1286701056,
+    268
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3003168,
+   "payload_size": 24,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 3784835072,
+    "value": 3784835072,
+    "certainty": "byte-direct",
+    "target_offset": 1094576,
+    "target_class_id": 12,
+    "target_class_name": "0x0c",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 3473408,
+    "value": 3473408,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": 58587,
+    "string_id": 58587,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 3705208,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "extended"
+   },
+   "response_1": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": 16777216,
+    "string_id": 16777216,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 1363528,
+    "target_class_id": 21,
+    "target_class_name": "part_0x15",
+    "resolver_source": "page-aligned"
+   },
+   "next_conversation_id": {
+    "raw_u32": 45190,
+    "value": 45190,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    3784835072,
+    3473408,
+    0,
+    45190,
+    58587,
+    16777216
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3225816,
+   "payload_size": 24,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 943718400,
+    "value": 943718400,
+    "certainty": "byte-direct",
+    "target_offset": 3225816,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590641,
+    "value": 590641,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": 48491,
+    "string_id": 48491,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 3203144,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "extended"
+   },
+   "response_1": {
+    "raw_u32": 362,
+    "string_id": 362,
+    "text": "caucasienne",
+    "certainty": "byte-direct"
+   },
+   "response_2": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    943718400,
+    590641,
+    362,
+    0,
+    48491,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3228376,
+   "payload_size": 24,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 1111490560,
+    "value": 1111490560,
+    "certainty": "byte-direct",
+    "target_offset": 1928840,
+    "target_class_id": 29,
+    "target_class_name": "part_0x1d",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590641,
+    "value": 590641,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": 16825681,
+    "string_id": 16825681,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_1": {
+    "raw_u32": 1472,
+    "string_id": 1472,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 975560,
+    "target_class_id": 1,
+    "target_class_name": "NeoPersist",
+    "resolver_source": "page-aligned"
+   },
+   "response_2": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    1111490560,
+    590641,
+    1472,
+    0,
+    16825681,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3240728,
+   "payload_size": 0,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [],
+   "certainty": "undetermined",
+   "reason": "payload-too-short-for-any-grammar-slot"
+  },
+  {
+   "record_offset": 3241760,
+   "payload_size": 8,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 1997537280,
+    "value": 1997537280,
+    "certainty": "byte-direct",
+    "target_offset": 751408,
+    "target_class_id": 11,
+    "target_class_name": "NeoIDList",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590592,
+    "value": 590592,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    1997537280,
+    590592
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244576,
+   "payload_size": 144,
+   "kind": "list_container",
+   "header_hex": "f2900000000b0000d230000000010001",
+   "entry_count": 16,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244592,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 49079,
+    "value": 49079,
+    "certainty": "byte-direct",
+    "target_offset": 1789192,
+    "target_class_id": 27,
+    "target_class_name": "part_0x1b",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 0,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244600,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 433864,
+    "value": 433864,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 1,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244608,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 447896,
+    "value": 447896,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 16,
+    "string_id": 16,
+    "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 2,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244616,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 448752,
+    "value": 448752,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 3,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244624,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 507096,
+    "value": 507096,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 4,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244632,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 782136,
+    "value": 782136,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 5,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244640,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1702448,
+    "value": 1702448,
+    "certainty": "byte-direct",
+    "target_offset": 1702448,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "direct-offset",
+    "kind": "direct-offset"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 16,
+    "string_id": 16,
+    "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 6,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244648,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1754928,
+    "value": 1754928,
+    "certainty": "byte-direct",
+    "target_offset": 1754928,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "direct-offset",
+    "kind": "direct-offset"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 16,
+    "string_id": 16,
+    "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 7,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244656,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1755016,
+    "value": 1755016,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 16,
+    "string_id": 16,
+    "text": "Vas-tu publier les fiches de signalement de Mulder et Scully?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 8,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244664,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1756944,
+    "value": 1756944,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 9,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244672,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1756992,
+    "value": 1756992,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 10,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244680,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1759936,
+    "value": 1759936,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 11,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244688,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1761840,
+    "value": 1761840,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 12,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244696,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1766912,
+    "value": 1766912,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 13,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244704,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1773360,
+    "value": 1773360,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 8,
+    "string_id": 8,
+    "text": "Savez-vous s'il se passe quelque chose d'inhabituel à Everett?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 14,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244712,
+   "payload_size": 8,
+   "kind": "list_container_entry",
+   "conversation_id": {
+    "raw_u32": 1778744,
+    "value": 1778744,
+    "certainty": "byte-direct",
+    "target_offset": 1778744,
+    "target_class_id": 37,
+    "target_class_name": "0x25",
+    "resolver_source": "direct-offset",
+    "kind": "direct-offset"
+   },
+   "topic": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-topic-slot"
+   },
+   "prompt": {
+    "raw_u32": 40,
+    "string_id": 40,
+    "text": "Que pouvez-vous me dire au sujet de cet entrepôt?",
+    "certainty": "byte-direct"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-response-slot"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-next-slot"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "list-entry-has-no-flags-slot"
+   },
+   "parent_list_offset": 3244576,
+   "entry_index": 15,
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3244808,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 2080899072,
+    "value": 2080899072,
+    "certainty": "byte-direct",
+    "target_offset": 424952,
+    "target_class_id": 6,
+    "target_class_name": "NeoInode",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590600,
+    "value": 590600,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 1561,
+    "string_id": 1561,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 131544,
+    "target_class_id": 1,
+    "target_class_name": "NeoPersist",
+    "resolver_source": "extended"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    2080899072,
+    590600,
+    1561,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3245600,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 2284847104,
+    "value": 2284847104,
+    "certainty": "byte-direct",
+    "target_offset": 3245600,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 4128768,
+    "value": 4128768,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    2284847104,
+    4128768,
+    0,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3245624,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 2289041408,
+    "value": 2289041408,
+    "certainty": "byte-direct",
+    "target_offset": 357512,
+    "target_class_id": 91,
+    "target_class_name": "VCEmailRead",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 3080192,
+    "value": 3080192,
+    "certainty": "byte-direct",
+    "target_offset": 101560,
+    "target_class_id": 1,
+    "target_class_name": "NeoPersist",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    2289041408,
+    3080192,
+    0,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3245648,
+   "payload_size": 16,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 2292187136,
+    "value": 2292187136,
+    "certainty": "byte-direct",
+    "target_offset": 226320,
+    "target_class_id": 3,
+    "target_class_name": "NeoClass",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 4063232,
+    "value": 4063232,
+    "certainty": "byte-direct",
+    "target_offset": 2048752,
+    "target_class_id": 1,
+    "target_class_name": "NeoPersist",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    2292187136,
+    4063232,
+    0,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3245768,
+   "payload_size": 8,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 2199388160,
+    "value": 2199388160,
+    "certainty": "byte-direct",
+    "target_offset": 3245768,
+    "target_class_id": 49,
+    "target_class_name": "VCConversation",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590592,
+    "value": 590592,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    2199388160,
+    590592
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3253208,
+   "payload_size": 8,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 2738880512,
+    "value": 2738880512,
+    "certainty": "byte-direct",
+    "target_offset": 366944,
+    "target_class_id": 4,
+    "target_class_name": "NeoSubclass",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590592,
+    "value": 590592,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    2738880512,
+    590592
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3258912,
+   "payload_size": 24,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 3121610752,
+    "value": 3121610752,
+    "certainty": "byte-direct",
+    "target_offset": 1354504,
+    "target_class_id": 20,
+    "target_class_name": "part_0x14",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590592,
+    "value": 590592,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": 4194304,
+    "string_id": 4194304,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 2187560,
+    "target_class_id": 82,
+    "target_class_name": "VCTriggerList",
+    "resolver_source": "page-aligned"
+   },
+   "response_1": {
+    "raw_u32": 1650,
+    "string_id": 1650,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": 590592,
+    "string_id": 590592,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    3121610752,
+    590592,
+    1650,
+    0,
+    4194304,
+    590592
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3258944,
+   "payload_size": 40,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 3123707904,
+    "value": 3123707904,
+    "certainty": "byte-direct",
+    "target_offset": 503880,
+    "target_class_id": 7,
+    "target_class_name": "NeoIDIndex",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590592,
+    "value": 590592,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": 65602,
+    "string_id": 65602,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 1117408,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "page-aligned"
+   },
+   "response_1": {
+    "raw_u32": 3670409216,
+    "string_id": 3670409216,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 739440,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "page-aligned"
+   },
+   "response_2": {
+    "raw_u32": 3895984128,
+    "string_id": 3895984128,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 726184,
+    "target_class_id": 8,
+    "target_class_name": "NeoParentIndex",
+    "resolver_source": "page-aligned"
+   },
+   "next_conversation_id": {
+    "raw_u32": 65536,
+    "value": 65536,
+    "certainty": "byte-direct",
+    "target_offset": 9960,
+    "target_class_id": 0,
+    "target_class_name": "NeoNullClass",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "flags": {
+    "raw_u32": 739652,
+    "value": 739652,
+    "certainty": "byte-direct"
+   },
+   "raw_dwords": [
+    3123707904,
+    590592,
+    3670409216,
+    65536,
+    65602,
+    3895984128,
+    739652,
+    538968064,
+    130816,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3259520,
+   "payload_size": 24,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 3163553792,
+    "value": 3163553792,
+    "certainty": "byte-direct",
+    "target_offset": 965816,
+    "target_class_id": 14,
+    "target_class_name": "0x0e",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590592,
+    "value": 590592,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": 16777216,
+    "string_id": 16777216,
+    "text": null,
+    "certainty": "byte-direct",
+    "kind": "neoid",
+    "target_offset": 1363528,
+    "target_class_id": 21,
+    "target_class_name": "part_0x15",
+    "resolver_source": "page-aligned"
+   },
+   "response_1": {
+    "raw_u32": 1756,
+    "string_id": 1756,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    3163553792,
+    590592,
+    1756,
+    0,
+    16777216,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3259600,
+   "payload_size": 24,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 3168796672,
+    "value": 3168796672,
+    "certainty": "byte-direct",
+    "target_offset": 2931968,
+    "target_class_id": 44,
+    "target_class_name": "VCCharacter",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 590592,
+    "value": 590592,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_1": {
+    "raw_u32": 1756,
+    "string_id": 1756,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "response_2": {
+    "raw_u32": 0,
+    "string_id": 0,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "u32-not-in-dll-string-range-and-not-in-extended-index"
+   },
+   "next_conversation_id": {
+    "raw_u32": 0,
+    "value": 0,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    3168796672,
+    590592,
+    1756,
+    0,
+    0,
+    0
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 3266272,
+   "payload_size": 8,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 3909615616,
+    "value": 3909615616,
+    "certainty": "byte-direct",
+    "target_offset": 1828840,
+    "target_class_id": 27,
+    "target_class_name": "part_0x1b",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 1409792,
+    "value": 1409792,
+    "certainty": "byte-direct",
+    "handle_status": "handle-not-in-extended-index"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    3909615616,
+    1409792
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 4320744,
+   "payload_size": 8,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 317718528,
+    "value": 317718528,
+    "certainty": "byte-direct",
+    "target_offset": 1298064,
+    "target_class_id": 81,
+    "target_class_name": "VCTrigger",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 328960,
+    "value": 328960,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    317718528,
+    328960
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 4326088,
+   "payload_size": 8,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 1352663040,
+    "value": 1352663040,
+    "certainty": "byte-direct",
+    "target_offset": 1265808,
+    "target_class_id": 19,
+    "target_class_name": "0x13",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 328960,
+    "value": 328960,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    1352663040,
+    328960
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 4327160,
+   "payload_size": 8,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 1423441920,
+    "value": 1423441920,
+    "certainty": "byte-direct",
+    "target_offset": 466864,
+    "target_class_id": 32,
+    "target_class_name": "0x20",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 328960,
+    "value": 328960,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    1423441920,
+    328960
+   ],
+   "certainty": "byte-direct"
+  },
+  {
+   "record_offset": 4337400,
+   "payload_size": 8,
+   "kind": "conversation_record",
+   "conversation_id": {
+    "raw_u32": 2411200512,
+    "value": 2411200512,
+    "certainty": "byte-direct",
+    "target_offset": 774112,
+    "target_class_id": 5,
+    "target_class_name": "NeoFreeList",
+    "resolver_source": "page-aligned",
+    "kind": "neoid"
+   },
+   "topic": {
+    "raw_u32": 328960,
+    "value": 328960,
+    "certainty": "byte-direct",
+    "target_offset": 524288,
+    "target_class_id": 26,
+    "target_class_name": "0x1a",
+    "resolver_source": "extended",
+    "kind": "neoid"
+   },
+   "prompt": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_1": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "response_2": {
+    "raw_u32": null,
+    "string_id": null,
+    "text": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "next_conversation_id": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "flags": {
+    "raw_u32": null,
+    "value": null,
+    "certainty": "undetermined",
+    "reason": "field-not-present-in-payload"
+   },
+   "raw_dwords": [
+    2411200512,
+    328960
+   ],
+   "certainty": "byte-direct"
+  }
+ ],
+ "graph_edges": [
+  {
+   "from": 358112,
+   "to": 358112,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 359552,
+   "to": 359552,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 369912,
+   "to": 369912,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 452480,
+   "to": 9960,
+   "via": "handle_target",
+   "slot": "response_2",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 452480,
+   "to": 452480,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 452480,
+   "to": 2301400,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 1,
+   "target_class_name": "NeoPersist",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 452480,
+   "to": 924712,
+   "via": "handle_target",
+   "slot": "next_conversation_id",
+   "target_class_id": 2,
+   "target_class_name": "NeoBlob",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 670912,
+   "to": 670912,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 670912,
+   "to": 2101712,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 1,
+   "target_class_name": "NeoPersist",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 670912,
+   "to": 1093576,
+   "via": "handle_target",
+   "slot": "next_conversation_id",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 1229088,
+   "to": 1229088,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 1229088,
+   "to": 1170472,
+   "via": "handle_target",
+   "slot": "next_conversation_id",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 1229880,
+   "to": 841280,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 22,
+   "target_class_name": "0x16",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 1229880,
+   "to": 3932160,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 59,
+   "target_class_name": "VCStdHotSpotList",
+   "resolver_source": "direct-offset",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 1229880,
+   "to": 1170472,
+   "via": "handle_target",
+   "slot": "next_conversation_id",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 1230528,
+   "to": 261680,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 3,
+   "target_class_name": "NeoClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 1230528,
+   "to": 2048752,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 1,
+   "target_class_name": "NeoPersist",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 1230528,
+   "to": 1170472,
+   "via": "handle_target",
+   "slot": "next_conversation_id",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3003168,
+   "to": 3705208,
+   "via": "handle_target",
+   "slot": "prompt",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3003168,
+   "to": 1363528,
+   "via": "handle_target",
+   "slot": "response_2",
+   "target_class_id": 21,
+   "target_class_name": "part_0x15",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3003168,
+   "to": 1094576,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 12,
+   "target_class_name": "0x0c",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3225816,
+   "to": 3203144,
+   "via": "handle_target",
+   "slot": "prompt",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3225816,
+   "to": 3225816,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 3228376,
+   "to": 975560,
+   "via": "handle_target",
+   "slot": "response_1",
+   "target_class_id": 1,
+   "target_class_name": "NeoPersist",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3228376,
+   "to": 1928840,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 29,
+   "target_class_name": "part_0x1d",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3241760,
+   "to": 751408,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 11,
+   "target_class_name": "NeoIDList",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3241760,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244592,
+   "to": 1789192,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 27,
+   "target_class_name": "part_0x1b",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244640,
+   "to": 1702448,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "direct-offset",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244648,
+   "to": 1754928,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "direct-offset",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244712,
+   "to": 1778744,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 37,
+   "target_class_name": "0x25",
+   "resolver_source": "direct-offset",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244592,
+   "via": "list_container_entry",
+   "entry_index": 0,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244600,
+   "via": "list_container_entry",
+   "entry_index": 1,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244608,
+   "via": "list_container_entry",
+   "entry_index": 2,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244616,
+   "via": "list_container_entry",
+   "entry_index": 3,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244624,
+   "via": "list_container_entry",
+   "entry_index": 4,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244632,
+   "via": "list_container_entry",
+   "entry_index": 5,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244640,
+   "via": "list_container_entry",
+   "entry_index": 6,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244648,
+   "via": "list_container_entry",
+   "entry_index": 7,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244656,
+   "via": "list_container_entry",
+   "entry_index": 8,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244664,
+   "via": "list_container_entry",
+   "entry_index": 9,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244672,
+   "via": "list_container_entry",
+   "entry_index": 10,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244680,
+   "via": "list_container_entry",
+   "entry_index": 11,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244688,
+   "via": "list_container_entry",
+   "entry_index": 12,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244696,
+   "via": "list_container_entry",
+   "entry_index": 13,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244704,
+   "via": "list_container_entry",
+   "entry_index": 14,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244576,
+   "to": 3244712,
+   "via": "list_container_entry",
+   "entry_index": 15,
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244808,
+   "to": 131544,
+   "via": "handle_target",
+   "slot": "response_1",
+   "target_class_id": 1,
+   "target_class_name": "NeoPersist",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3244808,
+   "to": 424952,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 6,
+   "target_class_name": "NeoInode",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3245600,
+   "to": 3245600,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 3245624,
+   "to": 357512,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 91,
+   "target_class_name": "VCEmailRead",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3245624,
+   "to": 101560,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 1,
+   "target_class_name": "NeoPersist",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3245648,
+   "to": 226320,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 3,
+   "target_class_name": "NeoClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3245648,
+   "to": 2048752,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 1,
+   "target_class_name": "NeoPersist",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3245768,
+   "to": 3245768,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 49,
+   "target_class_name": "VCConversation",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct",
+   "kind": "cross_conversation"
+  },
+  {
+   "from": 3245768,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3253208,
+   "to": 366944,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 4,
+   "target_class_name": "NeoSubclass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3253208,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258912,
+   "to": 2187560,
+   "via": "handle_target",
+   "slot": "prompt",
+   "target_class_id": 82,
+   "target_class_name": "VCTriggerList",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258912,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "response_2",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258912,
+   "to": 1354504,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 20,
+   "target_class_name": "part_0x14",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258912,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258944,
+   "to": 1117408,
+   "via": "handle_target",
+   "slot": "prompt",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258944,
+   "to": 739440,
+   "via": "handle_target",
+   "slot": "response_1",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258944,
+   "to": 726184,
+   "via": "handle_target",
+   "slot": "response_2",
+   "target_class_id": 8,
+   "target_class_name": "NeoParentIndex",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258944,
+   "to": 503880,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 7,
+   "target_class_name": "NeoIDIndex",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258944,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3258944,
+   "to": 9960,
+   "via": "handle_target",
+   "slot": "next_conversation_id",
+   "target_class_id": 0,
+   "target_class_name": "NeoNullClass",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3259520,
+   "to": 1363528,
+   "via": "handle_target",
+   "slot": "prompt",
+   "target_class_id": 21,
+   "target_class_name": "part_0x15",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3259520,
+   "to": 965816,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 14,
+   "target_class_name": "0x0e",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3259520,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3259600,
+   "to": 2931968,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 44,
+   "target_class_name": "VCCharacter",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3259600,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 3266272,
+   "to": 1828840,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 27,
+   "target_class_name": "part_0x1b",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 4320744,
+   "to": 1298064,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 81,
+   "target_class_name": "VCTrigger",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 4320744,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 4326088,
+   "to": 1265808,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 19,
+   "target_class_name": "0x13",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 4326088,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 4327160,
+   "to": 466864,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 32,
+   "target_class_name": "0x20",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 4327160,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 4337400,
+   "to": 774112,
+   "via": "handle_target",
+   "slot": "conversation_id",
+   "target_class_id": 5,
+   "target_class_name": "NeoFreeList",
+   "resolver_source": "page-aligned",
+   "certainty": "byte-direct"
+  },
+  {
+   "from": 4337400,
+   "to": 524288,
+   "via": "handle_target",
+   "slot": "topic",
+   "target_class_id": 26,
+   "target_class_name": "0x1a",
+   "resolver_source": "extended",
+   "certainty": "byte-direct"
+  }
+ ]
+}
