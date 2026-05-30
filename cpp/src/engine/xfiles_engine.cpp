@@ -35,6 +35,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <cctype>
 #include <map>
 #include <memory>
 #include <set>
@@ -666,6 +667,8 @@ struct TriggerSummary {
     std::string trigger_id;
     std::string scene_scope;
     std::string action_label;
+    std::string effect_summary;                 // "set bAIComity_GetLaptop = true"
+    std::vector<std::string> vars_written;
 };
 
 struct ActionSummary {
@@ -795,6 +798,13 @@ static bool load_game_definition(const std::string& path,
         ts.trigger_id = unwrap_str(t.at("trigger_id"));
         ts.scene_scope = unwrap_str(t.at("scene_scope"));
         ts.action_label = unwrap_str(t.at("action_label"));
+        ts.effect_summary = unwrap_str(t.at("effect_summary"));
+        if (t.at("vars_written").is_arr()) {
+            for (const json::Value& v : t.at("vars_written").as_arr()) {
+                const std::string s = unwrap_str(v);
+                if (!s.empty()) ts.vars_written.push_back(s);
+            }
+        }
         if (!ts.trigger_id.empty()) {
             gd.trigger_by_id[ts.trigger_id] = gd.triggers.size();
             gd.triggers.push_back(std::move(ts));
@@ -852,6 +862,100 @@ struct ValidatorTally {
     int walkthrough_only = 0;
     int fail = 0;
 };
+
+// ===========================================================================
+// PART 11 — HEADLESS DISPATCHER (byte-direct state-variable mutation)
+// ===========================================================================
+//
+// The dispatcher reads each scene's referenced triggers, parses each trigger's
+// effect_summary (the byte-direct one-line description emitted by the
+// `triggers_full` extractor), and applies the implied variable mutation to a
+// VariableState map. The grammar handled here is the closed shape that the
+// extractor produces:
+//
+//     set <var> = true | false | <int>
+//
+// Any effect_summary that does not match this grammar is reported as
+// "uninterpreted" — the dispatcher never invents semantics for it.
+struct VariableState {
+    std::map<std::string, std::string> values;   // var_name -> "true"/"false"/"<int>"
+    int set_true_count = 0;
+    int set_false_count = 0;
+    int set_int_count = 0;
+    int uninterpreted_count = 0;
+};
+
+static void apply_effect(const std::string& effect, VariableState& vs) {
+    // Trim
+    auto skip_ws = [](const std::string& s, std::size_t i) {
+        while (i < s.size() && (s[i] == ' ' || s[i] == '\t')) ++i;
+        return i;
+    };
+    std::size_t i = skip_ws(effect, 0);
+    auto starts = [&](const char* p) {
+        std::size_t n = std::strlen(p);
+        return effect.compare(i, n, p) == 0;
+    };
+    if (!starts("set ")) { ++vs.uninterpreted_count; return; }
+    i += 4;
+    i = skip_ws(effect, i);
+    // read var name
+    std::size_t name_start = i;
+    while (i < effect.size() &&
+            (std::isalnum((unsigned char)effect[i]) || effect[i] == '_'))
+        ++i;
+    if (i == name_start) { ++vs.uninterpreted_count; return; }
+    std::string name = effect.substr(name_start, i - name_start);
+    i = skip_ws(effect, i);
+    if (i >= effect.size() || effect[i] != '=') { ++vs.uninterpreted_count; return; }
+    ++i;
+    i = skip_ws(effect, i);
+    if (i >= effect.size()) { ++vs.uninterpreted_count; return; }
+    std::string rhs = effect.substr(i);
+    // strip trailing whitespace
+    while (!rhs.empty() && (rhs.back() == ' ' || rhs.back() == '\t' ||
+                              rhs.back() == '\r' || rhs.back() == '\n'))
+        rhs.pop_back();
+    if (rhs == "true") { vs.values[name] = "true"; ++vs.set_true_count; return; }
+    if (rhs == "false") { vs.values[name] = "false"; ++vs.set_false_count; return; }
+    // integer literal?
+    bool is_int = !rhs.empty();
+    std::size_t j = (rhs[0] == '-') ? 1 : 0;
+    if (j == rhs.size()) is_int = false;
+    for (; j < rhs.size(); ++j) if (!std::isdigit((unsigned char)rhs[j])) {
+        is_int = false; break;
+    }
+    if (is_int) { vs.values[name] = rhs; ++vs.set_int_count; return; }
+    ++vs.uninterpreted_count;
+}
+
+struct DispatcherReport {
+    int steps_dispatched = 0;
+    int triggers_dispatched = 0;
+    int effects_applied = 0;
+    int effects_uninterpreted = 0;
+    VariableState vs;
+};
+
+static DispatcherReport dispatch_playthrough(const GameDefinition& gd) {
+    DispatcherReport rep;
+    for (const FlowStep& fs : gd.steps) {
+        auto sit = gd.scenes.find(fs.location);
+        if (sit == gd.scenes.end()) continue;
+        ++rep.steps_dispatched;
+        for (const std::string& tid : sit->second.trigger_ids) {
+            auto tix = gd.trigger_by_id.find(tid);
+            if (tix == gd.trigger_by_id.end()) continue;
+            const TriggerSummary& ts = gd.triggers[tix->second];
+            ++rep.triggers_dispatched;
+            int before = rep.vs.uninterpreted_count;
+            apply_effect(ts.effect_summary, rep.vs);
+            if (rep.vs.uninterpreted_count == before) ++rep.effects_applied;
+            else ++rep.effects_uninterpreted;
+        }
+    }
+    return rep;
+}
 
 struct StateMachineSim {
     // per-location: which phase index we are at, and which checkpoints have fired.
@@ -1169,6 +1273,20 @@ int main(int argc, char** argv) {
         }
         std::printf("  Total phase advances: %d, completions: %d\n",
                     sim.total_advances, sim.total_completions);
+
+        // Headless dispatcher: fire each step's triggers, mutate the variable
+        // state map, report the result.
+        engine::DispatcherReport disp = engine::dispatch_playthrough(gd);
+        std::printf("\nHeadless dispatcher:\n");
+        std::printf("  steps dispatched      : %d / %d\n",
+                    disp.steps_dispatched, (int)gd.steps.size());
+        std::printf("  triggers dispatched   : %d\n", disp.triggers_dispatched);
+        std::printf("  effects applied       : %d (true=%d  false=%d  int=%d)\n",
+                    disp.effects_applied,
+                    disp.vs.set_true_count, disp.vs.set_false_count,
+                    disp.vs.set_int_count);
+        std::printf("  effects uninterpreted : %d\n", disp.effects_uninterpreted);
+        std::printf("  distinct variables set: %zu\n", disp.vs.values.size());
         return (tally.fail == 0 && total > 0) ? 0 : 1;
     }
 
