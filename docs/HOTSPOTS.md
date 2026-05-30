@@ -24,22 +24,46 @@ The polymorphic sub-object usually resolves to a `VCAssetRef` carrying
 the four screen-space coordinates and the asset reference used for
 hover-state graphics.
 
-## Hotspot index
+## HSPT files (`XV/*.HOT`)
 
-A separate inventory CSV exists in the curated format-analysis
-artifacts:
+The on-disk geometry lives in sibling `XV/<scene_id>.HOT` files in the
+`HSPT` container format (1 982 files in the shipped game).
 
 ```
-scene_id, hotspot_idx, type, x_min, y_min, x_max, y_max, action_id1, action_id2
-   1     ,     0     ,  4  ,  120 ,  340 ,  280 ,  410 ,    14     ,    15
-   1     ,     1     ,  4  ,  300 ,  340 ,  460 ,  410 ,    16     ,    17
-   ...
+header  : "HSPT" (4 B) + count (u32 LE, 4 B)
+entry   : type_zorder (u32 LE, 4 B)
+          x_min, y_min, x_max, y_max (i16 LE × 4)
+          action_id_1 (u32 LE, 4 B)
+          action_id_2 (u32 LE, 4 B)
+          total = 20 B per entry
 ```
 
-This index was documented byte-direct from the format; the values for each
-hotspot in the HDB can be cross-referenced against it. See the
-hotspots inventory (in the upstream research tree) for the full
-2 278-row inventory.
+A strict size invariant (`8 + n*20`) is enforced. Coordinates are
+screen-space 640×480.
+
+Python decoder:
+
+```python
+from hdb_extract.extractors.hotspots import (
+    parse_hot_file, build_hotspots_inventory, write_hotspots_inventory,
+)
+stats = write_hotspots_inventory("/path/to/XV", "hotspots_inventory.json")
+```
+
+The bundled output [`examples/outputs/hotspots_inventory.json`](../examples/outputs/hotspots_inventory.json)
+contains every parsed scene plus an `action_ids_by_frequency` ranking
+(680 scenes, 2 279 rects, 807 distinct action ids). The top action ids
+in the shipped game appear on 26 – 32 different scenes.
+
+## action_id semantics
+
+`action_id` is exposed **raw**. The mapping from `action_id` to a
+runtime effect (which video to play, which variable to set, which scene
+to navigate to, ...) is not in the public on-disk format: it is
+resolved at runtime by the original engine from in-memory state. A
+faithful re-implementation supplies this mapping from its own object
+graph; the bundled engine reports each `action_id` it would dispatch
+but does not invent semantics for it.
 
 ## Event flow
 
