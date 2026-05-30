@@ -1,8 +1,8 @@
 {
  "_about": "Cross-link of scene_asset_map and hotspots_inventory. Every scene is classified interactive (has .HOT) vs cinematic-only (label but no .HOT). Orphan .HOT files are surfaced honestly rather than silently dropped.",
  "_source": [
-  "examples/outputs/scene_asset_map.json",
-  "examples/outputs/hotspots_inventory.json"
+  "examples\\outputs\\scene_asset_map.json",
+  "examples\\outputs\\hotspots_inventory.json"
  ],
  "stats": {
   "scenes_total": 1438,

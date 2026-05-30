@@ -671,6 +671,47 @@ def scene_map_cmd(hdb_path: Path, out_path: Path):
     click.echo(f"  by_asset_dir        : {stats['by_asset_dir']}")
 
 
+@main.command(name="nav-targets")
+@click.argument("hdb_path", type=click.Path(exists=True, path_type=Path))
+@click.option("--out", "out_path", type=click.Path(path_type=Path),
+              default="examples/outputs/navigation_targets.json",
+              help="output path for the VCNav navigation targets JSON")
+def nav_targets_cmd(hdb_path: Path, out_path: Path):
+    """Extract VCNav (class 0x33) inline labels byte-direct."""
+    from hdb_extract.extractors.navigation_targets import write_navigation_targets
+
+    stats = write_navigation_targets(hdb_path, out_path)
+    click.echo(f"wrote {out_path}")
+    for k in ("count", "with_label", "without_label"):
+        click.echo(f"  {k:18s}: {stats[k]}")
+
+
+@main.command(name="scenes-with-hotspots")
+@click.option("--scene-map", "scene_map_path",
+              type=click.Path(exists=True, path_type=Path),
+              default="examples/outputs/scene_asset_map.json",
+              help="path to scene_asset_map.json")
+@click.option("--hotspots", "hotspots_path",
+              type=click.Path(exists=True, path_type=Path),
+              default="examples/outputs/hotspots_inventory.json",
+              help="path to hotspots_inventory.json")
+@click.option("--out", "out_path", type=click.Path(path_type=Path),
+              default="examples/outputs/scenes_with_hotspots.json",
+              help="output path for the cross-linked JSON")
+def scenes_with_hotspots_cmd(scene_map_path: Path, hotspots_path: Path,
+                              out_path: Path):
+    """Cross-link scene_asset_map x hotspots_inventory byte-direct."""
+    from hdb_extract.extractors.scenes_with_hotspots import (
+        write_scenes_with_hotspots,
+    )
+
+    stats = write_scenes_with_hotspots(scene_map_path, hotspots_path, out_path)
+    click.echo(f"wrote {out_path}")
+    for k in ("scenes_total", "interactive", "cinematic_only",
+              "orphan_hot_files"):
+        click.echo(f"  {k:20s}: {stats[k]}")
+
+
 @main.command()
 @click.argument("game_def_path", type=click.Path(exists=True,
                                                    path_type=Path))
