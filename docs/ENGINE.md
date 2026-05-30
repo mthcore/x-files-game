@@ -141,3 +141,38 @@ cd cpp && cmake -S . -B build && cmake --build build
 ./build/xfiles_engine --validate-flow examples/outputs/game_definition.json
 ./build/xfiles_engine --print-trace examples/outputs/playthrough_trace.json
 ```
+
+## The SDL2 playable shell (`xfiles_play`, opt-in)
+
+The reference engine above is headless. A small SDL2 companion executable —
+`xfiles_play` — opens a window, plays one scene byte-direct, and reports the
+`action_id` of any hotspot the user clicks. Off by default; turn it on at
+configure time:
+
+```bash
+cmake -S . -B build -DXFILES_PLAY=ON      # FetchContent fetches SDL2 source
+# or, when SDL2 is already installed on the system:
+cmake -S . -B build -DXFILES_PLAY=ON -DXFILES_SDL2_SYSTEM=ON
+cmake --build build --config Release --target xfiles_play
+
+# headless probe (CI-safe; loads everything, exits before SDL_Init):
+./build/Release/xfiles_play --probe --asset-dir /path/to/XV
+
+# interactive play (default scene = 19672 = Field Office):
+./build/Release/xfiles_play --asset-dir /path/to/XV --debug-hotspots
+```
+
+What it does:
+
+- Reads the sibling `XV/<scene_id>.HOT` (HSPT format) via the same shared
+  parser the engine uses (`cpp/include/runtime/hsp_loader.h`).
+- Plays the matching `XV/<scene_id>.xmv` (QuickTime + Cinepak + IMA ADPCM
+  stereo) via the byte-validated codecs in `cpp/include/assets/`.
+- Overlays the rects (toggle with **F1**) and prints each click as
+  `click (x,y) -> rect#i [...] action_id_1=N action_id_2=M`.
+- Falls back to a checker pattern when the .xmv or .HOT is missing, so the
+  shell stays runnable on partial asset trees.
+
+Slice 1 deliberately scope-limits to: one window, one scene, hotspot click
+→ action_id log. The dispatcher, conversation UI, PDA, panoramic NAV
+views, save/load, and TTF text are left to later slices.
