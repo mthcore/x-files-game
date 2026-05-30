@@ -105,8 +105,14 @@ honest roadmap of what a full playable rebuild still needs — read
 - **100.00 % byte-direct coverage** of `XFILES.HDB` (6 074 064 bytes,
   0 unknown). See [coverage report](python/out/audit/coverage_final.md).
 - **51/51** VC* classes spec'd byte-exact.
-- **50/50** Python unit + integration tests passing.
+- **130** Python unit + integration tests passing.
 - Container round-trip byte-identical confirmed via `dump-complete`.
+- Reference engine ships a scripted-playthrough validator and a headless
+  dispatcher (`xfiles_engine --validate-flow`): 18/29 canonical steps
+  byte-direct PASS, 11 walkthrough-only, 0 FAIL; 113 trigger
+  effect-summary statements interpreted, 48 variables mutated, ≥85 % of
+  them validated against the GAM namespace.
+- Python ↔ C++ dispatcher parity locked by integration test.
 
 ## Background
 
