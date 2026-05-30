@@ -594,7 +594,7 @@ def loc(dll_path: Path, out_path: Path | None):
 def game_def_cmd(hdb_path: Path, out_path: Path,
                  artifacts_dir: Path | None,
                  dll_dir: Path | None):
-    """Emit the unified game_definition.json (Schema v1, Pilier 6)."""
+    """Emit the unified game_definition.json (schema v1)."""
     from hdb_extract.extractors.game_definition import (
         verify_certainty, write_game_definition,
     )
@@ -617,6 +617,41 @@ def game_def_cmd(hdb_path: Path, out_path: Path,
         for path, c in audit["violations"][:20]:
             click.echo(f"    VIOLATION : {path}  ->  {c}", err=True)
         sys.exit(1)
+
+
+@main.command()
+@click.argument("xv_dir", type=click.Path(exists=True, file_okay=False,
+                                            path_type=Path))
+@click.option("--out", "out_path", type=click.Path(path_type=Path),
+              default="examples/outputs/hotspots_inventory.json",
+              help="output path for the hotspots inventory JSON")
+def hotspots(xv_dir: Path, out_path: Path):
+    """Decode every HSPT file under XV_DIR into a single inventory JSON."""
+    from hdb_extract.extractors.hotspots import write_hotspots_inventory
+
+    stats = write_hotspots_inventory(xv_dir, out_path)
+    click.echo(f"wrote {out_path}")
+    for k in ("scenes_total", "rects_total", "action_ids_distinct",
+              "skipped_files"):
+        click.echo(f"  {k:22s}: {stats[k]:,}")
+    rng = stats["action_id_range"]
+    click.echo(f"  action_id_range       : {rng['min']} .. {rng['max']}")
+
+
+@main.command()
+@click.argument("game_def_path", type=click.Path(exists=True,
+                                                   path_type=Path))
+@click.option("--out", "out_path", type=click.Path(path_type=Path),
+              default="examples/outputs/playthrough_trace.json",
+              help="output path for the playthrough trace JSON")
+def trace(game_def_path: Path, out_path: Path):
+    """Emit a per-step trace cross-referencing the unified game model."""
+    from hdb_extract.extractors.playthrough_trace import write_playthrough_trace
+
+    stats = write_playthrough_trace(game_def_path, out_path)
+    click.echo(f"wrote {out_path}")
+    for k, v in stats.items():
+        click.echo(f"  {k:30s}: {v:,}")
 
 
 @main.command()
