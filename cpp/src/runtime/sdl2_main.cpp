@@ -65,8 +65,14 @@ void print_usage() {
         "                      interactive scene_id. Beats --scene.\n"
         "  --scene-map <path>  scene_asset_map.json path\n"
         "                      (default: examples/outputs/scene_asset_map.json)\n"
+        "  --game-def <path>   game_definition.json path\n"
+        "                      (default: examples/outputs/game_definition.json)\n"
         "  --debug-hotspots    draw hotspot rect outlines (toggle: F1)\n"
-        "  --probe             load + report + exit 0, no SDL init\n",
+        "  --probe             load + report + exit 0, no SDL init\n"
+        "\n"
+        "Keys at runtime: ESC quit, F1 toggle hotspot overlay,\n"
+        "  SPACE next canonical-flow step, BACKSPACE previous step,\n"
+        "  left click in a rect -> dispatch action_id.\n",
         kDefaultScene);
 }
 
@@ -178,16 +184,35 @@ int main(int argc, char** argv) {
             if (it != scene_map.by_location.end())
                 triggers_for_loc = it->second.size();
         }
+        std::size_t flow_steps_count = 0;
+        if (std::filesystem::is_regular_file(args.game_def_path))
+            flow_steps_count = dsp::load_flow_steps(args.game_def_path).size();
         std::printf("probe ok, scene_id=%u rects=%zu video=%s status=%s "
-                     "triggers_for_location=%zu\n",
+                     "triggers_for_location=%zu flow_steps=%zu\n",
                      args.scene_id, rects.size(),
                      xmv_present ? "present" : "absent", status,
-                     triggers_for_loc);
+                     triggers_for_loc, flow_steps_count);
         return 0;
     }
 
-    // Fire the scene's triggers byte-direct on entry. Mutations land in
-    // `vstate` and are echoed on screen / stdout.
+    // Load the canonical 29-step flow so SPACE walks the locations in order
+    // (Field Office -> Comity -> Field Office -> Warehouse -> ...).
+    std::vector<dsp::FlowStep> flow_steps;
+    int step_idx = -1;
+    if (std::filesystem::is_regular_file(args.game_def_path)) {
+        flow_steps = dsp::load_flow_steps(args.game_def_path);
+        std::printf("xfiles_play: loaded %zu canonical flow steps\n",
+                     flow_steps.size());
+    }
+    if (!resolved_location.empty()) {
+        for (std::size_t i = 0; i < flow_steps.size(); ++i) {
+            if (flow_steps[i].location == resolved_location) {
+                step_idx = static_cast<int>(i);
+                break;
+            }
+        }
+    }
+
     auto fire_entry = [&]() {
         if (resolved_location.empty()) return;
         auto muts = dsp::dispatch_scene(scene_map, resolved_location, vstate);
@@ -199,6 +224,45 @@ int main(int argc, char** argv) {
         }
     };
     fire_entry();
+
+    // SPACE-step helper — resolve the next flow step to a scene_id + xmv/hot
+    // and re-attach the FMV player. Returns false if the flow is exhausted
+    // or the next step's location does not resolve byte-direct.
+    auto enter_step_idx = [&](int idx,
+                                xfiles::runtime::FmvPlayer& fmv_ref,
+                                SDL_Renderer* ren_ptr,
+                                SDL_AudioDeviceID audio_dev,
+                                bool& fmv_ok_ref) -> bool {
+        if (idx < 0 || idx >= static_cast<int>(flow_steps.size())) return false;
+        const std::string& loc = flow_steps[idx].location;
+        std::string map_path = args.scene_map_path;
+        if (!std::filesystem::is_regular_file(map_path)) return false;
+        auto r = xfiles::runtime::SceneResolver::from_scene_asset_map(
+            map_path, args.asset_dir);
+        auto m = r.scene_for(loc);
+        if (!m) {
+            std::printf("step %d: '%s' did NOT resolve byte-direct — "
+                         "skipping\n", idx + 1, loc.c_str());
+            return false;
+        }
+        args.scene_id = m->scene_id;
+        resolved_location = loc;
+        const std::string sid = std::to_string(args.scene_id);
+        const std::string new_hot = join_path(args.asset_dir, sid + ".HOT");
+        const std::string new_xmv = join_path(args.asset_dir, sid + ".xmv");
+        rects = xfiles::runtime::load_hot_file(new_hot);
+        std::printf("step %d (%s) %s -> scene_id=%u rects=%zu\n",
+                     flow_steps[idx].step, flow_steps[idx].day.c_str(),
+                     loc.c_str(), args.scene_id, rects.size());
+        if (std::filesystem::is_regular_file(new_xmv)) {
+            fmv_ok_ref = fmv_ref.open(new_xmv);
+            if (fmv_ok_ref) fmv_ok_ref = fmv_ref.attach(ren_ptr, audio_dev);
+        } else {
+            fmv_ok_ref = false;
+        }
+        fire_entry();
+        return true;
+    };
 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) != 0) {
         std::fprintf(stderr, "SDL_Init failed: %s\n", SDL_GetError());
@@ -258,9 +322,21 @@ int main(int argc, char** argv) {
             if (e.type == SDL_KEYDOWN) {
                 if (e.key.keysym.sym == SDLK_ESCAPE) running = false;
                 if (e.key.keysym.sym == SDLK_F1) debug = !debug;
-                if (e.key.keysym.sym == SDLK_SPACE && xmv_present) {
-                    fmv.open(xmv_path);
-                    fmv.attach(ren, audio);
+                if (e.key.keysym.sym == SDLK_SPACE) {
+                    if (!flow_steps.empty() && step_idx >= 0 &&
+                        step_idx + 1 < static_cast<int>(flow_steps.size())) {
+                        ++step_idx;
+                        enter_step_idx(step_idx, fmv, ren, audio, fmv_ok);
+                    } else if (xmv_present) {
+                        fmv.open(xmv_path);
+                        fmv.attach(ren, audio);
+                    }
+                }
+                if (e.key.keysym.sym == SDLK_BACKSPACE) {
+                    if (!flow_steps.empty() && step_idx > 0) {
+                        --step_idx;
+                        enter_step_idx(step_idx, fmv, ren, audio, fmv_ok);
+                    }
                 }
             }
             if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {

@@ -86,6 +86,52 @@ struct ScenesByLocation {
              std::vector<std::pair<std::string, std::string>>> by_location;
 };
 
+// One step of the canonical 29-step walkthrough flow.
+struct FlowStep {
+    int step = 0;
+    std::string day;
+    std::string location;
+};
+
+// Parse `flow.days[].scenes[]` and return the flat 29-step sequence in
+// canonical order. Used by the playable shell to walk locations on SPACE.
+inline std::vector<FlowStep> load_flow_steps(const std::string& json_path) {
+    namespace J = ::xfiles::engine::json;
+    std::vector<FlowStep> out;
+    std::string buf;
+    if (!J::load_file(json_path, buf)) return out;
+    J::Parser parser(buf.data(), buf.size());
+    J::Value root;
+    if (!parser.parse(root) || !root.is_obj()) return out;
+    auto str_at = [](const J::Value& v, const std::string& k) {
+        const J::Value& f = v.at(k);
+        if (f.is_str()) return f.as_str();
+        if (f.is_obj() && f.at("value").is_str()) return f.at("value").as_str();
+        return std::string();
+    };
+    auto int_at = [](const J::Value& v, const std::string& k) -> long long {
+        const J::Value& f = v.at(k);
+        if (f.is_num()) return f.as_int();
+        if (f.is_obj() && f.at("value").is_num()) return f.at("value").as_int();
+        return 0;
+    };
+    const J::Value& days = root.at("flow").at("days");
+    if (!days.is_arr()) return out;
+    for (const J::Value& d : days.as_arr()) {
+        const std::string day_name = str_at(d, "day");
+        const J::Value& scs = d.at("scenes");
+        if (!scs.is_arr()) continue;
+        for (const J::Value& s : scs.as_arr()) {
+            FlowStep fs;
+            fs.step = static_cast<int>(int_at(s, "step"));
+            fs.day = day_name;
+            fs.location = str_at(s, "location");
+            if (!fs.location.empty()) out.push_back(std::move(fs));
+        }
+    }
+    return out;
+}
+
 // Parse `examples/outputs/game_definition.json` and emit the per-location
 // trigger effect map. The flat-grammar `effect_summary` strings are read
 // straight from the JSON; their honesty contract (closed grammar, otherwise
