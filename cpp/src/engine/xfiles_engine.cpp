@@ -1079,6 +1079,7 @@ int main(int argc, char** argv) {
     // --- minimal flag parser (positional + --validate-flow + --print-trace) ---
     std::string validate_flow_path;
     std::string print_trace_path;
+    std::string json_out_path;
     std::vector<std::string> positional;
     for (int i = 1; i < argc; ++i) {
         std::string a = argv[i];
@@ -1094,11 +1095,17 @@ int main(int argc, char** argv) {
                 return 1;
             }
             print_trace_path = argv[++i];
+        } else if (a == "--json-out") {
+            if (i + 1 >= argc) {
+                std::fprintf(stderr, "--json-out requires a path argument\n");
+                return 1;
+            }
+            json_out_path = argv[++i];
         } else if (a == "--help" || a == "-h") {
             std::fprintf(stderr,
                 "Usage: xfiles_engine <XFILES.HDB> [XV_dir_with_HOT_files]\n"
                 "       xfiles_engine --validate-flow <game_definition.json> "
-                "[<XFILES.HDB>]\n"
+                "[--json-out <path>] [<XFILES.HDB>]\n"
                 "       xfiles_engine --print-trace <playthrough_trace.json>\n");
             return 0;
         } else {
@@ -1287,6 +1294,91 @@ int main(int argc, char** argv) {
                     disp.vs.set_int_count);
         std::printf("  effects uninterpreted : %d\n", disp.effects_uninterpreted);
         std::printf("  distinct variables set: %zu\n", disp.vs.values.size());
+
+        // Optional machine-readable export of the validator + dispatcher state.
+        if (!json_out_path.empty()) {
+            std::FILE* f = std::fopen(json_out_path.c_str(), "wb");
+            if (!f) {
+                std::fprintf(stderr, "cannot write %s\n", json_out_path.c_str());
+                return 1;
+            }
+            auto esc = [](const std::string& s) {
+                std::string out; out.reserve(s.size() + 2);
+                for (char c : s) {
+                    if (c == '"' || c == '\\') { out.push_back('\\'); out.push_back(c); }
+                    else if (c == '\n') out += "\\n";
+                    else if (c == '\r') out += "\\r";
+                    else if (c == '\t') out += "\\t";
+                    else if (static_cast<unsigned char>(c) < 0x20) {
+                        char buf[8];
+                        std::snprintf(buf, sizeof(buf), "\\u%04x", (unsigned)c);
+                        out += buf;
+                    }
+                    else out.push_back(c);
+                }
+                return out;
+            };
+            std::fprintf(f, "{\n");
+            std::fprintf(f, "  \"_about\": \"--validate-flow + dispatcher report\",\n");
+            std::fprintf(f, "  \"steps\": %d, \"pass\": %d, \"walkthrough_only\": %d, "
+                            "\"fail\": %d,\n",
+                         total, tally.pass, tally.walkthrough_only, tally.fail);
+            std::fprintf(f, "  \"per_step\": [\n");
+            for (std::size_t k = 0; k < reports.size(); ++k) {
+                const engine::StepReport& r = reports[k];
+                const char* st =
+                    r.status == engine::StepStatus::Pass ? "pass" :
+                    r.status == engine::StepStatus::WalkthroughOnly ? "walkthrough-only" :
+                    "fail";
+                std::fprintf(f, "    {\"step\": %d, \"day\": \"%s\", "
+                                "\"location\": \"%s\", \"status\": \"%s\", "
+                                "\"triggers_referenced\": %d, "
+                                "\"triggers_resolved\": %d, "
+                                "\"action_count\": %d}%s\n",
+                             r.step, esc(r.day).c_str(), esc(r.location).c_str(),
+                             st, r.triggers_referenced, r.triggers_resolved,
+                             r.action_count,
+                             (k + 1 < reports.size()) ? "," : "");
+            }
+            std::fprintf(f, "  ],\n");
+            std::fprintf(f, "  \"state_machine\": {\n");
+            std::size_t i_loc = 0;
+            for (const auto& kv : sim.by_location) {
+                auto sit = gd.scenes.find(kv.first);
+                const auto& sc = sit->second;
+                std::string phase_now = sc.phase_machine.empty() ? std::string("-")
+                                          : sc.phase_machine[kv.second.phase_index];
+                std::fprintf(f, "    \"%s\": {\"phase_index\": %d, "
+                                "\"phase_count\": %zu, \"phase_now\": \"%s\", "
+                                "\"checkpoints_fired\": %zu, "
+                                "\"checkpoints_total\": %zu}%s\n",
+                             esc(kv.first).c_str(),
+                             kv.second.phase_index + 1,
+                             sc.phase_machine.empty() ? size_t(1) : sc.phase_machine.size(),
+                             esc(phase_now).c_str(),
+                             kv.second.fired.size(),
+                             sc.checkpoints.size(),
+                             (++i_loc < sim.by_location.size()) ? "," : "");
+            }
+            std::fprintf(f, "  },\n");
+            std::fprintf(f, "  \"dispatcher\": {\n");
+            std::fprintf(f, "    \"steps_dispatched\": %d,\n", disp.steps_dispatched);
+            std::fprintf(f, "    \"triggers_dispatched\": %d,\n", disp.triggers_dispatched);
+            std::fprintf(f, "    \"effects_applied\": %d,\n", disp.effects_applied);
+            std::fprintf(f, "    \"effects_uninterpreted\": %d,\n", disp.effects_uninterpreted);
+            std::fprintf(f, "    \"variables\": {\n");
+            std::size_t i_v = 0;
+            for (const auto& kv : disp.vs.values) {
+                std::fprintf(f, "      \"%s\": \"%s\"%s\n",
+                             esc(kv.first).c_str(), esc(kv.second).c_str(),
+                             (++i_v < disp.vs.values.size()) ? "," : "");
+            }
+            std::fprintf(f, "    }\n");
+            std::fprintf(f, "  }\n");
+            std::fprintf(f, "}\n");
+            std::fclose(f);
+            std::printf("\nWrote %s\n", json_out_path.c_str());
+        }
         return (tally.fail == 0 && total > 0) ? 0 : 1;
     }
 
