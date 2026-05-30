@@ -19,7 +19,7 @@ fabricated "HBExpression/HBActionBody" classes. Their 16-byte payload
 is decoded byte-direct by hb_subrecords.decode_part_ref; the +14 relation
 byte's semantics are honestly left `undetermined`. Triggers also reference
 real VC* targets (0x33 VCNav, 0x34 VCNav_List, 0x2c VCCharacter, 0x51
-VCTrigger, 0x52 VCTriggerList, ...) which form the game graph (Pilier 4).
+VCTrigger, 0x52 VCTriggerList, ...) which form the game graph.
 """
 from __future__ import annotations
 
