@@ -31,6 +31,7 @@
 #include "hdb/hdb_container.h"
 #include "nl/hdb_record_index.h"
 #include "runtime/hsp_loader.h"
+#include "runtime/mini_json.h"
 
 #include <cstdint>
 #include <cstdio>
@@ -375,14 +376,15 @@ struct Conversation {
 };
 
 // ===========================================================================
-// PART 8 — MINIMAL JSON READER (in-tree, no external dep)
+// PART 8 — MINIMAL JSON READER (now in cpp/include/runtime/mini_json.h)
 // ===========================================================================
 //
-// A tiny recursive-descent parser tailored to the shape of `game_definition.json`
-// and `game_flow.json`. It accepts: null, bool, integer or floating numbers,
-// double-quoted strings (with the escapes used by these files: \" \\ \/ \n \r
-// \t \b \f), arrays and objects. No exceptions: a parse error leaves the parser
-// in a `failed_` state with a one-line diagnostic. The DOM is a Value variant.
+// The recursive-descent parser used to live inline here. It is now in
+// `cpp/include/runtime/mini_json.h` so the SDL2 playable shell shares the
+// exact same reader (one source of truth for the JSON grammar of the
+// artifacts in `examples/outputs/`). The block below keeps the historical
+// PART 8 numbering; the implementation moved verbatim.
+#if 0
 namespace json {
 
 // Object/Array are declared as wrapper structs (NOT std::map<std::string,Value>
@@ -625,6 +627,10 @@ inline bool load_file(const std::string& path, std::string& out) {
 }
 
 } // namespace json
+#endif  // moved to runtime/mini_json.h
+using namespace ::xfiles::engine::json;  // bring the header symbols into the
+                                          // same `engine::json::` qualified
+                                          // name the rest of this file uses.
 
 // ===========================================================================
 // PART 9 — GAME DEFINITION (mirrors `game_definition.json`)

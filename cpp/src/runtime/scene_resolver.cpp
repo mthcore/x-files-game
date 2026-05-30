@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
 #include "runtime/scene_resolver.h"
+#include "runtime/mini_json.h"
 
 #include <cstdio>
 #include <cstdlib>
 #include <filesystem>
 #include <string>
+#include <utility>
 
 namespace xfiles::runtime {
 
@@ -56,6 +58,32 @@ std::optional<SceneMatch> SceneResolver::scene_for(
     if (it == by_location_.end()) return std::nullopt;
     if (it->second.certainty != Certainty::byte_direct) return std::nullopt;
     return it->second;
+}
+
+SceneResolver SceneResolver::from_scene_asset_map(
+    const std::string& json_path,
+    const std::string& asset_dir) {
+    namespace J = ::xfiles::engine::json;
+    std::vector<std::pair<uint32_t, std::string>> hints;
+    std::string buf;
+    if (!J::load_file(json_path, buf)) return from_hints(asset_dir, hints);
+    J::Parser parser(buf.data(), buf.size());
+    J::Value root;
+    if (!parser.parse(root) || !root.is_obj()) {
+        return from_hints(asset_dir, hints);
+    }
+    const J::Value& entries = root.at("entries");
+    if (!entries.is_arr()) return from_hints(asset_dir, hints);
+    // Preserve first-seen order — the JSON is emitted sorted by asset_id, so
+    // the first interactive scene per location ends up at the smallest id.
+    for (const J::Value& e : entries.as_arr()) {
+        if (!e.is_obj()) continue;
+        const J::Value& loc = e.at("location");
+        const J::Value& aid = e.at("asset_id");
+        if (!loc.is_str() || !aid.is_num()) continue;
+        hints.emplace_back(static_cast<uint32_t>(aid.as_int()), loc.as_str());
+    }
+    return from_hints(asset_dir, hints);
 }
 
 std::size_t SceneResolver::byte_direct_count() const {

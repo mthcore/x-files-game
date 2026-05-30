@@ -41,6 +41,16 @@ public:
         const std::string& asset_dir,
         const std::vector<std::pair<uint32_t, std::string>>& hints);
 
+    // Build the resolver directly from the JSON artifact emitted by
+    // `hdb-extract scene-map` (`examples/outputs/scene_asset_map.json`).
+    // Each entry's (location, asset_dir, asset_id) is checked against the
+    // file system: if the matching `<asset_dir>/<id>.HOT` exists the match
+    // is byte-direct, otherwise it stays undetermined. First-wins per
+    // location, with byte-direct matches preferred over undetermined ones.
+    static SceneResolver from_scene_asset_map(
+        const std::string& scene_asset_map_json_path,
+        const std::string& asset_dir);
+
     // Single-scene lookup by exact location string.
     std::optional<SceneMatch> scene_for(const std::string& location) const;
 

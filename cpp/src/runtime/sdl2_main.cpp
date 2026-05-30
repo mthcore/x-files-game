@@ -42,19 +42,27 @@ constexpr uint32_t kDefaultScene = 58615;
 
 struct Args {
     std::string asset_dir;
+    std::string scene_map_path;          // optional scene_asset_map.json
+    std::string location;                // --location "Field Office"
     uint32_t scene_id = kDefaultScene;
+    bool scene_explicit = false;
     bool debug_hotspots = false;
     bool probe = false;
 };
 
 void print_usage() {
     std::printf(
-        "Usage: xfiles_play [--asset-dir <dir>] [--scene <id>]\n"
-        "                   [--debug-hotspots] [--probe]\n"
+        "Usage: xfiles_play [--asset-dir <dir>] [--scene <id> | --location <name>]\n"
+        "                   [--scene-map <path>] [--debug-hotspots] [--probe]\n"
         "\n"
         "  --asset-dir <dir>   directory holding XV/<scene_id>.{xmv,HOT}\n"
         "                      (defaults to ./XV)\n"
-        "  --scene <id>        scene id to load (default: %u)\n"
+        "  --scene <id>        scene id to load (default: %u = VCLogo)\n"
+        "  --location <name>   resolve a location name (e.g. 'Field Office')\n"
+        "                      via scene_asset_map.json to its first byte-direct\n"
+        "                      interactive scene_id. Beats --scene.\n"
+        "  --scene-map <path>  scene_asset_map.json path\n"
+        "                      (default: examples/outputs/scene_asset_map.json)\n"
         "  --debug-hotspots    draw hotspot rect outlines (toggle: F1)\n"
         "  --probe             load + report + exit 0, no SDL init\n",
         kDefaultScene);
@@ -66,13 +74,19 @@ bool parse(int argc, char** argv, Args& out) {
         if (a == "--asset-dir" && i + 1 < argc) { out.asset_dir = argv[++i]; }
         else if (a == "--scene" && i + 1 < argc) {
             out.scene_id = static_cast<uint32_t>(std::strtoul(argv[++i], nullptr, 10));
+            out.scene_explicit = true;
         }
+        else if (a == "--location" && i + 1 < argc) { out.location = argv[++i]; }
+        else if (a == "--scene-map" && i + 1 < argc) { out.scene_map_path = argv[++i]; }
         else if (a == "--debug-hotspots") { out.debug_hotspots = true; }
         else if (a == "--probe") { out.probe = true; }
         else if (a == "--help" || a == "-h") { print_usage(); return false; }
         else { std::fprintf(stderr, "unknown arg: %s\n", a.c_str()); print_usage(); return false; }
     }
     if (out.asset_dir.empty()) out.asset_dir = "XV";
+    if (out.scene_map_path.empty()) {
+        out.scene_map_path = "examples/outputs/scene_asset_map.json";
+    }
     return true;
 }
 
@@ -88,6 +102,34 @@ std::string join_path(const std::string& dir, const std::string& name) {
 int main(int argc, char** argv) {
     Args args;
     if (!parse(argc, argv, args)) return 1;
+
+    std::string resolved_location;
+    // --location wins over --scene unless --scene was explicit and --location
+    // wasn't supplied.
+    if (!args.location.empty()) {
+        namespace fs = std::filesystem;
+        if (fs::is_regular_file(args.scene_map_path)) {
+            auto r = xfiles::runtime::SceneResolver::from_scene_asset_map(
+                args.scene_map_path, args.asset_dir);
+            auto m = r.scene_for(args.location);
+            if (m) {
+                args.scene_id = m->scene_id;
+                resolved_location = args.location;
+                std::printf("xfiles_play: location='%s' -> scene_id=%u "
+                             "(byte-direct via scene_asset_map)\n",
+                             args.location.c_str(), args.scene_id);
+            } else {
+                std::printf("xfiles_play: location='%s' did NOT resolve to a "
+                             "byte-direct interactive scene; falling back to "
+                             "--scene=%u\n",
+                             args.location.c_str(), args.scene_id);
+            }
+        } else {
+            std::printf("xfiles_play: --scene-map='%s' missing — using "
+                         "--scene=%u\n",
+                         args.scene_map_path.c_str(), args.scene_id);
+        }
+    }
 
     const std::string sid_str = std::to_string(args.scene_id);
     const std::string hot_path = join_path(args.asset_dir, sid_str + ".HOT");
