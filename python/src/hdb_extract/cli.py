@@ -654,6 +654,23 @@ def trace(game_def_path: Path, out_path: Path):
         click.echo(f"  {k:30s}: {v:,}")
 
 
+@main.command(name="scene-map")
+@click.argument("hdb_path", type=click.Path(exists=True, path_type=Path))
+@click.option("--out", "out_path", type=click.Path(path_type=Path),
+              default="examples/outputs/scene_asset_map.json",
+              help="output path for the scene asset map JSON")
+def scene_map_cmd(hdb_path: Path, out_path: Path):
+    """Extract the byte-direct map from inline labels to XV/XN ids."""
+    from hdb_extract.extractors.scene_asset_map import write_scene_asset_map
+
+    stats = write_scene_asset_map(hdb_path, out_path)
+    click.echo(f"wrote {out_path}")
+    click.echo(f"  entries_total       : {stats['entries_total']:,}")
+    click.echo(f"  distinct_locations  : {stats['distinct_locations']}")
+    click.echo(f"  by_kind             : {stats['by_kind']}")
+    click.echo(f"  by_asset_dir        : {stats['by_asset_dir']}")
+
+
 @main.command()
 @click.argument("game_def_path", type=click.Path(exists=True,
                                                    path_type=Path))
