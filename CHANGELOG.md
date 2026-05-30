@@ -5,13 +5,27 @@
 - **SDL2 playable shell** (`xfiles_play`), opt-in via `cmake -DXFILES_PLAY=ON`.
   Opens a 640x480 window, plays a Cinepak/IMA scene from `XV/<scene_id>.xmv`,
   overlays its HSPT rects, dispatches the rect's `action_id` on click.
-  Default scene 19672 (Field Office). Build flag-gated — when OFF, no SDL2
-  fetch happens, the existing build matrix is untouched.
-- HSPT parser extracted into `cpp/include/runtime/hsp_loader.h` so the engine
-  and the shell share one byte-direct implementation.
+  Build flag-gated — when OFF, no SDL2 fetch happens, the existing build
+  matrix is untouched.
+- `--location <name>` resolves a location string to its byte-direct
+  interactive scene_id via `scene_asset_map.json`.
+- SPACE / BACKSPACE walk the canonical 29-step flow (`flow.days[].scenes[]`)
+  byte-direct; each step loads its scene's FMV + HOT and fires the
+  location's triggers via the shared headless dispatcher.
+- F5 / F9 save / load the variable state to / from `xfiles_play.save.json`
+  (full round-trip; the new `test_dispatcher_save_load` test locks it).
+- New byte-direct data artifacts:
+  `examples/outputs/scene_asset_map.json` (1 439 entries, 20 locations),
+  `examples/outputs/navigation_targets.json` (68 VCNav records, 14 labelled),
+  `examples/outputs/scenes_with_hotspots.json` (603 interactive, 835
+  cinematic-only, 77 orphan HOT files).
+- HSPT parser, mini JSON reader, and headless dispatcher extracted into
+  `cpp/include/runtime/` so the engine and the playable shell share one
+  byte-direct implementation. Three new CLI commands:
+  `hdb-extract scene-map / nav-targets / scenes-with-hotspots`.
 - `--probe` mode loads every artifact, reports state, exits 0 before
-  `SDL_Init` — safe for headless CI. Two new Catch2-compatible tests:
-  `test_scene_resolver`, `test_play_probe`.
+  `SDL_Init` — safe for headless CI. New tests:
+  `test_scene_resolver`, `test_play_probe`, `test_dispatcher_save_load`.
 - Unified game model (`hdb_extract game-def`) and C++ engine validator
   (`xfiles_engine --validate-flow`). Reports byte-direct PASS, walkthrough-only,
   and FAIL per step (18/29 PASS, 11 walkthrough-only, 0 FAIL on the shipped HDB).

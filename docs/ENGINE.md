@@ -168,11 +168,35 @@ What it does:
   parser the engine uses (`cpp/include/runtime/hsp_loader.h`).
 - Plays the matching `XV/<scene_id>.xmv` (QuickTime + Cinepak + IMA ADPCM
   stereo) via the byte-validated codecs in `cpp/include/assets/`.
+- **Resolves `--location <name>`** (e.g. `--location "Field Office"`) to a
+  byte-direct interactive scene_id by consulting
+  `examples/outputs/scene_asset_map.json`.
+- **Walks the canonical 29-step flow** with SPACE / BACKSPACE: each step's
+  location maps to a real scene_id, the FMV + HOT are reloaded byte-direct.
+- **Dispatches each scene's triggers** on enter: every trigger registered
+  for the current location fires its `effect_summary` ("set bAI* = true"),
+  mutating an in-memory variable state. The exit summary prints the
+  resulting state.
+- **F5 / F9 save / load** the variable state to / from
+  `xfiles_play.save.json`. The round-trip is unit-tested
+  (`cpp/tests/test_dispatcher_save_load.cpp`).
 - Overlays the rects (toggle with **F1**) and prints each click as
   `click (x,y) -> rect#i [...] action_id_1=N action_id_2=M`.
 - Falls back to a checker pattern when the .xmv or .HOT is missing, so the
   shell stays runnable on partial asset trees.
 
-Slice 1 deliberately scope-limits to: one window, one scene, hotspot click
-→ action_id log. The dispatcher, conversation UI, PDA, panoramic NAV
-views, save/load, and TTF text are left to later slices.
+Headless smoke check (CI-safe, exits before `SDL_Init`):
+
+```bash
+./build/Release/xfiles_play --probe --asset-dir /path/to/XV \
+    --location "Field Office"
+# expected output:
+#   xfiles_play: location='Field Office' -> scene_id=19736 (byte-direct ...)
+#   xfiles_play: dispatcher loaded 11 locations from .../game_definition.json
+#   probe ok, scene_id=19736 rects=1 video=present status=ready
+#                                triggers_for_location=8 flow_steps=29
+```
+
+Out of scope for now: conversation UI rendered with TTF, PDA / inventory
+panel, panoramic NAV views, GAM (NeoPersist 3.0) save round-trip — the
+JSON snapshot is a stand-in until the GAM writer lands.
