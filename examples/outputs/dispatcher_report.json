@@ -1,0 +1,618 @@
+{
+ "steps_dispatched": 18,
+ "triggers_dispatched": 113,
+ "effects_applied": 113,
+ "effects_uninterpreted": 0,
+ "variables": {
+  "bAIFieldOfficeN2_SearchedForWare": "true",
+  "bAIFieldOfficeN3_RevivedCook": "true",
+  "bAIFieldOfficeN3_SearchedOffice": "true",
+  "bAIFieldOffice_CaseFiles2Cook": "true",
+  "bAIFieldOffice_FiledAPB": "true",
+  "bAIFieldOffice_GotDrawerInv": "true",
+  "bAIFieldOffice_GotEquipInv": "true",
+  "bAIFieldOffice_RetrievedCaseFile": "true",
+  "bAIComity_GetLaptop": "true",
+  "bAIComity_PhoneIdeaIcon": "true",
+  "bAIComity_SkinnerMentionedPhone": "true",
+  "bAIComity_get_laptop": "true",
+  "bAIComity_phone_idea": "true",
+  "bAIWarehouse_CollectedBlackPowde": "true",
+  "bAIWarehouse_CollectedBlood": "true",
+  "bAIWarehouse_CollectedBullet": "true",
+  "bAIWarehouse_CollectedMorleyButt": "true",
+  "bAIWarehouse_CrateOpen": "true",
+  "bAIWarehouse_GetCrowbar": "true",
+  "bAITarakan_AllGrowingFoodFound": "true",
+  "bAITarakan_BeenInHold": "true",
+  "bAITarakan_BeenInWheelhouse": "true",
+  "bAITarakan_GotLeadSphere": "true",
+  "bAITarakan_GotLogAndJournal": "true",
+  "bAITarakan_NOTInWheelhouse": "true",
+  "bAITarakan_SeeEagleCrates": "true",
+  "bAITarakan_SeeFingerPrints": "true",
+  "bAITarakan_SeeWhiteShadow": "true",
+  "bAIHauling_EscapeThruGrate": "true",
+  "bAIHauling_GetShovel": "true",
+  "bAIHauling_GetsLogManifest": "true",
+  "bAISmol_CenterGoonDead": "true",
+  "bAISmol_GotGun": "true",
+  "bAISmol_LeftGoonDead": "true",
+  "bAISmol_ProcessedGun": "true",
+  "bAISmol_RightGoonDead": "true",
+  "bAISmol_SeeEagleCrates": "true",
+  "bAISmol_SeePayrollLog": "true",
+  "bAIRailyard_ClimbedPole": "true",
+  "bAIRauch_OpenedAttic": "true",
+  "bAISecretB_ComputerAccessed": "true",
+  "bAISecretB_GotKey": "true",
+  "bAISecretB_IsoActionIconShowing": "true",
+  "bAISecretB_IsoChamberOn": "true",
+  "bAISecretB_IsoDoorEastOpen": "true",
+  "bAISecretB_IsoDoorWestOpen": "true",
+  "bAISecretB_LifeSupportOn": "true",
+  "bAISecretB_LuredMulder": "true"
+ },
+ "timeline": [
+  {
+   "step": 1,
+   "location": "Field Office",
+   "mutations": [
+    {
+     "var": "bAIFieldOfficeN2_SearchedForWare",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_RevivedCook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_SearchedOffice",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_CaseFiles2Cook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_FiledAPB",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotDrawerInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotEquipInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_RetrievedCaseFile",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 2,
+   "location": "Comity",
+   "mutations": [
+    {
+     "var": "bAIComity_GetLaptop",
+     "value": "true"
+    },
+    {
+     "var": "bAIComity_PhoneIdeaIcon",
+     "value": "true"
+    },
+    {
+     "var": "bAIComity_SkinnerMentionedPhone",
+     "value": "true"
+    },
+    {
+     "var": "bAIComity_get_laptop",
+     "value": "true"
+    },
+    {
+     "var": "bAIComity_phone_idea",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 3,
+   "location": "Field Office",
+   "mutations": [
+    {
+     "var": "bAIFieldOfficeN2_SearchedForWare",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_RevivedCook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_SearchedOffice",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_CaseFiles2Cook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_FiledAPB",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotDrawerInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotEquipInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_RetrievedCaseFile",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 4,
+   "location": "Warehouse",
+   "mutations": [
+    {
+     "var": "bAIWarehouse_CollectedBlackPowde",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedBlood",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedBullet",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedMorleyButt",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CrateOpen",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_GetCrowbar",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 6,
+   "location": "Field Office",
+   "mutations": [
+    {
+     "var": "bAIFieldOfficeN2_SearchedForWare",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_RevivedCook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_SearchedOffice",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_CaseFiles2Cook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_FiledAPB",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotDrawerInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotEquipInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_RetrievedCaseFile",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 7,
+   "location": "Warehouse",
+   "mutations": [
+    {
+     "var": "bAIWarehouse_CollectedBlackPowde",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedBlood",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedBullet",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedMorleyButt",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CrateOpen",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_GetCrowbar",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 9,
+   "location": "Warehouse",
+   "mutations": [
+    {
+     "var": "bAIWarehouse_CollectedBlackPowde",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedBlood",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedBullet",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedMorleyButt",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CrateOpen",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_GetCrowbar",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 10,
+   "location": "Tarakan",
+   "mutations": [
+    {
+     "var": "bAITarakan_AllGrowingFoodFound",
+     "value": "true"
+    },
+    {
+     "var": "bAITarakan_BeenInHold",
+     "value": "true"
+    },
+    {
+     "var": "bAITarakan_BeenInWheelhouse",
+     "value": "true"
+    },
+    {
+     "var": "bAITarakan_GotLeadSphere",
+     "value": "true"
+    },
+    {
+     "var": "bAITarakan_GotLogAndJournal",
+     "value": "true"
+    },
+    {
+     "var": "bAITarakan_NOTInWheelhouse",
+     "value": "true"
+    },
+    {
+     "var": "bAITarakan_SeeEagleCrates",
+     "value": "true"
+    },
+    {
+     "var": "bAITarakan_SeeFingerPrints",
+     "value": "true"
+    },
+    {
+     "var": "bAITarakan_SeeWhiteShadow",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 13,
+   "location": "Field Office",
+   "mutations": [
+    {
+     "var": "bAIFieldOfficeN2_SearchedForWare",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_RevivedCook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_SearchedOffice",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_CaseFiles2Cook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_FiledAPB",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotDrawerInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotEquipInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_RetrievedCaseFile",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 15,
+   "location": "Warehouse",
+   "mutations": [
+    {
+     "var": "bAIWarehouse_CollectedBlackPowde",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedBlood",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedBullet",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CollectedMorleyButt",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_CrateOpen",
+     "value": "true"
+    },
+    {
+     "var": "bAIWarehouse_GetCrowbar",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 17,
+   "location": "Hauling Yard",
+   "mutations": [
+    {
+     "var": "bAIHauling_EscapeThruGrate",
+     "value": "true"
+    },
+    {
+     "var": "bAIHauling_GetShovel",
+     "value": "true"
+    },
+    {
+     "var": "bAIHauling_GetsLogManifest",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 19,
+   "location": "Field Office",
+   "mutations": [
+    {
+     "var": "bAIFieldOfficeN2_SearchedForWare",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_RevivedCook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_SearchedOffice",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_CaseFiles2Cook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_FiledAPB",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotDrawerInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotEquipInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_RetrievedCaseFile",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 20,
+   "location": "Smolnikoff",
+   "mutations": [
+    {
+     "var": "bAISmol_CenterGoonDead",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_GotGun",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_LeftGoonDead",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_ProcessedGun",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_RightGoonDead",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_SeeEagleCrates",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_SeePayrollLog",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 22,
+   "location": "Smolnikoff",
+   "mutations": [
+    {
+     "var": "bAISmol_CenterGoonDead",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_GotGun",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_LeftGoonDead",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_ProcessedGun",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_RightGoonDead",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_SeeEagleCrates",
+     "value": "true"
+    },
+    {
+     "var": "bAISmol_SeePayrollLog",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 26,
+   "location": "Rail Yard",
+   "mutations": [
+    {
+     "var": "bAIRailyard_ClimbedPole",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 27,
+   "location": "Field Office",
+   "mutations": [
+    {
+     "var": "bAIFieldOfficeN2_SearchedForWare",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_RevivedCook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOfficeN3_SearchedOffice",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_CaseFiles2Cook",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_FiledAPB",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotDrawerInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_GotEquipInv",
+     "value": "true"
+    },
+    {
+     "var": "bAIFieldOffice_RetrievedCaseFile",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 28,
+   "location": "Rauch",
+   "mutations": [
+    {
+     "var": "bAIRauch_OpenedAttic",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "step": 29,
+   "location": "Secret Base",
+   "mutations": [
+    {
+     "var": "bAISecretB_ComputerAccessed",
+     "value": "true"
+    },
+    {
+     "var": "bAISecretB_GotKey",
+     "value": "true"
+    },
+    {
+     "var": "bAISecretB_IsoActionIconShowing",
+     "value": "true"
+    },
+    {
+     "var": "bAISecretB_IsoChamberOn",
+     "value": "true"
+    },
+    {
+     "var": "bAISecretB_IsoDoorEastOpen",
+     "value": "true"
+    },
+    {
+     "var": "bAISecretB_IsoDoorWestOpen",
+     "value": "true"
+    },
+    {
+     "var": "bAISecretB_LifeSupportOn",
+     "value": "true"
+    },
+    {
+     "var": "bAISecretB_LuredMulder",
+     "value": "true"
+    }
+   ]
+  }
+ ]
+}

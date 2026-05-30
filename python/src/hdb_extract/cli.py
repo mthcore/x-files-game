@@ -655,6 +655,22 @@ def trace(game_def_path: Path, out_path: Path):
 
 
 @main.command()
+@click.argument("game_def_path", type=click.Path(exists=True,
+                                                   path_type=Path))
+@click.option("--out", "out_path", type=click.Path(path_type=Path),
+              default="examples/outputs/dispatcher_report.json",
+              help="output path for the dispatcher JSON report")
+def dispatch(game_def_path: Path, out_path: Path):
+    """Replay the 29-step flow over the unified model and mutate variables."""
+    from hdb_extract.extractors.dispatcher import write_dispatch_report
+
+    counts = write_dispatch_report(game_def_path, out_path)
+    click.echo(f"wrote {out_path}")
+    for k, v in counts.items():
+        click.echo(f"  {k:25s}: {v}")
+
+
+@main.command()
 @click.argument("gam_path", type=click.Path(exists=True, path_type=Path))
 @click.option("--out", "out_path", type=click.Path(path_type=Path),
               default=None, help="if set, write a JSON summary to this path")
