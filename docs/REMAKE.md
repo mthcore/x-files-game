@@ -203,14 +203,28 @@ input) and the run-time-only evaluation noted in §6.
 
 - **Container**: 100% byte-direct, byte-identical round-trip.
 - **Classes**: every VC* class has an exact read grammar.
-- **Flow**: ordered story Nodes + navigation links, byte-direct.
+- **Flow**: ordered story Nodes + navigation links + the canonical 29-step
+  walkthrough integrated into the unified model, byte-direct.
 - **Triggers**: the pair graph resolves ~96% byte-direct; conditions/actions
-  decoded structurally.
-- **Hotspots**: every scene's clickable rectangles + action ids, byte-direct.
+  decoded structurally. The CNeoPart `+14` relation byte distribution is
+  surfaced empirically in [TRIGGERS.md](TRIGGERS.md).
+- **Hotspots**: 680 scenes / 2 279 clickable rects / 807 distinct action ids
+  byte-direct from the `XV/*.HOT` HSPT files, with a per-action_id frequency
+  ranking ([HOTSPOTS.md](HOTSPOTS.md)).
 - **Runtime state**: savegame variable values + the authors' enum legends and
   condition labels, byte-direct.
 - **Media/text**: PFF, QuickTime video, localization strings, PDA text — all
   parsed with verified round-trips.
+- **Unified game model** (`game_definition.json`, schema v1) and **per-step
+  trace** (`playthrough_trace.json`) — one file each that cross-references
+  every artifact for downstream consumers.
+- **Headless dispatcher** in the reference engine (`xfiles_engine
+  --validate-flow`) fires each canonical-flow step's triggers and mutates a
+  variable-state map; 113 effect-summary statements interpreted byte-direct,
+  ≥85% of the resulting variable names verified against the GAM namespace.
+- **B-tree page inventory** (tag/kind statistics, `btree_pages_inventory.json`)
+  surfaces the structural shape; per-kind semantics stays honestly
+  `undetermined` per the public format.
 
 That is the complete content-and-logic blueprint of the game.
 
@@ -282,11 +296,16 @@ semantics instead of reading them from disk.
 ### 6.5 Suggested build order for a remake
 
 1. Load `game_definition.json` into an in-memory object graph (scenes,
-   navigation, hotspots, triggers, variables, conversations, e-mails).
+   navigation, hotspots, triggers, variables, conversations, e-mails). The
+   reference engine's headless validator (`xfiles_engine --validate-flow`)
+   already does this and writes a machine-readable report
+   (`--json-out <path>`) — a good baseline to compare your loader against.
 2. Stand up presentation: play the per-scene clip, draw the backdrop, overlay
    hotspots, handle clicks. (You now have a clickable, navigable slideshow.)
 3. Implement the action vocabulary (§6.3) so clicks have effects and the state
-   machine advances.
+   machine advances. The reference dispatcher's `set <var> = <value>` parser
+   is the smallest non-trivial example: every trigger's `effect_summary`
+   feeds it byte-direct.
 4. Add the condition/relation evaluation (§6.2) against your object graph so
    triggers fire and gate progression.
 5. Layer in conversations, the PDA/e-mail arc, audio and the panoramic views.
