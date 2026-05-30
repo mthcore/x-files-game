@@ -929,12 +929,19 @@ static void apply_effect(const std::string& effect, VariableState& vs) {
     ++vs.uninterpreted_count;
 }
 
+struct StepMutation {
+    int          step = 0;
+    std::string  location;
+    std::vector<std::pair<std::string, std::string>> mutations; // (var, value)
+};
+
 struct DispatcherReport {
     int steps_dispatched = 0;
     int triggers_dispatched = 0;
     int effects_applied = 0;
     int effects_uninterpreted = 0;
     VariableState vs;
+    std::vector<StepMutation> timeline;     // per-step mutation list
 };
 
 static DispatcherReport dispatch_playthrough(const GameDefinition& gd) {
@@ -943,16 +950,35 @@ static DispatcherReport dispatch_playthrough(const GameDefinition& gd) {
         auto sit = gd.scenes.find(fs.location);
         if (sit == gd.scenes.end()) continue;
         ++rep.steps_dispatched;
+        StepMutation sm;
+        sm.step = fs.step;
+        sm.location = fs.location;
         for (const std::string& tid : sit->second.trigger_ids) {
             auto tix = gd.trigger_by_id.find(tid);
             if (tix == gd.trigger_by_id.end()) continue;
             const TriggerSummary& ts = gd.triggers[tix->second];
             ++rep.triggers_dispatched;
-            int before = rep.vs.uninterpreted_count;
+            std::size_t vars_before = rep.vs.values.size();
+            int u_before = rep.vs.uninterpreted_count;
             apply_effect(ts.effect_summary, rep.vs);
-            if (rep.vs.uninterpreted_count == before) ++rep.effects_applied;
+            if (rep.vs.uninterpreted_count == u_before) ++rep.effects_applied;
             else ++rep.effects_uninterpreted;
+            // capture the new mutation (whether the key was new or updated):
+            // walk the mutated map and find the var(s) touched by ts.vars_written.
+            for (const std::string& vn : ts.vars_written) {
+                auto v_it = rep.vs.values.find(vn);
+                if (v_it != rep.vs.values.end()) {
+                    sm.mutations.emplace_back(vn, v_it->second);
+                }
+            }
+            // fallback: if vars_written was empty, try to detect any net-new var.
+            if (ts.vars_written.empty() &&
+                rep.vs.values.size() > vars_before) {
+                // best-effort: pick the last-inserted key (std::map is ordered;
+                // we can't trivially know which was new without a probe). Skip.
+            }
         }
+        rep.timeline.push_back(std::move(sm));
     }
     return rep;
 }
@@ -1373,7 +1399,24 @@ int main(int argc, char** argv) {
                              esc(kv.first).c_str(), esc(kv.second).c_str(),
                              (++i_v < disp.vs.values.size()) ? "," : "");
             }
-            std::fprintf(f, "    }\n");
+            std::fprintf(f, "    },\n");
+            // Per-step timeline of mutations.
+            std::fprintf(f, "    \"timeline\": [\n");
+            for (std::size_t ti = 0; ti < disp.timeline.size(); ++ti) {
+                const engine::StepMutation& sm = disp.timeline[ti];
+                std::fprintf(f, "      {\"step\": %d, \"location\": \"%s\", "
+                                "\"mutations\": [", sm.step,
+                             esc(sm.location).c_str());
+                for (std::size_t mi = 0; mi < sm.mutations.size(); ++mi) {
+                    std::fprintf(f, "{\"var\": \"%s\", \"value\": \"%s\"}%s",
+                                 esc(sm.mutations[mi].first).c_str(),
+                                 esc(sm.mutations[mi].second).c_str(),
+                                 (mi + 1 < sm.mutations.size()) ? ", " : "");
+                }
+                std::fprintf(f, "]}%s\n",
+                             (ti + 1 < disp.timeline.size()) ? "," : "");
+            }
+            std::fprintf(f, "    ]\n");
             std::fprintf(f, "  }\n");
             std::fprintf(f, "}\n");
             std::fclose(f);
