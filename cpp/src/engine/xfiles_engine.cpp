@@ -30,6 +30,7 @@
 
 #include "hdb/hdb_container.h"
 #include "nl/hdb_record_index.h"
+#include "runtime/hsp_loader.h"
 
 #include <cstdint>
 #include <cstdio>
@@ -202,12 +203,10 @@ struct Part {
 // ===========================================================================
 // PART 4 — THE GAME OBJECT MODEL (rebuilt from the records)
 // ===========================================================================
-struct Hotspot {          // from the scene's .HOT file (screen geometry)
-    int      index;
-    uint32_t type_zorder; // raw z-order/layer number
-    int16_t  x_min, y_min, x_max, y_max;   // 640x480 screen rect
-    uint32_t action_id_1, action_id_2;     // what fires on click
-};
+// Hotspot lives in the shared runtime header so the SDL2 playable shell can
+// reuse the parser. Alias it here so the existing engine code keeps reading
+// `engine::Hotspot`.
+using Hotspot = ::xfiles::runtime::Hotspot;
 
 struct Trigger {
     std::size_t          offset;     // record offset in the HDB
@@ -287,31 +286,11 @@ static GameModel load_game(const uint8_t* hdb, std::size_t hdb_size) {
     return g;
 }
 
-// ---------------------------------------------------------------------------
-// Hotspot geometry lives in the sibling XV/<scene_id>.HOT files (the 'HSPT'
-// format), NOT in the HDB. Header: 'HSPT' + count(u32 LE). Entry (20B):
-//   type/z-order(u32 LE) + x_min,y_min,x_max,y_max (i16 LE x4) + action1,action2.
-// ---------------------------------------------------------------------------
+// Hotspot HSPT parsing now lives in `cpp/include/runtime/hsp_loader.h` so the
+// SDL2 playable shell can share it. This thin wrapper preserves the existing
+// `engine::load_hot_file(bytes)` API used in the legacy positional mode.
 static std::vector<Hotspot> load_hot_file(const std::vector<uint8_t>& b) {
-    std::vector<Hotspot> out;
-    auto le32 = [](const uint8_t* p) {
-        return uint32_t(p[0]) | (uint32_t(p[1]) << 8) |
-               (uint32_t(p[2]) << 16) | (uint32_t(p[3]) << 24);
-    };
-    auto le16 = [](const uint8_t* p) { return int16_t(uint16_t(p[0]) | (uint16_t(p[1]) << 8)); };
-    if (b.size() < 8 || std::memcmp(b.data(), "HSPT", 4) != 0) return out;
-    uint32_t n = le32(&b[4]);
-    if (b.size() != 8u + n * 20u) return out;          // strict size invariant
-    for (uint32_t i = 0; i < n; ++i) {
-        const uint8_t* e = &b[8 + i * 20];
-        Hotspot h; h.index = int(i);
-        h.type_zorder = le32(e);
-        h.x_min = le16(e + 4); h.y_min = le16(e + 6);
-        h.x_max = le16(e + 8); h.y_max = le16(e + 10);
-        h.action_id_1 = le32(e + 12); h.action_id_2 = le32(e + 16);
-        out.push_back(h);
-    }
-    return out;
+    return ::xfiles::runtime::load_hot_bytes(b);
 }
 
 // ===========================================================================

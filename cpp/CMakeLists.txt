@@ -28,6 +28,8 @@ file(GLOB_RECURSE HDB_DECODER_SOURCES
     "src/nl/classes/*.cpp"
     "src/vc/*.cpp"
     "src/assets/*.cpp"
+    "src/runtime/hsp_loader.cpp"
+    "src/runtime/scene_resolver.cpp"
 )
 
 add_library(hdb_decoder STATIC ${HDB_DECODER_SOURCES})
@@ -53,6 +55,38 @@ target_link_libraries(hdb_dump PRIVATE hdb_decoder)
 # runtime game loop. See docs/ENGINE.md.
 add_executable(xfiles_engine src/engine/xfiles_engine.cpp)
 target_link_libraries(xfiles_engine PRIVATE hdb_decoder)
+
+# --- Optional SDL2 playable shell --------------------------------------------
+# Slice 1: a 640x480 window that plays one Cinepak/IMA scene, overlays its HSPT
+# rects, and dispatches action_ids on click. Off by default — when off, no SDL2
+# fetch happens and the existing build matrix is untouched.
+
+option(XFILES_PLAY "Build the SDL2 playable shell (xfiles_play)" OFF)
+option(XFILES_SDL2_SYSTEM "Use system SDL2 (find_package) instead of FetchContent" OFF)
+
+if(XFILES_PLAY)
+    if(XFILES_SDL2_SYSTEM)
+        find_package(SDL2 CONFIG REQUIRED)
+    else()
+        include(FetchContent)
+        set(SDL_TEST   OFF CACHE BOOL "" FORCE)
+        set(SDL_SHARED OFF CACHE BOOL "" FORCE)
+        set(SDL_STATIC ON  CACHE BOOL "" FORCE)
+        FetchContent_Declare(SDL2
+            GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
+            GIT_TAG release-2.30.7
+            GIT_SHALLOW TRUE)
+        FetchContent_MakeAvailable(SDL2)
+    endif()
+
+    add_executable(xfiles_play
+        src/runtime/sdl2_main.cpp
+        src/runtime/fmv_player.cpp)
+    target_link_libraries(xfiles_play PRIVATE hdb_decoder SDL2::SDL2 SDL2::SDL2main)
+    target_include_directories(xfiles_play PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include)
+    install(TARGETS xfiles_play RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+endif()
 
 # --- Tests (optional, Catch2 vendored) ---------------------------------------
 
@@ -96,6 +130,14 @@ if(HDB_BUILD_TESTS)
             message(STATUS "  test ${test_name}: built but skipped on MSVC (vtable padding)")
         endif()
     endforeach()
+
+    # The xfiles_play --probe smoke test needs the binary path. When the SDL2
+    # shell is built, point the test at it via an env var. When OFF, the test
+    # self-skips (printing SKIP, returning 0).
+    if(XFILES_PLAY AND TARGET test_play_probe AND TARGET xfiles_play)
+        set_tests_properties(test_play_probe PROPERTIES
+            ENVIRONMENT "XFILES_PLAY_BIN=$<TARGET_FILE:xfiles_play>")
+    endif()
 endif()
 
 # --- Install -----------------------------------------------------------------
