@@ -92,8 +92,8 @@ def build_hotspots_inventory(xv_dir: str | Path) -> dict:
     xv = Path(xv_dir)
     scenes: list[dict] = []
     rect_total = 0
-    action_ids: set[int] = set()
     skipped = 0
+    action_id_counts: dict[int, int] = {}
     for p in sorted(xv.glob("*.HOT")):
         rec = parse_hot_file(p)
         if rec is None:
@@ -102,9 +102,18 @@ def build_hotspots_inventory(xv_dir: str | Path) -> dict:
         scenes.append(rec)
         rect_total += rec["rect_count"]
         for r in rec["rects"]:
-            action_ids.add(r["action_id_1"])
-            action_ids.add(r["action_id_2"])
-    action_ids.discard(0)
+            for slot in ("action_id_1", "action_id_2"):
+                aid = r[slot]
+                if aid:
+                    action_id_counts[aid] = action_id_counts.get(aid, 0) + 1
+
+    # Ranked frequency table (descending by count, ascending action_id for ties).
+    ranked = sorted(action_id_counts.items(),
+                     key=lambda kv: (-kv[1], kv[0]))
+    by_frequency = [
+        {"action_id": aid, "occurrences": count, "certainty": "byte-direct"}
+        for aid, count in ranked
+    ]
     return {
         "_about": "Inventory of every HSPT hotspot file in the supplied XV "
                   "directory. Each rect's geometry and action_ids are read "
@@ -113,9 +122,15 @@ def build_hotspots_inventory(xv_dir: str | Path) -> dict:
         "stats": {
             "scenes_total": len(scenes),
             "rects_total": rect_total,
-            "action_ids_distinct": len(action_ids),
+            "action_ids_distinct": len(action_id_counts),
             "skipped_files": skipped,
+            "action_id_range": {
+                "min": min(action_id_counts) if action_id_counts else 0,
+                "max": max(action_id_counts) if action_id_counts else 0,
+            },
+            "top_action_ids_top_count": (ranked[0][1] if ranked else 0),
         },
+        "action_ids_by_frequency": by_frequency,
         "scenes": scenes,
     }
 
