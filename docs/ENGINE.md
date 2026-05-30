@@ -83,38 +83,55 @@ structure, classes, geometry, dialogue, flow and wiring around them are all here
 
 ## Scripted-playthrough validator (`--validate-flow`)
 
-The engine accepts a second mode that takes the **unified honest model**
-(`examples/outputs/game_definition.json`) and checks that the on-disk story flow
-resolves cleanly:
+The engine accepts the **unified honest model**
+(`examples/outputs/game_definition.json`) and walks the canonical 29-step flow
+in `flow.days[].scenes[]`:
 
 ```
 xfiles_engine --validate-flow <game_definition.json> [<XFILES.HDB>]
 ```
 
-For each entry in `flow.node_order` it verifies that:
+For each step, it classifies the outcome as one of:
 
-- the node has at least one scene in `flow.scenes_per_node[node]`;
-- every referenced scene exists under the top-level `scenes` map;
-- every per-scene trigger `offset` resolves into the top-level `triggers[]`
-  array (cross-checking the marker offsets emitted by the byte-direct
-  decoder).
+- `PASS` — the step's `location` is in the byte-direct `scenes{}` catalog,
+  every trigger the catalog references resolves in the global `triggers[]`
+  list, and the step has at least one walkthrough action.
+- `WALK` — the step's location is not in the byte-direct catalog (5 scenes
+  in the shipped game: `Crime Lab`, `Apt`, `Coroner`, `Hangar`, `Hospital`),
+  so it is honestly surfaced as walkthrough-only — counted toward coverage
+  but flagged.
+- `FAIL` — actions missing, or a referenced trigger does not resolve.
 
-When an `XFILES.HDB` path is also supplied, the validator additionally loads
-the HDB-derived `GameModel` and notes any `"Node N"` keys that have no inline
-label coverage. The HDB step is a soft cross-check — labels are heuristic, so
-its findings show up as `note:` lines rather than as failures.
+A second pass simulates the byte-direct **state machine** of each scene:
+its phase variable (`cAI<Location>WhereAreWe`), the ordered `phase_machine`
+values, and the checkpoint set are fired round-robin as the player visits
+the scene across steps. Final tally:
 
-Each step is reported as either `PASS` or `FAIL` with a one-line diagnostic
-listing the missing scenes / triggers, ending with a tally
-`scripted playthrough: K/N steps verified`. Exit code is `0` when `K == N`,
-`1` otherwise.
+```text
+scripted playthrough: 18/29 byte-direct PASS, 11 walkthrough-only, 0 FAIL
 
-The validator embeds a small in-tree JSON reader (`namespace json` inside
-`xfiles_engine.cpp`) — no external dependency is added; it parses the tightly
-bounded subset of JSON the honest model uses (numbers, strings, arrays,
-nested objects, the standard escape set). Every emitted field carries the
-honesty contract inherited from `game_definition.json` — the validator never
-invents data, missing matches surface as MISSING entries.
+State-machine simulation:
+  Field Office   phase 1/7 (P:Phone)  checkpoints 6/8
+  Comity         phase 1/3 (N:None)   checkpoints 1/5
+  ...
+```
+
+Exit code is `0` when there are no `FAIL` steps, `1` otherwise.
+
+## Trace pretty-printer (`--print-trace`)
+
+```text
+xfiles_engine --print-trace <playthrough_trace.json>
+```
+
+Reads the per-step trace produced by `hdb-extract trace`
+(`examples/outputs/playthrough_trace.json`) and prints a readable
+step-by-step summary: walkthrough action text, top triggers with their
+`effect_summary`, and dialogue line samples reachable through the
+location's scope. No HDB required — the trace is self-contained.
+
+Both modes embed a small in-tree JSON reader (`namespace json` inside
+`xfiles_engine.cpp`); no external dependency is added.
 
 ## Build & run
 
@@ -122,4 +139,5 @@ invents data, missing matches surface as MISSING entries.
 cd cpp && cmake -S . -B build && cmake --build build
 ./build/xfiles_engine /path/to/XFILES.HDB /path/to/XV
 ./build/xfiles_engine --validate-flow examples/outputs/game_definition.json
+./build/xfiles_engine --print-trace examples/outputs/playthrough_trace.json
 ```
