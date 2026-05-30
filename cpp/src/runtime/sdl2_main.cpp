@@ -25,6 +25,7 @@
 #include <string>
 #include <vector>
 
+#include "runtime/dispatcher.h"
 #include "runtime/fmv_player.h"
 #include "runtime/hsp_loader.h"
 #include "runtime/scene_resolver.h"
@@ -43,6 +44,7 @@ constexpr uint32_t kDefaultScene = 58615;
 struct Args {
     std::string asset_dir;
     std::string scene_map_path;          // optional scene_asset_map.json
+    std::string game_def_path;           // optional game_definition.json
     std::string location;                // --location "Field Office"
     uint32_t scene_id = kDefaultScene;
     bool scene_explicit = false;
@@ -78,6 +80,7 @@ bool parse(int argc, char** argv, Args& out) {
         }
         else if (a == "--location" && i + 1 < argc) { out.location = argv[++i]; }
         else if (a == "--scene-map" && i + 1 < argc) { out.scene_map_path = argv[++i]; }
+        else if (a == "--game-def" && i + 1 < argc) { out.game_def_path = argv[++i]; }
         else if (a == "--debug-hotspots") { out.debug_hotspots = true; }
         else if (a == "--probe") { out.probe = true; }
         else if (a == "--help" || a == "-h") { print_usage(); return false; }
@@ -86,6 +89,9 @@ bool parse(int argc, char** argv, Args& out) {
     if (out.asset_dir.empty()) out.asset_dir = "XV";
     if (out.scene_map_path.empty()) {
         out.scene_map_path = "examples/outputs/scene_asset_map.json";
+    }
+    if (out.game_def_path.empty()) {
+        out.game_def_path = "examples/outputs/game_definition.json";
     }
     return true;
 }
@@ -147,15 +153,52 @@ int main(int argc, char** argv) {
     std::printf("  hotspots loaded: %zu rects from %s\n", rects.size(),
                 hot_present ? hot_path.c_str() : "(no .HOT file)");
 
+    // Load the per-location dispatcher map (best-effort; absent JSON =
+    // dispatcher is a no-op).
+    namespace dsp = xfiles::runtime::dispatcher;
+    dsp::ScenesByLocation scene_map;
+    if (std::filesystem::is_regular_file(args.game_def_path)) {
+        scene_map = dsp::load_scenes_by_location(args.game_def_path);
+        std::printf("xfiles_play: dispatcher loaded %zu locations from %s\n",
+                     scene_map.by_location.size(),
+                     args.game_def_path.c_str());
+    } else {
+        std::printf("xfiles_play: --game-def='%s' missing — dispatcher disabled\n",
+                     args.game_def_path.c_str());
+    }
+    dsp::VariableState vstate;
+
     if (args.probe) {
         const char* status = xmv_present
             ? (hot_present ? "ready" : "video-only")
             : "fallback";
-        std::printf("probe ok, scene_id=%u rects=%zu video=%s status=%s\n",
+        std::size_t triggers_for_loc = 0;
+        if (!resolved_location.empty()) {
+            auto it = scene_map.by_location.find(resolved_location);
+            if (it != scene_map.by_location.end())
+                triggers_for_loc = it->second.size();
+        }
+        std::printf("probe ok, scene_id=%u rects=%zu video=%s status=%s "
+                     "triggers_for_location=%zu\n",
                      args.scene_id, rects.size(),
-                     xmv_present ? "present" : "absent", status);
+                     xmv_present ? "present" : "absent", status,
+                     triggers_for_loc);
         return 0;
     }
+
+    // Fire the scene's triggers byte-direct on entry. Mutations land in
+    // `vstate` and are echoed on screen / stdout.
+    auto fire_entry = [&]() {
+        if (resolved_location.empty()) return;
+        auto muts = dsp::dispatch_scene(scene_map, resolved_location, vstate);
+        if (muts.empty()) return;
+        std::printf("dispatcher: entered '%s' -> %zu trigger mutations:\n",
+                     resolved_location.c_str(), muts.size());
+        for (const auto& [k, v] : muts) {
+            std::printf("  set %s = %s\n", k.c_str(), v.c_str());
+        }
+    };
+    fire_entry();
 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) != 0) {
         std::fprintf(stderr, "SDL_Init failed: %s\n", SDL_GetError());
@@ -272,6 +315,17 @@ int main(int argc, char** argv) {
     std::printf("  clicks         : %d\n", clicks);
     std::printf("  last action_id : %d\n", last_action_id);
     std::printf("  scene_id       : %u\n", args.scene_id);
+    std::printf("  variables set  : %zu (true=%d false=%d int=%d)\n",
+                vstate.values.size(),
+                vstate.set_true_count,
+                vstate.set_false_count,
+                vstate.set_int_count);
+    if (!vstate.values.empty()) {
+        std::printf("  state:\n");
+        for (const auto& [k, v] : vstate.values) {
+            std::printf("    %s = %s\n", k.c_str(), v.c_str());
+        }
+    }
 
     if (audio) SDL_CloseAudioDevice(audio);
     SDL_DestroyRenderer(ren);
