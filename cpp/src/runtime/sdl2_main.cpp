@@ -33,7 +33,12 @@ namespace {
 
 constexpr int kWindowW = 640;
 constexpr int kWindowH = 480;
-constexpr uint32_t kDefaultScene = 19672;   // Field Office, demo'd by xfiles_engine
+// First video the original game plays: the studio logo. Derived from the HDB
+// inline label `Video.Game.VCLogo.mov.0.1.12XV.58615.xmv`. Has no .HOT file
+// (non-interactive), the shell renders the video full-frame and the hotspot
+// overlay stays empty. Override with `--scene <id>` (e.g. 19706 for the first
+// Field Office scene, 19736 for the Cook dialog SC005).
+constexpr uint32_t kDefaultScene = 58615;
 
 struct Args {
     std::string asset_dir;
@@ -101,11 +106,12 @@ int main(int argc, char** argv) {
                 hot_present ? hot_path.c_str() : "(no .HOT file)");
 
     if (args.probe) {
-        const bool ready = hot_present && xmv_present;
+        const char* status = xmv_present
+            ? (hot_present ? "ready" : "video-only")
+            : "fallback";
         std::printf("probe ok, scene_id=%u rects=%zu video=%s status=%s\n",
                      args.scene_id, rects.size(),
-                     xmv_present ? "present" : "absent",
-                     ready ? "ready" : "fallback");
+                     xmv_present ? "present" : "absent", status);
         return 0;
     }
 
