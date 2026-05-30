@@ -1,0 +1,498 @@
+{
+ "_about": "Byte-direct labels of every VCNav (class 0x33) record. Each entry names a navigation point; the label is the longest printable run inside the record's payload.",
+ "_source": "G:/TheXFiles/XFILES.HDB",
+ "stats": {
+  "count": 68,
+  "with_label": 14,
+  "without_label": 54,
+  "by_size_class": {
+   "0": 22,
+   "16": 24,
+   "32": 11,
+   "64": 1,
+   "80": 3,
+   "96": 2,
+   "128": 1,
+   "144": 1,
+   "160": 3
+  }
+ },
+ "entries": [
+  {
+   "record_offset": 1125152,
+   "payload_size": 88,
+   "label": "Graphics:full screen paper items:fromSkinner:paperfolderinner.pic",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 1306752,
+   "payload_size": 32,
+   "label": "7 (porch SE)",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 1703456,
+   "payload_size": 128,
+   "label": "Video:Node 2:Warehouse:Info:Willmore \"What do you think about this?\" POSITIVE SKINNER narco slice",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3176040,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3176136,
+   "payload_size": 40,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3176184,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3286560,
+   "payload_size": 72,
+   "label": "tiVideo:Link 3:Apt:Answering Machine Beeping (narco)",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3290304,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3299616,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3342440,
+   "payload_size": 24,
+   "label": "active",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3344704,
+   "payload_size": 168,
+   "label": "an ironclad case, courtesy of some fine Bureau work, thank you, you'd think these lawyers would just resign themselves to trEnableKitIcon",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3345952,
+   "payload_size": 168,
+   "label": "me and Elizabeth, if I can get the day off. Still no word on whether or not I'll be working. I know we have a surveEnableKitIcon",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3350096,
+   "payload_size": 168,
+   "label": "called for SPD backup and told Astadourian about it too. I don't know what's going on. Cook is either screwing with my head EnableKitIcon",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3355936,
+   "payload_size": 24,
+   "label": "Dear Cr",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3355992,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3356040,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3356088,
+   "payload_size": 40,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3356136,
+   "payload_size": 32,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3356176,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3360672,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3372832,
+   "payload_size": 96,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3373816,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3377952,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3378000,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3378048,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3378192,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3378984,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3379032,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3379128,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3379176,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3379224,
+   "payload_size": 0,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3387424,
+   "payload_size": 32,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3387464,
+   "payload_size": 32,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3389728,
+   "payload_size": 32,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3389768,
+   "payload_size": 32,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3389808,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3392104,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3392152,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3392272,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3395616,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3395776,
+   "payload_size": 88,
+   "label": "Video\\Node 3\\Wong\\\"Okay, so what's the connectio",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3396136,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3396232,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3396280,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3397552,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3400920,
+   "payload_size": 40,
+   "label": "e_N photo daughter",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3400968,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3401112,
+   "payload_size": 24,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3407688,
+   "payload_size": 32,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3407728,
+   "payload_size": 32,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 3407768,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5065432,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5089344,
+   "payload_size": 104,
+   "label": "DisplayDBox",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5091872,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5091888,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5091904,
+   "payload_size": 80,
+   "label": "23It works on my machine.",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5092024,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5093408,
+   "payload_size": 16,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5093632,
+   "payload_size": 24,
+   "label": "42Navs/LoopsR/F",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5118800,
+   "payload_size": 144,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5118952,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5119264,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5119280,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5119296,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5119312,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5119328,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5119344,
+   "payload_size": 8,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  },
+  {
+   "record_offset": 5119360,
+   "payload_size": 24,
+   "label": "",
+   "certainty": "byte-direct",
+   "source": "HDB:VCNav-inline-label"
+  }
+ ]
+}
