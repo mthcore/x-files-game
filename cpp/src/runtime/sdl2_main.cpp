@@ -72,6 +72,7 @@ void print_usage() {
         "\n"
         "Keys at runtime: ESC quit, F1 toggle hotspot overlay,\n"
         "  SPACE next canonical-flow step, BACKSPACE previous step,\n"
+        "  F5 save state to xfiles_play.save.json, F9 load it back,\n"
         "  left click in a rect -> dispatch action_id.\n",
         kDefaultScene);
 }
@@ -337,6 +338,20 @@ int main(int argc, char** argv) {
                         --step_idx;
                         enter_step_idx(step_idx, fmv, ren, audio, fmv_ok);
                     }
+                }
+                if (e.key.keysym.sym == SDLK_F5) {
+                    const std::string save_path = "xfiles_play.save.json";
+                    bool ok = dsp::save_state_json(save_path, vstate);
+                    std::printf("save -> %s (%s, %zu variables)\n",
+                                 save_path.c_str(), ok ? "ok" : "FAILED",
+                                 vstate.values.size());
+                }
+                if (e.key.keysym.sym == SDLK_F9) {
+                    const std::string save_path = "xfiles_play.save.json";
+                    bool ok = dsp::load_state_json(save_path, vstate);
+                    std::printf("load <- %s (%s, %zu variables now)\n",
+                                 save_path.c_str(), ok ? "ok" : "FAILED",
+                                 vstate.values.size());
                 }
             }
             if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {

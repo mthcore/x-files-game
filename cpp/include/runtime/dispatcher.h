@@ -229,4 +229,73 @@ dispatch_scene(const ScenesByLocation& map,
     return muts;
 }
 
+// Save the current variable state to a JSON file (closed shape, easy to
+// diff). Format::
+//
+//     {
+//       "_about": "xfiles_play variable state snapshot",
+//       "values": { "var": "true|false|<int>", ... },
+//       "counters": { "set_true": N, "set_false": N, "set_int": N }
+//     }
+//
+// Honest contract: only the closed-grammar mutations the dispatcher applied
+// are surfaced; nothing is reconstructed or inferred from the GAM bytes
+// (that's a separate slice).
+inline bool save_state_json(const std::string& path, const VariableState& vs) {
+    std::ofstream f(path, std::ios::binary);
+    if (!f) return false;
+    f << "{\n  \"_about\": \"xfiles_play variable state snapshot\",\n";
+    f << "  \"values\": {\n";
+    std::size_t i = 0;
+    for (const auto& [k, v] : vs.values) {
+        f << "    \"" << k << "\": \"" << v << "\""
+          << (++i < vs.values.size() ? "," : "") << "\n";
+    }
+    f << "  },\n";
+    f << "  \"counters\": {\n";
+    f << "    \"set_true\":  " << vs.set_true_count  << ",\n";
+    f << "    \"set_false\": " << vs.set_false_count << ",\n";
+    f << "    \"set_int\":   " << vs.set_int_count   << ",\n";
+    f << "    \"uninterpreted\": " << vs.uninterpreted_count << "\n";
+    f << "  }\n";
+    f << "}\n";
+    return true;
+}
+
+// Replace `vs` with the state stored in `path`. Returns false on I/O or
+// parse failure; on success the variable map is completely replaced.
+inline bool load_state_json(const std::string& path, VariableState& vs) {
+    namespace J = ::xfiles::engine::json;
+    std::string buf;
+    if (!J::load_file(path, buf)) return false;
+    J::Parser parser(buf.data(), buf.size());
+    J::Value root;
+    if (!parser.parse(root) || !root.is_obj()) return false;
+    const J::Value& vals = root.at("values");
+    if (!vals.is_obj()) return false;
+    vs.values.clear();
+    vs.set_true_count = vs.set_false_count = vs.set_int_count = 0;
+    vs.uninterpreted_count = 0;
+    for (const auto& [k, v] : vals.as_obj()) {
+        if (!v.is_str()) continue;
+        const std::string& sval = v.as_str();
+        vs.values[k] = sval;
+        if      (sval == "true")  ++vs.set_true_count;
+        else if (sval == "false") ++vs.set_false_count;
+        else {
+            bool is_int = !sval.empty();
+            std::size_t j = (sval[0] == '-') ? 1 : 0;
+            if (j == sval.size()) is_int = false;
+            for (; j < sval.size(); ++j) {
+                if (!std::isdigit(static_cast<unsigned char>(sval[j]))) {
+                    is_int = false; break;
+                }
+            }
+            if (is_int) ++vs.set_int_count;
+            else ++vs.uninterpreted_count;
+        }
+    }
+    return true;
+}
+
 }  // namespace xfiles::runtime::dispatcher
