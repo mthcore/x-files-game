@@ -104,7 +104,8 @@ def build_navigation_targets(hdb_path: str | Path) -> dict:
             "count": len(entries),
             "with_label": with_label,
             "without_label": len(entries) - with_label,
-            "by_size_class": dict(sorted(size_class_counts.items())),
+            "by_size_class": {str(k): v for k, v
+                              in sorted(size_class_counts.items())},
         },
         "entries": entries,
     }
