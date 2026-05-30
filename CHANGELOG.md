@@ -4,7 +4,22 @@
 
 - Unified game model (`hdb_extract game-def`) and C++ engine validator
   (`xfiles_engine --validate-flow`). Reports byte-direct PASS, walkthrough-only,
-  and FAIL per step.
+  and FAIL per step (18/29 PASS, 11 walkthrough-only, 0 FAIL on the shipped HDB).
+- Headless dispatcher in the engine: fires each step's triggers, parses every
+  byte-direct `effect_summary`, mutates a variable-state map. 113 effects
+  applied, 48 distinct variables set, ≥85% overlap with the GAM namespace
+  (cross-validated by integration test).
+- Scene state-machine simulator: per-location phase variable + checkpoints
+  fired round-robin as the canonical flow visits each scene.
+- `--print-trace` mode reads `playthrough_trace.json` and emits a readable
+  per-step summary (action text, top triggers, dialogue line samples).
+- `--json-out` exports the validator + state machine + dispatcher report.
+- `hdb_extract trace` produces `playthrough_trace.json` cross-referencing
+  every step with its triggers, conversations, and dialogue lines.
+- `hdb_extract hotspots` decodes every `XV/*.HOT` (HSPT) file: 680 scenes,
+  2 279 rects, 807 distinct action ids, with a per-action_id frequency ranking.
+- `btree_pages_inventory.json` surfaces the (tag, kind) statistics for every
+  page; per-kind semantics stays honestly `undetermined`.
 - Master resolver covers NeoIDList / NeoIDIndex pair tables;
   `classify_handle` returns `neoid` / `direct-offset` / `unknown`.
 - VCConversation extractor walks the on-disk list container; dialogue text
